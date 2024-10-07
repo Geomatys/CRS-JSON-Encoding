@@ -1,133 +1,269 @@
 {
-  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
-  "type": "ProjectedCRS",
+  "$schema": "https://schemas.opengis.net/crsjson/1.0/crsjson.json",
+  "x-comment": "CRS definition from https://epsg.org/crs_2154/RGF93-v1-Lambert-93.html",
+  "entityType": "ProjectedCRS",
   "name": "RGF93 v1 / Lambert-93",
-  "base_crs": {
+  "alias": [
+    {
+      "x-comment": "Scope structure is simplified, and 'RGF93 / LAMB93' is interpreted as 'LAMB93 on RGF93' rather than two aliases.",
+      "entityType": "ScopedName",
+      "scope": "EuroGeographics Identifier",
+      "parsedName": ["FR_RGF93", "LAMB93"]
+    },
+    {
+      "entityType": "ScopedName",
+      "scope": "EPSG alias",
+      "parsedName": ["RGF93", "Lambert-93"]
+    }
+  ],
+  "baseCRS": {
+    "entityType": "GeographicCRS",
     "name": "RGF93 v1",
     "datum": {
-      "type": "GeodeticReferenceFrame",
+      "entityType": "GeodeticReferenceFrame",
       "name": "Reseau Geodesique Francais 1993 v1",
       "ellipsoid": {
+        "entityType": "Ellipsoid",
         "name": "GRS 1980",
-        "semi_major_axis": 6378137,
-        "inverse_flattening": 298.257222101
+        "semiMajorAxis": {
+          "value": 6378137,
+          "uom": "m"
+        },
+        "secondDefiningParameter": {
+          "inverseFlattening": {
+            "x-comment": "Need to define a symbol for unitless.",
+            "value": 298.257222101,
+            "uom": ""
+          }
+        }
+      },
+      "primeMeridian": {
+        "entityType": "PrimeMeridian",
+        "name": "Greenwich",
+        "greenwichLongitude": {
+          "value": 0,
+          "uom": "deg"
+        }
       }
     },
-    "coordinate_system": {
-      "subtype": "ellipsoidal",
+    "coordinateSystem": {
+      "entityType": "EllipsoidalCS",
+      "name": "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degreeOpen",
       "axis": [
         {
+          "entityType": "CoordinateSystemAxis",
           "name": "Geodetic latitude",
-          "abbreviation": "Lat",
-          "direction": "north",
-          "unit": "degree"
+          "axisAbbrev": "Lat",
+          "axisDirection": "north",
+          "axisUnitID": "deg"
         },
         {
+          "entityType": "CoordinateSystemAxis",
           "name": "Geodetic longitude",
-          "abbreviation": "Lon",
-          "direction": "east",
-          "unit": "degree"
+          "axisAbbrev": "Lon",
+          "axisDirection": "east",
+          "axisUnitID": "deg"
         }
       ]
     },
-    "id": {
-      "authority": "EPSG",
-      "code": 4171
-    }
+    "identifier": [
+      {
+        "type": "MD_Identifier",
+        "codespace": "EPSG",
+        "code": 4171
+      }
+    ]
   },
-  "conversion": {
+  "derivingConversion": {
+    "entityType": "Conversion",
     "name": "Lambert-93",
     "method": {
+      "entityType": "OperationMethod",
       "name": "Lambert Conic Conformal (2SP)",
-      "id": {
-        "authority": "EPSG",
-        "code": 9802
-      }
+      "formulaReference": {
+        "formula": "TODO"
+      },
+      "identifier": [
+        {
+          "type": "MD_Identifier",
+          "codespace": "EPSG",
+          "code": 9802
+        }
+      ]
     },
-    "parameters": [
+    "parameterValue": [
       {
-        "name": "Latitude of false origin",
-        "value": 46.5,
-        "unit": "degree",
-        "id": {
-          "authority": "EPSG",
-          "code": 8821
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Latitude of false origin",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8821
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 46.5,
+            "uom": "deg"
+          }
         }
       },
       {
-        "name": "Longitude of false origin",
-        "value": 3,
-        "unit": "degree",
-        "id": {
-          "authority": "EPSG",
-          "code": 8822
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Longitude of false origin",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8822
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 3,
+            "uom": "deg"
+          }
         }
       },
       {
-        "name": "Latitude of 1st standard parallel",
-        "value": 49,
-        "unit": "degree",
-        "id": {
-          "authority": "EPSG",
-          "code": 8823
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Latitude of 1st standard parallel",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8823
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 49,
+            "uom": "deg"
+          }
         }
       },
       {
-        "name": "Latitude of 2nd standard parallel",
-        "value": 44,
-        "unit": "degree",
-        "id": {
-          "authority": "EPSG",
-          "code": 8824
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Latitude of 2nd standard parallel",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8824
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 44,
+            "uom": "deg"
+          }
         }
       },
       {
-        "name": "Easting at false origin",
-        "value": 700000,
-        "unit": "metre",
-        "id": {
-          "authority": "EPSG",
-          "code": 8826
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Easting at false origin",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8826
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 700000,
+            "uom": "m"
+          }
         }
       },
       {
-        "name": "Northing at false origin",
-        "value": 6600000,
-        "unit": "metre",
-        "id": {
-          "authority": "EPSG",
-          "code": 8827
+        "entityType": "OperationParameterValue",
+        "parameter": {
+          "x-comment": "Should be a link to a parameter definition in the method.",
+          "entityType": "OperationParameter",
+          "name": "Northing at false origin",
+          "identifier": [
+            {
+              "type": "MD_Identifier",
+              "codespace": "EPSG",
+              "code": 8827
+            }
+          ]
+        },
+        "parameterValue": {
+          "value": {
+            "value": 6600000,
+            "uom": "m"
+          }
         }
       }
     ]
   },
-  "coordinate_system": {
-    "subtype": "Cartesian",
+  "coordinateSystem": {
+    "entityType": "CartesianCS",
+    "name": "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m",
     "axis": [
       {
+        "entityType": "CoordinateSystemAxis",
         "name": "Easting",
-        "abbreviation": "X",
-        "direction": "east",
-        "unit": "metre"
+        "axisAbbrev": "X",
+        "axisDirection": "east",
+        "axisUnitID": "m"
       },
       {
+        "entityType": "CoordinateSystemAxis",
         "name": "Northing",
-        "abbreviation": "Y",
-        "direction": "north",
-        "unit": "metre"
+        "axisAbbrev": "Y",
+        "axisDirection": "north",
+        "axisUnitID": "m"
       }
     ]
   },
-  "scope": "Engineering survey, topographic mapping.",
-  "area": "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
-  "bbox": {
-    "south_latitude": 41.15,
-    "west_longitude": -9.86,
-    "north_latitude": 51.56,
-    "east_longitude": 10.38
-  },
-  "id": {
-    "authority": "EPSG",
-    "code": 2154
-  }
+  "domain": [
+    {
+      "entityType": "ObjectDomain",
+      "scope": "Engineering survey, topographic mapping.",
+      "domainOfValidity": {
+        "description": "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
+        "geographicElement": [
+          {
+            "x-comment": "ISO 19115-4 working group currently uses 'type' instead of 'entityType'.",
+            "type": "EX_GeographicBoundingBox",
+            "southBoundLatitude": 41.15,
+            "westBoundLongitude": -9.86,
+            "northBoundLatitude": 51.56,
+            "eastBoundLongitude": 10.38
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "type": "MD_Identifier",
+      "codespace": "EPSG",
+      "code": 2154
+    }
+  ]
 }
