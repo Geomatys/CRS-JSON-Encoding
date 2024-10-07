@@ -1,43 +1,71 @@
 {
-  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
-  "type": "GeographicCRS",
+  "$schema": "https://schemas.opengis.net/crsjson/1.0/crsjson.json",
+  "entityType": "GeographicCRS",
   "name": "RGF93 v1",
+  "alias": [
+    {
+      "scope": "IGNF",
+      "parsedName": ["RGF93 v1 (lat-lon)"]
+    },
+    {
+      "scope": "EPSG",
+      "parsedName": ["RGF93"]
+    }
+  ],
   "datum": {
-    "type": "GeodeticReferenceFrame",
+    "entityType": "GeodeticReferenceFrame",
     "name": "Reseau Geodesique Francais 1993 v1",
     "ellipsoid": {
       "name": "GRS 1980",
-      "semi_major_axis": 6378137,
-      "inverse_flattening": 298.257222101
+      "semiMajorAxis": 6378137,
+      "inverseFlattening": 298.257222101
     }
   },
-  "coordinate_system": {
-    "subtype": "ellipsoidal",
+  "coordinateSystem": {
+    "entityType": "EllipsoidalCS",
+    "name": "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degreeOpen",
     "axis": [
       {
         "name": "Geodetic latitude",
         "abbreviation": "Lat",
         "direction": "north",
-        "unit": "degree"
+        "unit": "deg",
+        "minimumValue": -90,
+        "maximumValue": 90,
+        "rangeMeaning": "exact"
       },
       {
         "name": "Geodetic longitude",
         "abbreviation": "Lon",
         "direction": "east",
-        "unit": "degree"
+        "unit": "deg",
+        "minimumValue": -180,
+        "maximumValue": 180,
+        "rangeMeaning": "wraparound"
       }
     ]
   },
-  "scope": "Horizontal component of 3D system.",
-  "area": "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
-  "bbox": {
-    "south_latitude": 41.15,
-    "west_longitude": -9.86,
-    "north_latitude": 51.56,
-    "east_longitude": 10.38
-  },
-  "id": {
-    "authority": "EPSG",
-    "code": 4171
-  }
+  "domain": [
+    {
+      "scope": "Horizontal component of 3D system.",
+      "domainOfValidity": {
+        "description": "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
+        "geographicElement": [
+          {
+            "entityType": "GeographicBoundingBox",
+            "southBoundLatitude": 41.15,
+            "westBoundLongitude": -9.86,
+            "northBoundLatitude": 51.56,
+            "eastBoundLongitude": 10.38
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "codespace": "EPSG",
+      "code": 4171
+    }
+  ]
 }
