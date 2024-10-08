@@ -36,15 +36,23 @@ The changes can be seen in Git history.
 The most significant changes implied by OGC 24-017 is the replacement of `"type"` and `"subtype"` by `"entityType"`.
 Other changes are more a consequence of compliance with ISO 19111 than OGC 24-017.
 
+### Changes that are not real
+The differences between PROJJSON and the edited files give the impression that new elements were added for
+`"minimumValue"`, `"maximumValue"`and `"rangeMeaning"`, and that `identifier` has been changed from a singleton to an array.
+But actually, PROJJSON already allows those properties. They were just not used in the PROJJSON output.
+
+
 ### Ignoreable changes
 The PROJJSON elements do not appear in the same order as in the UML,
 but the examples keep elements in the same order as PROJJSON for making comparisons easier.
 New elements are added, which make the JSON looks more verbose,
-but some of these new elements such as `"alias"`, `"minimumValue"`, `"maximumValue"`and `"rangeMeaning"` are optional.
+but some of these new elements, such as `"alias"`,  are optional.
 
 PROJJSON uses snake-case, while UML, OGC 24-017 and json-schema.org use camel-case.
 Furthermore, the identifiers (ignoring case) used in PROJJSON do not always match the UML identifiers.
 The examples in this directory use UML identifiers, including their camel case.
+Such renaming is not mandatory, this is only an experiment.
+Note: PROJJSON uses the plural form for arrays, which may be something good to replicate even if UML identifiers are used.
 
 ### Units of measurement
 While OGC 24-017 uses [Unified Code for Units of Measure](https://ucum.org/) (UCUM) in its example,
@@ -57,3 +65,11 @@ UCUM symbols are "deg" for angular degrees and "m" for meter
 In addition, year does not seem to be defined precisely in UCUM
 (by contrast, EPSG uses a specific definition of tropical year).
 The "conversion to base unit" factor may be needed but has not been added yet in the examples.
+
+### Structural changes
+The following elements are structured differently in ISO 19111 compared to WKT 2 / PROJJSON.
+Those changes are more significant than only element renaming:
+
+* The way that coordinate system types are identified
+* The structure where scope and geographic/vertical/temporal extents are stored.
+* The structure of identifiers.
