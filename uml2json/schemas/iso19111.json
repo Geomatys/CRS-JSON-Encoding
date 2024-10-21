@@ -1,0 +1,2177 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.isotc211.org/19111/-/3.2.0/iso19111.json",
+  "description": "Replaces 19111 Edition 2 and 19111-2 Edition 1",
+  "$defs": {
+    "AffineCS": {
+      "$anchor": "AffineCS",
+      "description": "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal\r\nNote: The number of associations shall equal the dimension of the coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "AxisDirection": {
+      "$anchor": "AxisDirection",
+      "description": "direction of positive increase in the coordinate value for a coordinate system axis",
+      "type": "string"
+    },
+    "CRS": {
+      "$anchor": "CRS",
+      "description": "coordinate reference system which is usually single but may be compound",
+      "allOf": [
+        {
+          "$ref": "#/$defs/ObjectUsage"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "Calendar": {
+      "$anchor": "Calendar",
+      "description": "specification of the calendar to which a temporal origin is referenced",
+      "type": "string"
+    },
+    "CartesianCS": {
+      "$anchor": "CartesianCS",
+      "description": "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal\r\nNote: The number of associations shall equal the dimension of the coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/AffineCS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "CompoundCRS": {
+      "$anchor": "CompoundCRS",
+      "description": "coordinate reference system describing the position of points through two or more independent single coordinate reference systems\r\nNote: two coordinate reference systems are independent of each other if coordinate values in one cannot be converted or transformed into coordinate values in the other.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "componentReferenceSystem": {
+              "description": "coordinate reference system that is a component of this compound coordinate reference system",
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/SingleCRS"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "componentReferenceSystem"
+          ]
+        }
+      ]
+    },
+    "ConcatenatedOperation": {
+      "$anchor": "ConcatenatedOperation",
+      "description": "ordered sequence of two or more single coordinate operations\r\nNote: The sequence of coordinate operations is constrained by the requirement that the source coordinate reference system of step (n + 1) shall be the same as the target coordinate reference system of step (n). The source coordinate reference system of the first step and the target coordinate reference system of the last step are the source and target coordinate reference system associated with the concatenated coordinate operation. For a concatenated coordinate operation sequence of n coordinate operations: \r\n    source CRS (concatenated coordinate operation) \u003d source CRS (coordinate operation step 1) \r\n    target CRS (coordinate operation step i) \u003d source CRS (coordinate operation step i + 1); i \u003d 1 ...(n - 1) \r\n    target CRS (concatenated coordinate operation) \u003d target CRS (coordinate operation step n) \r\nInstead of a forward coordinate operation, an inverse coordinate operation may be used for one or more of the coordinate operation steps mentioned above, if the inverse coordinate operation is uniquely defined by the forward coordinate operation method.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordOperation": {
+              "description": "coordinate operation that is a step in the sequence forming this concatenated coordinate operation",
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/CoordinateOperation"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "coordOperation"
+          ]
+        }
+      ]
+    },
+    "Conversion": {
+      "$anchor": "Conversion",
+      "description": "mathematical operation on coordinates in which the parameter values are defined rather than empirically derived; application of the coordinate conversion introduces no error into output coordinates\r\nNote: The best-known example of a coordinate conversion is a map projection. For coordinate conversions the output coordinates are referenced to the same datum as are the input coordinates.\r\nCoordinate conversions forming a component of a derived CRS have a source CRS and a target CRS that are NOT specified through the source and target associations, but through associations from DerivedCRS to SingleCRS.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operationVersion": {
+              "description": "(not applicable) \r\nNote: This attribute is not used in a coordinate conversion.",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "CoordinateDataType": {
+      "$anchor": "CoordinateDataType",
+      "description": "datatype of coordinate values",
+      "type": "string"
+    },
+    "CoordinateMetadata": {
+      "$anchor": "CoordinateMetadata",
+      "description": "metadata required to reference coordinates",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "crsID": {
+          "description": "identifier of the coordinate reference system to which a coordinate set is referenced"
+        },
+        "crs": {
+          "description": "full definition of the coordinate reference system to which a coordinate set is referenced",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CRS"
+            }
+          ]
+        },
+        "coordinateEpoch": {
+          "description": "epoch at which a coordinate set referenced to a dynamic CRS is valid \r\nNote: Required if the CRS is dynamic, otherwise should no be given.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/DataEpoch"
+            }
+          ]
+        }
+      },
+      "required": [
+        "entityType"
+      ]
+    },
+    "CoordinateOperation": {
+      "$anchor": "CoordinateOperation",
+      "description": "mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch\r\nNote: Many but not all coordinate operations (from CRS A to CRS B) also uniquely define the inverse coordinate operation (from CRS B to CRS A). In some cases, the coordinate operation method algorithm for the inverse coordinate operation is the same as for the forward algorithm, but the signs of some coordinate operation parameter values have to be reversed. In other cases, different algorithms are required for the forward and inverse coordinate operations, but the same coordinate operation parameter values are used. If (some) entirely different parameter values are needed, a different coordinate operation shall be defined.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/ObjectUsage"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operationVersion": {
+              "description": "version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters) \r\nCondition: Mandatory when describing a coordinate transformation or point motion operation, and should not be supplied for a coordinate conversion.",
+              "type": "string"
+            },
+            "coordinateOperationAccuracy": {
+              "description": "estimate(s) of the impact of this coordinate operation on point accuracy\r\nNote: Gives position error estimates for target coordinates of this coordinate operation, assuming no errors in source coordinates.",
+              "type": "array",
+              "uniqueItems": true
+            },
+            "sourcePosition": {},
+            "targetPosition": {},
+            "targetCoordinateEpoch": {
+              "description": "coordinate epoch of the coordinate set output from this coordinate operation",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/DataEpoch"
+                }
+              ]
+            },
+            "sourceCoordinateEpoch": {
+              "description": "coordinate epoch of the coordinate set input into this coordinate operation",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/DataEpoch"
+                }
+              ]
+            },
+            "sourceCRS": {
+              "description": "coordinate reference system to which the coordinate set input into this coordinate operation is referenced",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CRS"
+                }
+              ]
+            },
+            "interpolationCRS": {
+              "description": "\"coordinate reference system to which gridded data files are referenced which this coordinate operation uses to  transform coordinates between two other coordinate reference systems\r\nNote: InterpolationCRS is only used when it is different from both sourceCRS and targetCRS.\"",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CRS"
+                }
+              ]
+            },
+            "targetCRS": {
+              "description": "coordinate reference system to which the coordinate set output from this coordinate operation is referenced",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CRS"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "CoordinateSet": {
+      "$anchor": "CoordinateSet",
+      "description": "description of the coordinate tuples in a coordinate set \r\nNote: A single coordinate tuple is treated as a special case of coordinate set containing only one member.",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "coordinateTuple": {
+          "description": "position described by a coordinate tuple",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "coordinateMetadata": {
+          "description": "coordinate metadata to which this coordinate set is referenced",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CoordinateMetadata"
+            }
+          ]
+        }
+      },
+      "required": [
+        "coordinateMetadata",
+        "coordinateTuple",
+        "entityType"
+      ]
+    },
+    "CoordinateSystem": {
+      "$anchor": "CoordinateSystem",
+      "description": "non-repeating sequence of coordinate system axes that spans a given coordinate space\r\nNote: A coordinate system is derived from a set of mathematical rules for specifying how coordinates in a given space are to be assigned to points. The coordinate values in a coordinate tuple shall be recorded in the order in which the coordinate system axes associations are recorded.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "axis": {
+              "description": "coordinate system axis that is a component of this coordinate system",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/CoordinateSystemAxis"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "axis"
+          ]
+        }
+      ]
+    },
+    "CoordinateSystemAxis": {
+      "$anchor": "CoordinateSystemAxis",
+      "description": "definition of a coordinate system axis",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "axisAbbrev": {
+              "description": "abbreviation used for this coordinate system axis; this abbreviation is also used to identify the coordinates in the coordinate tuple\r\nExamples: X and Y. \r\nNote: when the standard symbol is a Greek character the abbreviation may differ from the symbol (for example to constrain symbols to other character sets).",
+              "type": "string"
+            },
+            "axisDirection": {
+              "description": "direction of this coordinate system axis (or in the case of Cartesian projected coordinates, the direction of this coordinate system axis locally) \r\nExamples: north or south, east or west, up or down. \r\nNote: Within any set of coordinate system axes, only one of each pair of terms can be used. For Earth-fixed CRSs, this direction is often approximate and intended to provide a human interpretable meaning to the axis. When a geodetic reference frame is used, the precise directions of the axes may therefore vary slightly from this approximate direction. Note that an EngineeringCRS often requires specific descriptions of the directions of its coordinate system axes.",
+              "$ref": "#/$defs/AxisDirection"
+            },
+            "axisUnitID": {
+              "description": "spatial unit or temporal quantity used for this coordinate system axis\r\nNote: The value of a coordinate in a coordinate tuple is recorded using this unit. \r\nThis element is omitted if this axis is part of a DateTimeTemporalCS or an OrdinalCS, and is provided in all other cases.",
+              "type": "string"
+            },
+            "minimumValue": {
+              "description": "minimum value normally allowed for this axis, in the unit for the axis",
+              "type": "number"
+            },
+            "maximumValue": {
+              "description": "maximum value normally allowed for this axis, in the unit for the axis",
+              "type": "number"
+            },
+            "rangeMeaning": {
+              "description": "meaning of axis value range specified by minimumValue and maximumValue\r\nNote: This element shall be omitted when both minimumValue and maximumValue are omitted. It may be included when minimumValue and/or maximumValue are included. If this element is omitted when minimumValue or maximumValue are included, the meaning is unspecified.",
+              "$ref": "#/$defs/RangeMeaning"
+            }
+          },
+          "required": [
+            "axisAbbrev",
+            "axisDirection"
+          ]
+        }
+      ]
+    },
+    "CylindricalCS": {
+      "$anchor": "CylindricalCS",
+      "description": "three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system\r\nNote: A CylindricalCS shall have three axis associations.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DataEpoch": {
+      "$anchor": "DataEpoch",
+      "description": "time attribute of a coordinate set that is referenced to a dynamic CRS",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "coordinateEpoch": {
+          "description": "date at which coordinates are referenced to a dynamic coordinate reference system, expressed as a decimal year in the Gregorian calendar\r\nExample: 2017-03-25 in the Gregorian calendar is epoch 2017.23.",
+          "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+        }
+      },
+      "required": [
+        "coordinateEpoch",
+        "entityType"
+      ]
+    },
+    "DateTimeTemporalCS": {
+      "$anchor": "DateTimeTemporalCS",
+      "description": "one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.\r\nNote: A DateTimeTemporalCS shall have one axis association. It does not use axisUnitID; the temporal quantities are defined through the ISO 8601 representation.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/TemporalCS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "Datum": {
+      "$anchor": "Datum",
+      "description": "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system\r\nNote: For geodetic and vertical coordinate reference systems, it relates a coordinate system to the Earth. With other types of coordinate reference systems, the datum may relate the coordinate system to another physical or virtual object. A datum uses a parameter or set of parameters that determine the location of the origin of the coordinate reference system. Each datum subtype can be associated with only specific types of coordinate reference systems.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/ObjectUsage"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "anchorDefinition": {
+              "description": "description, possibly including coordinates of an identified point or points, of the relationship used to anchor a coordinate system to the Earth or alternate object \r\nNote: For modern geodetic reference frames the anchor may be a set of station coordinates; if the reference frame is dynamic it will also include coordinate velocities. For a traditional geodetic datum, the anchor may be a point known as the fundamental point, which is traditionally the point where the relationship between geoid and ellipsoid is defined, together with a direction from that point.\r\n- For a vertical reference frame the anchor may be the zero level at one or more defined locations or a conventionally defined surface. \r\n- For an engineering datum, the anchor may be an identified physical point with the orientation defined relative to the object.",
+              "type": "string"
+            },
+            "anchorEpoch": {
+              "description": "epoch at which a datum (reference frame) is aligned with another datum (reference frame).\r\nNote: Not to be confused with the frame reference epoch of dynamic geodetic and dynamic vertical reference frames. Nor with the epoch at which a reference frame is defined to be aligned with another reference frame; this  information should be included in the datum anchor definition.",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            },
+            "publicationDate": {
+              "description": "date on which the datum definition was published",
+              "type": "string",
+              "format": "date"
+            },
+            "conventionalRS": {
+              "description": "name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frame\r\nExamples: \"ITRS\" for ITRF88 through ITRF2008 and ITRF2014, or \"EVRS\" for EVRF2000 and EVRF2007.",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/IdentifiedObject"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "DatumEnsemble": {
+      "$anchor": "DatumEnsemble",
+      "description": "A collection of two or more datums (or if geodetic or vertical, a collection of two or more reference frames) that are realizations of one Conventional Reference System and which for all but the highest accuracy requirements may be considered to be insignificantly different from each other.\r\n\r\nNote: Within the datum ensemble every frame or datum is constrained to be a realization of the same reference system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/ObjectUsage"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ensembleAccuracy": {
+              "description": "inaccuracy introduced through use of this collection of reference frames or datums\r\nNote: It is an indication of the differences in coordinate values at all points between the various realizations that have been grouped into this datum ensemble."
+            },
+            "datum": {
+              "description": "datum or reference frame which is a member of this datum ensemble",
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/Datum"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "datum",
+            "ensembleAccuracy"
+          ]
+        }
+      ]
+    },
+    "DefiningParameter": {
+      "$anchor": "DefiningParameter",
+      "description": "parameter value, an ordered sequence of values, or a reference to a file of parameter values that define a paramtric datum",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parameterValue": {
+              "description": "value of the datum-defining parameter",
+              "$ref": "#/$defs/ParameterValue"
+            }
+          },
+          "required": [
+            "parameterValue"
+          ]
+        }
+      ]
+    },
+    "DerivedCRS": {
+      "$anchor": "DerivedCRS",
+      "description": "single coordinate reference system that is defined through the application of a specified coordinate conversion to the definition of a previously established single coordinate reference system referred to as the base CRS\r\nNote:  A derived coordinate reference system inherits its datum (or datum ensemble) from its base CRS. The coordinate conversion between the base and derived coordinate reference system is implemented using the parameters and formula(s) specified in the definition of the coordinate conversion.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "baseCRS": {
+              "description": "coordinate reference system that is the baseCRS for this derived coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/SingleCRS"
+                }
+              ]
+            },
+            "derivingConversion": {
+              "description": "conversion that is a component of this derived coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/Conversion"
+                }
+              ]
+            }
+          },
+          "required": [
+            "baseCRS",
+            "derivingConversion"
+          ]
+        }
+      ]
+    },
+    "DerivedEngineeringCRS": {
+      "$anchor": "DerivedEngineeringCRS",
+      "description": "derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class",
+      "allOf": [
+        {
+          "$ref": "#/$defs/EngineeringCRS"
+        },
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DerivedGeodeticCRS": {
+      "$anchor": "DerivedGeodeticCRS",
+      "description": "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeodeticCRS"
+        },
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DerivedGeographicCRS": {
+      "$anchor": "DerivedGeographicCRS",
+      "description": "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and an ellipsoidal coordinate system\r\nNote: A derived geographic CRS can be based on a geodetic CRS only if that geodetic CRS definition includes an ellipsoid.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeographicCRS"
+        },
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DerivedParametricCRS": {
+      "$anchor": "DerivedParametricCRS",
+      "description": "derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system",
+      "allOf": [
+        {
+          "$ref": "#/$defs/ParametricCRS"
+        },
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DerivedProjectedCRS": {
+      "$anchor": "DerivedProjectedCRS",
+      "description": "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS",
+      "allOf": [
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "baseCRS": {
+              "description": "projected coordinate reference system that is the baseCRS for this derived projected coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/ProjectedCRS"
+                }
+              ]
+            }
+          },
+          "required": [
+            "baseCRS"
+          ]
+        }
+      ]
+    },
+    "DerivedProjectedCS": {
+      "$anchor": "DerivedProjectedCS",
+      "description": "coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system",
+      "type": "object",
+      "properties": {
+        "affineCS": {
+          "description": "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal. The number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/AffineCS"
+            }
+          ]
+        },
+        "cartesianCS": {
+          "description": "two- or three-dimensional coordinate system in Euclidean space with orthogonal straight axes. All axes shall have the same length unit. A CartesianCS shall have two or three axis associations; the number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CartesianCS"
+            }
+          ]
+        },
+        "cylindricalCS": {
+          "description": "three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system. A CylindricalCS shall have three axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CylindricalCS"
+            }
+          ]
+        },
+        "ordinalCS": {
+          "description": "n-dimensional coordinate system in which every axis uses integers. The number of associations shall be equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/OrdinalCS"
+            }
+          ]
+        },
+        "polarCS": {
+          "description": "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference direction. A PolarCS shall have two axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/PolarCS"
+            }
+          ]
+        },
+        "sphericalCS": {
+          "description": "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates. Not to be confused with an ellipsoidal coordinate system based on an ellipsoid \"degenerated\" into a sphere. A SphericalCS shall have three axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/SphericalCS"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "DerivedTemporalCRS": {
+      "$anchor": "DerivedTemporalCRS",
+      "description": "derived coordinate reference system which has a temporal coordinate reference system as its base CRS, thereby inheriting a temporal datum, and is associated with a temporal coordinate system",
+      "allOf": [
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "$ref": "#/$defs/TemporalCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DerivedVerticalCRS": {
+      "$anchor": "DerivedVerticalCRS",
+      "description": "derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system",
+      "allOf": [
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "$ref": "#/$defs/VerticalCRS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "DynamicGeodeticReferenceFrame": {
+      "$anchor": "DynamicGeodeticReferenceFrame",
+      "description": "geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates\r\nExample: defining station coordinates having linear velocities to account for crustal motion.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeodeticReferenceFrame"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "frameReferenceEpoch": {
+              "description": "epoch to which the coordinates of stations defining the dynamic geodetic reference frame are referenced, expressed as a decimal year in the Gregorian calendar\r\nExample: 2016,47.",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            }
+          },
+          "required": [
+            "frameReferenceEpoch"
+          ]
+        }
+      ]
+    },
+    "DynamicVerticalReferenceFrame": {
+      "$anchor": "DynamicVerticalReferenceFrame",
+      "description": "vertical reference frame in which some of the defining parameters have time dependency\r\nExample: Defining station heights have velocity to account for post-glacial isostatic rebound motion.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/VerticalReferenceFrame"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "frameReferenceEpoch": {
+              "description": "epoch to which the coordinates of stations defining the dynamic vertical reference frame are referenced, expressed as a decimal year in the Gregorian calendar\r\nExample: 2016,47.",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            }
+          },
+          "required": [
+            "frameReferenceEpoch"
+          ]
+        }
+      ]
+    },
+    "Ellipsoid": {
+      "$anchor": "Ellipsoid",
+      "description": "geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis\r\nNote: For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal centre of the Earth.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "semiMajorAxis": {
+              "description": "length of the semi-major axis of the ellipsoid",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            },
+            "secondDefiningParameter": {
+              "description": "definition of the second parameter that describes the shape of this ellipsoid",
+              "$ref": "#/$defs/SecondDefiningParameter"
+            },
+            "semiMedianAxis": {
+              "description": "length of the semi-median axis of a triaxial ellipsoid\r\nNote: This parameter is not required for a biaxial ellipsoid.",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            }
+          },
+          "required": [
+            "secondDefiningParameter",
+            "semiMajorAxis"
+          ]
+        }
+      ]
+    },
+    "EllipsoidalCS": {
+      "$anchor": "EllipsoidalCS",
+      "description": "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height\r\nNote: An EllipsoidalCS shall have two or three associations; the number of associations shall equal the dimension of the coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "EngineeringCRS": {
+      "$anchor": "EngineeringCRS",
+      "description": "contextually local coordinate reference system associated with an engineering datum and which is applied either to activities on or near the surface of the Earth without geodetic corrections, or on moving platforms such as road vehicles, vessels, aircraft or spacecraft, or as the internal CRS of an image",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datum": {
+              "description": "engineering datum that is a component of this coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/EngineeringDatum"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "EngineeringCS": {
+      "$anchor": "EngineeringCS",
+      "description": "coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system",
+      "type": "object",
+      "properties": {
+        "affineCS": {
+          "description": "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal. The number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/AffineCS"
+            }
+          ]
+        },
+        "cartesianCS": {
+          "description": "two- or three-dimensional coordinate system in Euclidean space with orthogonal straight axes. All axes shall have the same length unit. A CartesianCS shall have two or three axis associations; the number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CartesianCS"
+            }
+          ]
+        },
+        "cylindricalCS": {
+          "description": "three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system. A CylindricalCS shall have three axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CylindricalCS"
+            }
+          ]
+        },
+        "linearCS": {
+          "description": "one-dimensional coordinate system that consists of the points that lie on the single axis described. The associated coordinate is the distance – with or without offset – from the origin point, specified through the datum definition, to the point along the axis. Example: usage of the line feature representing a pipeline to describe points on or along that pipeline. A LinearCS shall have one axis association.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/LinearCS"
+            }
+          ]
+        },
+        "polarCS": {
+          "description": "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference direction. A PolarCS shall have two axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/PolarCS"
+            }
+          ]
+        },
+        "sphericalCS": {
+          "description": "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates. Not to be confused with an ellipsoidal coordinate system based on an ellipsoid \"degenerated\" into a sphere. A SphericalCS shall have three axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/SphericalCS"
+            }
+          ]
+        },
+        "ordinalCS": {
+          "description": "n-dimensional coordinate system in which every axis uses integers. The number of associations shall be equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/OrdinalCS"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "EngineeringDatum": {
+      "$anchor": "EngineeringDatum",
+      "description": "definition of the origin and orientation of an engineering coordinate reference system\r\nNote: The origin can be fixed with respect to the Earth (such as a defined point at a construction site), or be a defined point on a moving vehicle (such as on a ship or satellite), or a defined point of an image.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Datum"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "Formula": {
+      "$anchor": "Formula",
+      "description": "specification of the coordinate operation method formula",
+      "type": "object",
+      "properties": {
+        "formula": {
+          "description": "formula(s) or procedure used by the coordinate operation method",
+          "type": "string"
+        },
+        "formulaCitation": {
+          "description": "reference to a publication giving the formula(s) or procedure used by the coordinate operation method"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "GeneralOperationParameter": {
+      "$anchor": "GeneralOperationParameter",
+      "description": "definition of a parameter or group of parameters used by a coordinate operation method",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "GeneralParameterValue": {
+      "$anchor": "GeneralParameterValue",
+      "description": "parameter value or group of parameter values",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "parameter": {
+          "description": "parameter or parameter group which has this value or value group",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/GeneralOperationParameter"
+            }
+          ]
+        }
+      },
+      "required": [
+        "entityType",
+        "parameter"
+      ]
+    },
+    "GeodeticCRS": {
+      "$anchor": "GeodeticCRS",
+      "description": "coordinate reference system associated with a geodetic reference frame and a three-dimensional Cartesian or spherical coordinate system\r\nNote: If the geodetic reference frame is dynamic then the geodetic CRS is dynamic, else it is static.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "velocityModel": {
+              "description": "velocity model or deformation grid that may be applied to this geodetic coordinate reference system",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/PointMotionOperation"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "definingTransformation": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/Transformation"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "datum": {
+              "description": "geodetic reference frame that is a component of this geodetic coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/GeodeticReferenceFrame"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "GeodeticCS": {
+      "$anchor": "GeodeticCS",
+      "description": "coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system",
+      "type": "object",
+      "properties": {
+        "cartesianCS": {
+          "description": "two- or three-dimensional coordinate system in Euclidean space with orthogonal straight axes. All axes shall have the same length unit. A CartesianCS shall have two or three axis associations; the number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/CartesianCS"
+            }
+          ]
+        },
+        "ellipsoidalCS": {
+          "description": "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height. An EllipsoidalCS shall have two or three associations; the number of associations shall equal the dimension of the CS.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/EllipsoidalCS"
+            }
+          ]
+        },
+        "sphericalCS": {
+          "description": "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates. Not to be confused with an ellipsoidal coordinate system based on an ellipsoid \"degenerated\" into a sphere. A SphericalCS shall have three axis associations.",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/SphericalCS"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "GeodeticReferenceFrame": {
+      "$anchor": "GeodeticReferenceFrame",
+      "description": "definition of the position, scale and orientation of a geocentric Cartesian 3D coordinate system relative to the Earth\r\nNote 1: It may also identify a defined ellipsoid (or sphere) that approximates the shape of the Earth and which is centred on and aligned to this geocentric coordinate system. Older geodetic datums define the location and orientation of a defined ellipsoid (or sphere) that approximates the shape of the earth.\r\nNote 2: In 19111:2007 this class was called GeodeticDatum.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Datum"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "primeMeridian": {
+              "description": "prime meridian which is a component of this geodetic reference frame",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/PrimeMeridian"
+                }
+              ]
+            },
+            "ellipsoid": {
+              "description": "ellipsoid which is a component of this geodetic reference frame",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/Ellipsoid"
+                }
+              ]
+            }
+          },
+          "required": [
+            "primeMeridian"
+          ]
+        }
+      ]
+    },
+    "GeographicCRS": {
+      "$anchor": "GeographicCRS",
+      "description": "coordinate reference system associated with a geodetic reference frame and a two- or three-dimensional ellipsoidal coordinate system \r\nNote: If the geodetic reference frame is dynamic then the geographic CRS is dynamic, else it is static.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeodeticCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinateSystem": {
+              "description": "ellipsoidal coordinate system that is a component of this geographic coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/EllipsoidalCS"
+                }
+              ]
+            }
+          },
+          "required": [
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "GeographicObject": {
+      "$anchor": "GeographicObject",
+      "description": "identification of an object used as a parameter in a coordinate transformation, point motion operation or coordinate conversion",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "identifier": {
+          "description": "identifier of the geographic object",
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "entityType"
+      ]
+    },
+    "IdentifiedObject": {
+      "$anchor": "IdentifiedObject",
+      "description": "identifications of a CRS-related object",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "name": {
+          "description": "primary name by which this object is identified"
+        },
+        "identifier": {
+          "description": "identifier which references elsewhere the object\u0027s defining information; alternatively an identifier by which this object can be referenced",
+          "type": "array",
+          "uniqueItems": true
+        },
+        "alias": {
+          "description": "alternative name by which this object is identified",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "remarks": {
+          "description": "comments on or information about this object, including data source information",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entityType",
+        "name"
+      ]
+    },
+    "LinearCS": {
+      "$anchor": "LinearCS",
+      "description": "one-dimensional coordinate system that consists of the points that lie on the single axis described\r\nNote: The associated coordinate is the distance – with or without offset – from the origin point, specified through the datum definition, to the point along the axis. Example: usage of the line feature representing a pipeline to describe points on or along that pipeline. A LinearCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "ObjectDomain": {
+      "$anchor": "ObjectDomain",
+      "description": "scope and validity of a CRS-related object",
+      "type": "object",
+      "properties": {
+        "scope": {
+          "description": "description of usage, or limitations of usage, for which this object is valid \r\nNote: If unknown, enter \"not known\".",
+          "type": "string"
+        },
+        "domainOfValidity": {
+          "description": "spatial and temporal extent in which this object is valid"
+        }
+      },
+      "required": [
+        "domainOfValidity",
+        "scope"
+      ]
+    },
+    "ObjectUsage": {
+      "$anchor": "ObjectUsage",
+      "description": "usage of a CRS-related object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "domain": {
+              "description": "scope and validity of a CRS-related object",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ObjectDomain"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "OperationMethod": {
+      "$anchor": "OperationMethod",
+      "description": "method (algorithm or procedure) used to perform the coordinate operation",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "formulaReference": {
+              "description": "formula(s) or procedure used by this coordinate operation method\r\nNote: This may be a reference to a publication. Note that the operation method may not be analytic, in which case this attribute references or contains the procedure, not an analytic formula.",
+              "$ref": "#/$defs/Formula"
+            },
+            "parameter": {
+              "description": "parameter or parameter group used by this coordinate operation method",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/GeneralOperationParameter"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "formulaReference"
+          ]
+        }
+      ]
+    },
+    "OperationParameter": {
+      "$anchor": "OperationParameter",
+      "description": "definition of a parameter used by a coordinate operation method\r\nNote: Most parameter values are numeric, but other types of parameter values are possible.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeneralOperationParameter"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "OperationParameterGroup": {
+      "$anchor": "OperationParameterGroup",
+      "description": "definition of a group of related parameters used by a coordinate operation method",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeneralOperationParameter"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "minimumOccurs": {
+              "description": "minimum number of times that values for this parameter group or parameter is required\r\nNote: If this attribute is omitted, the minimum number is one.",
+              "type": "integer"
+            },
+            "maximumOccurs": {
+              "description": "maximum number of times that values for this parameter group or parameter can be included\r\nNote: If this attribute is omitted, the maximum number is one.",
+              "type": "integer"
+            },
+            "parameter": {
+              "description": "parameter that is a member of this parameter group",
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/GeneralOperationParameter"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "parameter"
+          ]
+        }
+      ]
+    },
+    "OperationParameterValue": {
+      "$anchor": "OperationParameterValue",
+      "description": "parameter value, ordered sequence of values, or reference to a file of parameter values",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeneralParameterValue"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parameterValue": {
+              "description": "value of the coordinate operation parameter",
+              "$ref": "#/$defs/ParameterValue"
+            },
+            "parameter": {
+              "description": "parameter which has this value",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/OperationParameter"
+                }
+              ]
+            }
+          },
+          "required": [
+            "parameter",
+            "parameterValue"
+          ]
+        }
+      ]
+    },
+    "OrdinalCS": {
+      "$anchor": "OrdinalCS",
+      "description": "n-dimensional coordinate system in which every axis uses integers\r\nNote: The number of associations shall be equal the dimension of the coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinateType": {
+              "description": "datatype of coordinate values",
+              "$ref": "#/$defs/CoordinateDataType"
+            }
+          },
+          "required": [
+            "coordinateType"
+          ]
+        }
+      ]
+    },
+    "ParameterValue": {
+      "$anchor": "ParameterValue",
+      "description": "value of the coordinate operation parameter",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "numeric value of the coordinate operation parameter with its associated unit",
+          "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+        },
+        "stringValue": {
+          "description": "string value of a coordinate operation parameter\r\nNote: A string value does not have an associated unit.",
+          "type": "string"
+        },
+        "integerValue": {
+          "description": "positive integer value of a coordinate operation parameter, usually used for a count\r\nNote: An integer value does not have an associated unit.",
+          "type": "integer"
+        },
+        "booleanValue": {
+          "description": "boolean value of a coordinate operation parameter\r\nNote: A Boolean value does not have an associated unit.",
+          "type": "boolean"
+        },
+        "valueList": {
+          "description": "ordered collection, i.e. sequence, of two or more numeric values of a coordinate operation parameter list, where each value has the same associated unit",
+          "type": "array",
+          "items": {
+            "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+          }
+        },
+        "integerValueList": {
+          "description": "ordered collection, i.e. sequence, of two or more integer values of a coordinate operation parameter list, usually used for counts\r\nNote: These integer values do not have an associated unit.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "valueFile": {
+          "description": "reference to a file or an identified part of a file containing one or more parameter values\" and note changed to \"Note: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents",
+          "type": "string"
+        },
+        "valueFileCitation": {
+          "description": "citation for a reference to a file or an identified part of a file containing one or more parameter values\r\n\r\nNote: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents"
+        },
+        "geographicObject": {
+          "description": "identifier of a geographic feature of which the coordinates are used as operation parameters",
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "#/$defs/GeographicObject"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "ParameterValueGroup": {
+      "$anchor": "ParameterValueGroup",
+      "description": "group of related parameter values\r\nNote: The same group can be repeated more than once in a coordinate operation or higher level ParameterValueGroup, if those instances contain different values of one or more ParameterValues which suitably distinguish among those groups.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/GeneralParameterValue"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parameterValue": {
+              "description": "value in this value group",
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/GeneralParameterValue"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "group": {
+              "description": "parameter group associated with this value group",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/OperationParameterGroup"
+                }
+              ]
+            }
+          },
+          "required": [
+            "group",
+            "parameterValue"
+          ]
+        }
+      ]
+    },
+    "ParametricCRS": {
+      "$anchor": "ParametricCRS",
+      "description": "coordinate reference system having a parametric datum and a one-dimensional parametric coordinate system which uses parameter values or functions",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datum": {
+              "description": "parametric datum that is a component of this parametric coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/ParametricDatum"
+                }
+              ]
+            },
+            "coordinateSystem": {
+              "description": "parametric coordinate system that is a component of this parametric coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/ParametricCS"
+                }
+              ]
+            }
+          },
+          "required": [
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "ParametricCS": {
+      "$anchor": "ParametricCS",
+      "description": "one-dimensional coordinate reference system which uses parameter values or functions that may vary monotonically with height\r\nNote: A ParametricCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "ParametricDatum": {
+      "$anchor": "ParametricDatum",
+      "description": "textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Datum"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datumDefiningParameter": {
+              "description": "parameter used to define the parametric datum",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/DefiningParameter"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "PassThroughOperation": {
+      "$anchor": "PassThroughOperation",
+      "description": "specification of a subset of coordinate tuples that is subject to a coordinate operation",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "modifiedCoordinate": {
+              "description": "ordered sequence of positive integers defining the positions in a source coordinate tuple of the coordinates affected by this pass-through operation",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "coordOperation": {
+              "description": "subset of a coordinate tuple that the coordinate operation will operate upon",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CoordinateOperation"
+                }
+              ]
+            }
+          },
+          "required": [
+            "coordOperation"
+          ]
+        }
+      ]
+    },
+    "PointMotionOperation": {
+      "$anchor": "PointMotionOperation",
+      "description": "mathematical operation that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch \r\nNote: In this document the motion is due to tectonic plate movement or deformation.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operationVersion": {
+              "description": "version of the point motion operation (i.e. instantiation due to the stochastic nature of the parameters) \r\nNote: This attribute is mandatory in a point motion operation.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "operationVersion"
+          ]
+        }
+      ]
+    },
+    "PolarCS": {
+      "$anchor": "PolarCS",
+      "description": "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference direction\r\nNote: A PolarCS shall have two axis associations.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "PrimeMeridian": {
+      "$anchor": "PrimeMeridian",
+      "description": "origin meridian from which longitude values are determined \r\nNote: The default value for prime meridian name is “Greenwich”. When the default applies, the value for the greenwichLongitude shall be 0 (degrees).",
+      "allOf": [
+        {
+          "$ref": "#/$defs/IdentifiedObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "greenwichLongitude": {
+              "description": "longitude of the prime meridian measured from the internationally-recognised reference meridian (\u0027Greenwich meridian\u0027), positive eastward\r\nNote 1: Default value: 0 degrees. \r\nNote 2: If the value of the prime meridian name is “Greenwich” then the value of greenwichLongitude is required to be 0 degrees.",
+              "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+            }
+          },
+          "required": [
+            "greenwichLongitude"
+          ]
+        }
+      ]
+    },
+    "ProjectedCRS": {
+      "$anchor": "ProjectedCRS",
+      "description": "derived coordinate reference system which has a geodetic (usually geographic) coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, is converted using a map projection, and has a Cartesian coordinate system, usually two-dimensional but may be three-dimensional\r\nNote: In the 3D case the base geographic CRSs ellipsoidal height is passed through unchanged and forms the vertical axis of the projected CRS\u0027s Cartesian coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/DerivedCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinateSystem": {
+              "description": "Cartesian coordinate system that is a component of this projected coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CartesianCS"
+                }
+              ]
+            },
+            "baseCRS": {
+              "description": "geodetic or geographic coordinate reference system that is the baseCRS for this projected coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/GeodeticCRS"
+                }
+              ]
+            }
+          },
+          "required": [
+            "baseCRS",
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "RangeMeaning": {
+      "$anchor": "RangeMeaning",
+      "description": "meaning of the axis value range specified through minimumValue and maximumValue",
+      "type": "string"
+    },
+    "RealizationMethod": {
+      "$anchor": "RealizationMethod",
+      "description": "specification of the method by which the vertical reference frame is realized",
+      "type": "string"
+    },
+    "RegisterOperations": {
+      "$anchor": "RegisterOperations",
+      "description": "operations supported in the Coordinate Operations package",
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string"
+        },
+        "authority": {
+          "description": "citation used by this register operation"
+        }
+      },
+      "required": [
+        "authority",
+        "entityType"
+      ]
+    },
+    "SecondDefiningParameter": {
+      "$anchor": "SecondDefiningParameter",
+      "description": "definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoid\r\nNote: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis “degenerates” into the radius of the sphere.",
+      "type": "object",
+      "properties": {
+        "inverseFlattening": {
+          "description": "inverse flattening value of the ellipsoid",
+          "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+        },
+        "semiMinorAxis": {
+          "description": "length of the semi-minor axis of the ellipsoid",
+          "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/Measure"
+        },
+        "isSphere": {
+          "description": "ellipsoid is degenerate and is actually a sphere\r\nNote: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value “true” if the figure is a sphere.",
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "SingleCRS": {
+      "$anchor": "SingleCRS",
+      "description": "coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datum": {
+              "description": "datum that is a component of this single coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/Datum"
+                }
+              ]
+            },
+            "coordinateSystem": {
+              "description": "coordinate system that is a component of this single coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/CoordinateSystem"
+                }
+              ]
+            },
+            "datumEnsemble": {
+              "description": "datum ensemble that is a component of this single coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/DatumEnsemble"
+                }
+              ]
+            }
+          },
+          "required": [
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "SingleOperation": {
+      "$anchor": "SingleOperation",
+      "description": "single (not concatenated) coordinate operation",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parameterValue": {
+              "description": "parameter value or parameter value group used by this single operation",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/GeneralParameterValue"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "method": {
+              "description": "algorithm or procedure used by this single operation",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/OperationMethod"
+                }
+              ]
+            }
+          },
+          "required": [
+            "method"
+          ]
+        }
+      ]
+    },
+    "SphericalCS": {
+      "$anchor": "SphericalCS",
+      "description": "two or three-dimensional coordinate system in Euclidean space with two angular coordinates  and (in the 3D case) one distance measured from the origin.\r\nNote: Not to be confused with an ellipsoidal coordinate system based on an ellipsoid \"degenerated\" into a sphere. A SphericalCS shall have two or three axis associations; the number of associations shall equal the dimension of the coordinate system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "TemporalCRS": {
+      "$anchor": "TemporalCRS",
+      "description": "coordinate reference system associated with a temporal datum and a one-dimensional temporal coordinate system",
+      "allOf": [
+        {
+          "$ref": ""
+        },
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datum": {
+              "description": "temporal datum that is a component of this temporal coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/TemporalDatum"
+                }
+              ]
+            },
+            "coordinateSystem": {
+              "description": "temporal coordinate system that is a component of this temporal coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/TemporalCS"
+                }
+              ]
+            }
+          },
+          "required": [
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "TemporalCS": {
+      "$anchor": "TemporalCS",
+      "description": "one-dimensional coordinate system used to record time \r\nNote: A TemporalCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinateType": {
+              "description": "datatype of coordinate values",
+              "$ref": "#/$defs/CoordinateDataType"
+            }
+          },
+          "required": [
+            "coordinateType"
+          ]
+        }
+      ]
+    },
+    "TemporalCountCS": {
+      "$anchor": "TemporalCountCS",
+      "description": "one-dimensional coordinate system used to record time as an integer count\r\nNote: A TemporalCountCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/TemporalCS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "TemporalDatum": {
+      "$anchor": "TemporalDatum",
+      "description": "definition of the relationship of a temporal coordinate system to an object\r\nNote: The object is normally time on the Earth.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Datum"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "origin": {
+              "description": "date and time to which temporal coordinates are referenced, expressed in conformance with ISO 8601",
+              "type": "string",
+              "format": "date-time"
+            },
+            "calendar": {
+              "description": "calendar to which the temporal origin is referenced\r\nNote: Default value is prolepticGregorian",
+              "$ref": "#/$defs/Calendar"
+            }
+          },
+          "required": [
+            "calendar",
+            "origin"
+          ]
+        }
+      ]
+    },
+    "TemporalMeasureCS": {
+      "$anchor": "TemporalMeasureCS",
+      "description": "one-dimensional coordinate system used to record a time as a real number\r\nNote: A TemporalMeasureCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/TemporalCS"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "Transformation": {
+      "$anchor": "Transformation",
+      "description": "mathematical operation on coordinates in which parameters are empirically derived from data containing the coordinates of a series of points in both coordinate reference systems\r\nNote: This computational process is usually “over-determined”, allowing derivation of error (or accuracy) estimates for the coordinate transformation. Also, the stochastic nature of the parameters may result in multiple (different) versions of the same coordinate transformations between the same source and target CRSs. Any single coordinate operation in which the input and output coordinates are referenced to different datums (reference frames) will be a coordinate transformation.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleOperation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operationVersion": {
+              "description": "version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "operationVersion"
+          ]
+        }
+      ]
+    },
+    "VerticalCRS": {
+      "$anchor": "VerticalCRS",
+      "description": "coordinate reference system having a vertical reference frame and a one-dimensional vertical coordinate system used for recording gravity-related heights or depths; vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward. \r\nNote 1: If the vertical reference frame is dynamic then the vertical CRS is dynamic, else it is static. \r\nNote 2: Ellipsoidal heights cannot be captured in a vertical coordinate reference system. They exist only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SingleCRS"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geoidModel": {
+              "description": "geoid model or height correction model that is associated with this vertical coordinate reference system",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/Transformation"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "datum": {
+              "description": "vertical reference frame that is a component of this vertical coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/VerticalReferenceFrame"
+                }
+              ]
+            },
+            "coordinateSystem": {
+              "description": "vertical coordinate system that is a component of this vertical coordinate reference system",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "#/$defs/VerticalCS"
+                }
+              ]
+            },
+            "velocityModel": {
+              "description": "velocity model or deformation grid that is applied to this vertical coordinate reference system",
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "#/$defs/PointMotionOperation"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "coordinateSystem"
+          ]
+        }
+      ]
+    },
+    "VerticalCS": {
+      "$anchor": "VerticalCS",
+      "description": "one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth\u0027s gravity field\r\nNote: An exact definition is deliberately not provided as the complexities of the subject fall outside the scope of this document. A VerticalCS shall have one axis association.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/CoordinateSystem"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "VerticalReferenceFrame": {
+      "$anchor": "VerticalReferenceFrame",
+      "description": "textual description and/or a set of parameters identifying a particular reference level surface used as a zero-height or zero-depth surface, including its position with respect to the Earth\r\nNote: In 19111:2007 this class was called VerticalDatum.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Datum"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "realizationMethod": {
+              "description": "method through which this vertical reference frame is realized",
+              "$ref": "#/$defs/RealizationMethod"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
