@@ -29,12 +29,13 @@ Note that the encoding of geometries is covered by §7.4.2.
 * §7.6   — GeoJSON encoding
 * §7.7   — JSON-FG encoding ("FG" stands for "Feature Geometry")
 
-The changes can be seen in Git history.
+The changes between the modified JSON and the original PROJJSON can be seen in
+[Git history](https://github.com/Geomatys/CRS-JSON-Encoding/commit/5befdbff017a0cfce9fcfcdad183c14e791ef7c6?diff=unified).
 
 ## Notes on some changes compared to PROJJSON
 
 The most significant changes implied by OGC 24-017 is the replacement of `"type"` and `"subtype"` by `"entityType"`.
-Other changes are more a consequence of compliance with ISO 19111 than OGC 24-017.
+Other changes are more a consequence of compliance with ISO 19111 rather than changes mandated by OGC 24-017.
 
 ### Changes that are not real
 The differences between PROJJSON and the edited files give the impression that new elements were added for
@@ -43,8 +44,8 @@ But actually, PROJJSON already allows those properties. They were just not used 
 
 
 ### Ignoreable changes
-The PROJJSON elements do not appear in the same order as in the UML,
-but the examples keep elements in the same order as PROJJSON for making comparisons easier.
+The PROJJSON elements do not appear in the same order as in the UML.
+The examples in this directory keep elements in the same order as PROJJSON for making comparisons easier.
 New elements are added, which make the JSON looks more verbose,
 but some of these new elements, such as `"alias"`,  are optional.
 
