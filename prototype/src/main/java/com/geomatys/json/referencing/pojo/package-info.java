@@ -18,4 +18,4 @@
  * <abbr>POJO</abbr> generated from <abbr>JSON</abbr> schema.
  * Used for prototyping only.
  */
-package com.geomatys.json.referencing;
+package com.geomatys.json.referencing.pojo;
