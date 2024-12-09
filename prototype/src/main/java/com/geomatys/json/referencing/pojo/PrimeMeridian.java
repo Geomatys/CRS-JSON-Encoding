@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * origin meridian from which longitude values are determined 
+ * origin meridian from which longitude values are determined
  * Note: The default value for prime meridian name is “Greenwich”. When the default applies, the value for the greenwichLongitude shall be 0 (degrees).
- * 
+ *
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,10 +29,17 @@ public class PrimeMeridian
      * <p>
      * definition of a measure object
      * (Required)
-     * 
+     *
      */
     @JsonProperty("greenwichLongitude")
     @JsonPropertyDescription("definition of a measure object")
     public Measure greenwichLongitude;
 
+    public PrimeMeridian() {
+    }
+
+    public PrimeMeridian(org.opengis.referencing.datum.PrimeMeridian pm) {
+        super(pm);
+        greenwichLongitude = new Measure(pm.getGreenwichLongitude(), pm.getAngularUnit());
+    }
 }
