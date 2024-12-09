@@ -23,10 +23,10 @@
                                http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.geomatys</groupId>
-  <artifactId>CRS-JSON</artifactId>
+  <groupId>com.geomatys.crs-json</groupId>
+  <artifactId>parent</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>Prototype of CRS-JSON support from generated schema</name>
   <url>https://github.com/Geomatys/CRS-JSON-Encoding</url>
@@ -47,16 +47,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>23</maven.compiler.release>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.jsonschema2pojo</groupId>
-      <artifactId>jsonschema2pojo-core</artifactId>
-      <version>1.2.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.opengis</groupId>
-      <artifactId>geoapi</artifactId>
-      <version>3.0.2</version>
-    </dependency>
-  </dependencies>
+
+  <modules>
+    <module>binding</module>
+    <module>server</module>
+  </modules>
 </project>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRS-JSON prototype</title>
+  </head>
+  <body>
+    <h1>CRS-JSON prototype</h1>
+    <p>
+      This is a prototype of what <strong>could</strong> be a <abbr>JSON</abbr> encoding of <abbr>CRS</abbr> objects
+      if that encoding was derived from the <abbr>UML</abbr> of the <abbr>ISO</abbr> 19111 abstract model.
+      <strong>This is not a standard, and may never be.</strong>
+      This server is provided for evaluation purposes only.
+      See the <a href="https://github.com/opengeospatial/CRS-JSON-Encoding/">CRS-JSON-Encoding</a> project
+      on GitHub for more information.
+    </p>
+
+    <h2>Usage</h2>
+    <p>
+      Put an <abbr>EPSG</abbr> code and the end of the <abbr>URL</abbr>.
+      Examples for Coordinate Reference Systems:
+    </p>
+    <ul>
+      <li><a href="def/crs/epsg/9.9.1/4326">def/crs/epsg/9.9.1/4326</a> (a geographic <abbr>CRS</abbr>)</li>
+      <li><a href="def/crs/epsg/9.9.1/2154">def/crs/epsg/9.9.1/2154</a> (a projected <abbr>CRS</abbr>)</li>
+    </ul>
+    <p>
+      This demo accepts also coordinate operations.
+      Examples:
+    </p>
+    <ul>
+      <li><a href="def/coordinateOperation/epsg/9.9.1/1241">def/coordinateOperation/epsg/9.9.1/1241</a></li>
+    </ul>
+    <p>
+      Other types accepted by the demo are <code>cs</code> and <code>datum</code>.
+    </p>
+
+    <h2>Limitations</h2>
+    <p>
+      The server currently does not support datum ensembles.
+      This is a limitation of the software used for this demo, not a limitation of <abbr>CRS</abbr>-<abbr>JSON</abbr>.
+      This is because the software uses version 9.9.1 of the <abbr>EPSG</abbr> database
+      while datum ensembles were introduced in versions 10 and later.
+      Upgrade to latest <abbr>EPSG</abbr> database will be done as soon as possible.
+    </p>
+  </body>
+</html>
