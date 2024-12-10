@@ -43,4 +43,28 @@ public class SingleOperation
     @JsonPropertyDescription("algorithm or procedure used by this single operation")
     public Object method;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    protected SingleOperation() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl     implementation of a GeoAPI object to serialize.
+     * @param withCRS  whether to initialize also {@link #sourceCRS} and {@link #targetCRS}.
+     */
+    protected SingleOperation(final org.opengis.referencing.operation.SingleOperation impl, boolean withCRS) {
+        super(impl, withCRS);
+        entityType = "SingleOperation";
+        parameterValue = many(impl.getParameterValues().values(), GeneralParameterValue::create);
+        method = new OperationMethod(impl.getMethod());
+    }
 }

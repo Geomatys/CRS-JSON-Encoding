@@ -20,4 +20,23 @@ public class Conversion
 {
 
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public Conversion() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl     implementation of a GeoAPI object to serialize.
+     * @param withCRS  whether to initialize also {@link #sourceCRS} and {@link #targetCRS}.
+     */
+    public Conversion(final org.opengis.referencing.operation.Conversion impl, boolean withCRS) {
+        super(impl, withCRS);
+        entityType = "Conversion";
+    }
 }

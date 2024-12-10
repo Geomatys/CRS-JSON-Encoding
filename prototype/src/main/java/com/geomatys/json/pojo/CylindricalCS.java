@@ -19,4 +19,22 @@ public class CylindricalCS
 {
 
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public CylindricalCS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public CylindricalCS(final org.opengis.referencing.cs.CylindricalCS impl) {
+        super(impl);
+        entityType = "CylindricalCS";
+    }
 }

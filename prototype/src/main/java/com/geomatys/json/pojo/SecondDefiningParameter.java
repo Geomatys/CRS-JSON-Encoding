@@ -49,6 +49,29 @@ public class SecondDefiningParameter {
      */
     @JsonProperty("isSphere")
     @JsonPropertyDescription("ellipsoid is degenerate and is actually a sphere\r\nNote: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value \u201ctrue\u201d if the figure is a sphere.")
-    public Boolean isSphere = true;
+    public Boolean isSphere;
 
+
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public SecondDefiningParameter() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public SecondDefiningParameter(org.opengis.referencing.datum.Ellipsoid impl) {
+        isSphere = impl.isSphere();
+        if (impl.isIvfDefinitive()) {
+            inverseFlattening = new Measure(impl.getInverseFlattening());
+        } else {
+            semiMinorAxis = new Measure(impl.getSemiMinorAxis(), impl.getAxisUnit());
+        }
+    }
 }

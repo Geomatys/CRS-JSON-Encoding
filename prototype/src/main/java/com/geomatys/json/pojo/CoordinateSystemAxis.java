@@ -77,4 +77,39 @@ public class CoordinateSystemAxis
     @JsonPropertyDescription("meaning of the axis value range specified through minimumValue and maximumValue")
     public String rangeMeaning;
 
+
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public CoordinateSystemAxis() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public CoordinateSystemAxis(final org.opengis.referencing.cs.CoordinateSystemAxis impl) {
+        super(impl);
+        entityType    = "CoordinateSystemAxis";
+        axisAbbrev    = impl.getAbbreviation();
+        axisDirection = code(impl.getDirection());
+        axisUnitID    = Measure.uom(impl.getUnit());
+        minimumValue  = real(impl.getMinimumValue());
+        maximumValue  = real(impl.getMaximumValue());
+        rangeMeaning  = code(impl.getRangeMeaning());
+    }
+
+    /**
+     * Returns the given value if it is finite, or {@code null} otherwise.
+     *
+     * @param  value  the value to marshal.
+     * @return the given value if finite, or {@code null} otherwise.
+     */
+    private static Double real(double value) {
+        return Double.isFinite(value) ? value : null;
+    }
 }

@@ -19,4 +19,22 @@ public class OperationParameter
 {
 
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public OperationParameter() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public OperationParameter(final org.opengis.parameter.ParameterDescriptor<?> impl) {
+        super(impl);
+        entityType = "OperationParameter";
+    }
 }

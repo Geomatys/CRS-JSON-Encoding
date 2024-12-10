@@ -35,4 +35,24 @@ public class PrimeMeridian
     @JsonPropertyDescription("definition of a measure object")
     public Measure greenwichLongitude;
 
+
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public PrimeMeridian() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public PrimeMeridian(org.opengis.referencing.datum.PrimeMeridian impl) {
+        super(impl);
+        entityType = "PrimeMeridian";
+        greenwichLongitude = new Measure(impl.getGreenwichLongitude(), impl.getAngularUnit());
+    }
 }

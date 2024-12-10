@@ -2,6 +2,7 @@
 package com.geomatys.json.pojo;
 
 import java.util.List;
+import java.util.Arrays;
 import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -41,4 +42,24 @@ public class PassThroughOperation
     @JsonPropertyDescription("subset of a coordinate tuple that the coordinate operation will operate upon")
     public Object coordOperation;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public PassThroughOperation() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public PassThroughOperation(final org.opengis.referencing.operation.PassThroughOperation impl) {
+        super(impl, true);
+        entityType = "PassThroughOperation";
+        modifiedCoordinate = Arrays.stream(impl.getModifiedCoordinates()).mapToObj(Integer::valueOf).toList();
+        coordOperation = create(impl.getOperation());
+    }
 }

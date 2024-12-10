@@ -36,4 +36,23 @@ public class CompoundCRS
     @JsonPropertyDescription("coordinate reference system that is a component of this compound coordinate reference system")
     public Set<Object> componentReferenceSystem;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public CompoundCRS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public CompoundCRS(final org.opengis.referencing.crs.CompoundCRS impl) {
+        super(impl);
+        entityType = "CompoundCRS";
+        componentReferenceSystem = many(impl.getComponents(), Crs::create);
+    }
 }
