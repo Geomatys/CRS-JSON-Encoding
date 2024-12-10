@@ -3,9 +3,6 @@ package com.geomatys.json.pojo;
 
 import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -17,21 +14,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "operationVersion"
-})
 @Generated("jsonschema2pojo")
 public class Conversion
     extends SingleOperation
 {
 
-    /**
-     * (not applicable)
-     * Note: This attribute is not used in a coordinate conversion.
-     *
-     */
-    @JsonProperty("operationVersion")
-    @JsonPropertyDescription("(not applicable) \r\nNote: This attribute is not used in a coordinate conversion.")
-    public String operationVersion;
 
 }

@@ -3,9 +3,6 @@ package com.geomatys.json.pojo;
 
 import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -16,30 +13,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "coordinateSystem",
-    "baseCRS"
-})
 @Generated("jsonschema2pojo")
 public class ProjectedCRS
     extends DerivedCRS
 {
 
-    /**
-     * Cartesian coordinate system that is a component of this projected coordinate reference system
-     * (Required)
-     *
-     */
-    @JsonProperty("coordinateSystem")
-    @JsonPropertyDescription("Cartesian coordinate system that is a component of this projected coordinate reference system")
-    public Object coordinateSystem;
-    /**
-     * geodetic or geographic coordinate reference system that is the baseCRS for this projected coordinate reference system
-     * (Required)
-     *
-     */
-    @JsonProperty("baseCRS")
-    @JsonPropertyDescription("geodetic or geographic coordinate reference system that is the baseCRS for this projected coordinate reference system")
-    public Object baseCRS;
 
 }
