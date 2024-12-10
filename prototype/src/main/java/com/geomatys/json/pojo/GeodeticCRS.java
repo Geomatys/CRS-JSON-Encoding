@@ -20,8 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "velocityModel",
-    "definingTransformation",
-    "datum"
+    "definingTransformation"
 })
 @Generated("jsonschema2pojo")
 public class GeodeticCRS
@@ -39,12 +38,5 @@ public class GeodeticCRS
     @JsonProperty("definingTransformation")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     public Set<Object> definingTransformation;
-    /**
-     * geodetic reference frame that is a component of this geodetic coordinate reference system
-     *
-     */
-    @JsonProperty("datum")
-    @JsonPropertyDescription("geodetic reference frame that is a component of this geodetic coordinate reference system")
-    public Object datum;
 
 }

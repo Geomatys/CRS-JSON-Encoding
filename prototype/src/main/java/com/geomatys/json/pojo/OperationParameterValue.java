@@ -16,8 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "parameterValue",
-    "parameter"
+    "parameterValue"
 })
 @Generated("jsonschema2pojo")
 public class OperationParameterValue
@@ -32,13 +31,5 @@ public class OperationParameterValue
     @JsonProperty("parameterValue")
     @JsonPropertyDescription("value of the coordinate operation parameter")
     public ParameterValue parameterValue;
-    /**
-     * parameter which has this value
-     * (Required)
-     *
-     */
-    @JsonProperty("parameter")
-    @JsonPropertyDescription("parameter which has this value")
-    public Object parameter;
 
 }
