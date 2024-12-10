@@ -200,8 +200,6 @@
               "type": "array",
               "uniqueItems": true
             },
-            "sourcePosition": {},
-            "targetPosition": {},
             "targetCoordinateEpoch": {
               "description": "coordinate epoch of the coordinate set output from this coordinate operation",
               "oneOf": [
