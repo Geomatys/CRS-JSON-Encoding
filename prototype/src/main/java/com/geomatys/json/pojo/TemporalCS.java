@@ -33,4 +33,26 @@ public class TemporalCS
     @JsonPropertyDescription("datatype of coordinate values")
     public String coordinateType;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    protected TemporalCS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    protected TemporalCS(final org.opengis.referencing.cs.TimeCS impl) {
+        super(impl);
+        entityType = "TemporalCS";
+        // TODO: missing coordinateType.
+    }
 }

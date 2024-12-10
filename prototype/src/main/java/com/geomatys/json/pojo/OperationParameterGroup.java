@@ -53,4 +53,25 @@ public class OperationParameterGroup
     @JsonPropertyDescription("parameter that is a member of this parameter group")
     public Set<Object> parameter;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public OperationParameterGroup() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public OperationParameterGroup(final org.opengis.parameter.ParameterDescriptorGroup impl) {
+        super(impl);
+        entityType = "OperationParameterGroup";
+        minimumOccurs = impl.getMinimumOccurs();
+        maximumOccurs = impl.getMaximumOccurs();
+        parameter = many(impl.descriptors(), GeneralOperationParameter::create);
+    }
 }

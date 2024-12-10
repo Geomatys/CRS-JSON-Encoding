@@ -19,4 +19,22 @@ public class ProjectedCRS
 {
 
 
+
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public ProjectedCRS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public ProjectedCRS(final org.opengis.referencing.crs.ProjectedCRS impl) {
+        super(impl);
+    }
 }

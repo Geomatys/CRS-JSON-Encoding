@@ -86,4 +86,53 @@ public class CoordinateOperation
     @JsonPropertyDescription("coordinate reference system to which the coordinate set output from this coordinate operation is referenced")
     public Object targetCRS;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    protected CoordinateOperation() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl     implementation of a GeoAPI object to serialize.
+     * @param withCRS  whether to initialize also {@link #sourceCRS} and {@link #targetCRS}.
+     */
+    protected CoordinateOperation(final org.opengis.referencing.operation.CoordinateOperation impl, boolean withCRS) {
+        super(impl);
+        entityType = "CoordinateOperation";
+        operationVersion = impl.getOperationVersion();
+        if (withCRS) {
+            sourceCRS = Crs.create(impl.getSourceCRS());
+            targetCRS = Crs.create(impl.getTargetCRS());
+        }
+        // TODO: missing coordinateOperationAccuracy, sourceCoordinateEpoch, targetCoordinateEpoch, interpolationCRS.
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The subtype is determined by the interface implemented by the given object.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     * @return the POJO to serialize.
+     */
+    public static CoordinateOperation create(org.opengis.referencing.operation.CoordinateOperation impl) {
+        if (impl == null) {
+            return null;
+        }
+        return switch (impl) {
+            case org.opengis.referencing.operation.ConcatenatedOperation subtype -> new ConcatenatedOperation(subtype);
+            case org.opengis.referencing.operation.PassThroughOperation  subtype -> new PassThroughOperation (subtype);
+            case org.opengis.referencing.operation.Transformation        subtype -> new Transformation       (subtype);
+            case org.opengis.referencing.operation.Conversion            subtype -> new Conversion           (subtype, true);
+            case org.opengis.referencing.operation.SingleOperation       subtype -> new SingleOperation      (subtype, true);
+            default -> new CoordinateOperation(impl, true);
+        };
+    }
 }

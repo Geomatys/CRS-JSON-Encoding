@@ -39,4 +39,26 @@ public class GeodeticCRS
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     public Set<Object> definingTransformation;
 
+    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public GeodeticCRS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public GeodeticCRS(final org.opengis.referencing.crs.GeodeticCRS impl) {
+        super(impl);
+        entityType = "GeodeticCRS";
+        // TODO: missing velocityModel, definingTransformation.
+    }
 }
