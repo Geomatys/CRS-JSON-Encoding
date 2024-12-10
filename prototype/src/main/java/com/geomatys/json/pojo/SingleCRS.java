@@ -48,4 +48,28 @@ public class SingleCRS
     @JsonPropertyDescription("datum ensemble that is a component of this single coordinate reference system")
     public Object datumEnsemble;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    protected SingleCRS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    protected SingleCRS(final org.opengis.referencing.crs.SingleCRS impl) {
+        super(impl);
+        entityType = "SingleCRS";
+        datum = Datum.create(impl.getDatum());
+        coordinateSystem = CoordinateSystem.create(impl.getCoordinateSystem());
+        // TODO: missing datumEnsemble.
+    }
 }

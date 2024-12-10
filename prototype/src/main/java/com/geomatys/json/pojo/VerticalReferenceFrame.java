@@ -32,4 +32,23 @@ public class VerticalReferenceFrame
     @JsonPropertyDescription("specification of the method by which the vertical reference frame is realized")
     public String realizationMethod;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public VerticalReferenceFrame() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public VerticalReferenceFrame(final org.opengis.referencing.datum.VerticalDatum impl) {
+        super(impl);
+        entityType = "VerticalReferenceFrame";
+        // TODO: missing realizationMethod.
+    }
 }

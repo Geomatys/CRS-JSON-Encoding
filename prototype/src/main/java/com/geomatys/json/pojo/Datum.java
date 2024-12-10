@@ -62,4 +62,48 @@ public class Datum
     @JsonPropertyDescription("name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frame\r\nExamples: \"ITRS\" for ITRF88 through ITRF2008 and ITRF2014, or \"EVRS\" for EVRF2000 and EVRF2007.")
     public Object conventionalRS;
 
+
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    protected Datum() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * <h4>Note for subclasses</h4>
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    protected Datum(org.opengis.referencing.datum.Datum impl) {
+        super(impl);
+        entityType = "Datum";
+        anchorDefinition = text(impl.getAnchorPoint());
+        // TODO: missing anchorEpoch, publicationDate and conventionalRS.
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The subtype is determined by the interface implemented by the given object.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     * @return the POJO to serialize.
+     */
+    public static Datum create(org.opengis.referencing.datum.Datum impl) {
+        if (impl == null) {
+            return null;
+        }
+        return switch (impl) {
+            case org.opengis.referencing.datum.GeodeticDatum    subtype -> new GeodeticReferenceFrame(subtype);
+            case org.opengis.referencing.datum.VerticalDatum    subtype -> new VerticalReferenceFrame(subtype);
+            case org.opengis.referencing.datum.TemporalDatum    subtype -> new TemporalDatum         (subtype);
+            case org.opengis.referencing.datum.EngineeringDatum subtype -> new EngineeringDatum      (subtype);
+            default -> new Datum(impl);
+        };
+    }
 }
