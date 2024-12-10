@@ -21,8 +21,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonPropertyOrder({
     "operationVersion",
     "coordinateOperationAccuracy",
-    "sourcePosition",
-    "targetPosition",
     "targetCoordinateEpoch",
     "sourceCoordinateEpoch",
     "sourceCRS",
@@ -51,10 +49,6 @@ public class CoordinateOperation
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("estimate(s) of the impact of this coordinate operation on point accuracy\r\nNote: Gives position error estimates for target coordinates of this coordinate operation, assuming no errors in source coordinates.")
     public Set<Object> coordinateOperationAccuracy;
-    @JsonProperty("sourcePosition")
-    public Object sourcePosition;
-    @JsonProperty("targetPosition")
-    public Object targetPosition;
     /**
      * coordinate epoch of the coordinate set output from this coordinate operation
      *
