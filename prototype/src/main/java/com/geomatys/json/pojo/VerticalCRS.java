@@ -21,8 +21,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "geoidModel",
-    "datum",
-    "coordinateSystem",
     "velocityModel"
 })
 @Generated("jsonschema2pojo")
@@ -38,21 +36,6 @@ public class VerticalCRS
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("geoid model or height correction model that is associated with this vertical coordinate reference system")
     public Set<Object> geoidModel;
-    /**
-     * vertical reference frame that is a component of this vertical coordinate reference system
-     *
-     */
-    @JsonProperty("datum")
-    @JsonPropertyDescription("vertical reference frame that is a component of this vertical coordinate reference system")
-    public Object datum;
-    /**
-     * vertical coordinate system that is a component of this vertical coordinate reference system
-     * (Required)
-     *
-     */
-    @JsonProperty("coordinateSystem")
-    @JsonPropertyDescription("vertical coordinate system that is a component of this vertical coordinate reference system")
-    public Object coordinateSystem;
     /**
      * velocity model or deformation grid that is applied to this vertical coordinate reference system
      *
