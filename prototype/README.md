@@ -11,13 +11,13 @@ For testing on a Unix command line (replace `<implementation>` by the absolute
 path to a directory containing the JAR files of a GeoAPI implementation):
 
 ```shell
-src/main/shell/console <implementation>
+binding/src/main/shell/console <implementation>
 ```
 
 For test convenience, [Apache SIS](https://sis.apache.org/) is available with the following shortcut:
 
 ```shell
-src/main/shell/console apache-sis
+binding/src/main/shell/console apache-sis
 ```
 
 [PROJ-JNI](https://github.com/OSGeo/PROJ-JNI) requires a local build
@@ -31,5 +31,5 @@ git clone https://github.com/OSGeo/PROJ-JNI
 git checkout 2.0
 mvn clean install
 cd ..
-src/main/shell/console $PROJ_JNI/target
+binding/src/main/shell/console $PROJ_JNI/target
 ```
