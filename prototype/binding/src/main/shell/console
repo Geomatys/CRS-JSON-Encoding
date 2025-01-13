@@ -26,4 +26,4 @@ fi
 
 CMD_HOME="`dirname "$( readlink -e "$0"; )";`"
 cd "$CMD_HOME/../../../target"
-jshell --class-path "CRS-JSON-1.0-SNAPSHOT.jar:dependency/*:$1/*" "$CMD_HOME/imports.jsh"
+jshell --class-path "binding-1.0-SNAPSHOT.jar:dependency/*:$1/*" "$CMD_HOME/imports.jsh"
