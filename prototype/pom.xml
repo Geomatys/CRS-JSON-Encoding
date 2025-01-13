@@ -50,5 +50,6 @@
 
   <modules>
     <module>binding</module>
+    <module>server</module>
   </modules>
 </project>
