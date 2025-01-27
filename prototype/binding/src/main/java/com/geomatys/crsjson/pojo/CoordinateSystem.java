@@ -7,7 +7,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -19,24 +18,19 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "axis"
-})
 @Generated("jsonschema2pojo")
 public class CoordinateSystem
     extends IdentifiedObject
 {
-
     /**
      * coordinate system axis that is a component of this coordinate system
      * (Required)
      *
      */
-    @JsonProperty("axis")
+    @JsonProperty(value="axis", index=100)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("coordinate system axis that is a component of this coordinate system")
     public Set<Object> axis;
-
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 

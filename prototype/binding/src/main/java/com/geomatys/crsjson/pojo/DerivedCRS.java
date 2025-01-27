@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -16,29 +15,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "baseCRS",
-    "derivingConversion"
-})
 @Generated("jsonschema2pojo")
 public class DerivedCRS
     extends SingleCRS
 {
-
     /**
      * coordinate reference system that is the baseCRS for this derived coordinate reference system
      * (Required)
      *
      */
-    @JsonProperty("baseCRS")
+    @JsonProperty(value="baseCRS", index=300)
     @JsonPropertyDescription("coordinate reference system that is the baseCRS for this derived coordinate reference system")
     public Object baseCRS;
+
     /**
      * conversion that is a component of this derived coordinate reference system
      * (Required)
      *
      */
-    @JsonProperty("derivingConversion")
+    @JsonProperty(value="derivingConversion", index=310)
     @JsonPropertyDescription("conversion that is a component of this derived coordinate reference system")
     public Object derivingConversion;
 

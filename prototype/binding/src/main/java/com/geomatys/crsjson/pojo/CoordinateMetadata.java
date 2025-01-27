@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -15,42 +14,38 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "entityType",
-    "crsID",
-    "crs",
-    "coordinateEpoch"
-})
 @Generated("jsonschema2pojo")
 public class CoordinateMetadata {
-
     /**
      *
      * (Required)
      *
      */
-    @JsonProperty("entityType")
+    @JsonProperty(value="entityType", index=0)
     public String entityType;
+
     /**
      * identifier of the coordinate reference system to which a coordinate set is referenced
      *
      */
-    @JsonProperty("crsID")
+    @JsonProperty(value="crsID", index=10)
     @JsonPropertyDescription("identifier of the coordinate reference system to which a coordinate set is referenced")
     public Object crsID;
+
     /**
      * full definition of the coordinate reference system to which a coordinate set is referenced
      *
      */
-    @JsonProperty("crs")
+    @JsonProperty(value="crs", index=20)
     @JsonPropertyDescription("full definition of the coordinate reference system to which a coordinate set is referenced")
     public Object crs;
+
     /**
      * epoch at which a coordinate set referenced to a dynamic CRS is valid
      * Note: Required if the CRS is dynamic, otherwise should no be given.
      *
      */
-    @JsonProperty("coordinateEpoch")
+    @JsonProperty(value="coordinateEpoch", index=30)
     @JsonPropertyDescription("epoch at which a coordinate set referenced to a dynamic CRS is valid \r\nNote: Required if the CRS is dynamic, otherwise should no be given.")
     public Object coordinateEpoch;
 

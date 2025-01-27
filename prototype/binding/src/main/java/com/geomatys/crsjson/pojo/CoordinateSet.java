@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -18,36 +17,32 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "entityType",
-    "coordinateTuple",
-    "coordinateMetadata"
-})
 @Generated("jsonschema2pojo")
 public class CoordinateSet {
-
     /**
      *
      * (Required)
      *
      */
-    @JsonProperty("entityType")
+    @JsonProperty(value="entityType", index=0)
     public String entityType;
+
     /**
      * position described by a coordinate tuple
      * (Required)
      *
      */
-    @JsonProperty("coordinateTuple")
+    @JsonProperty(value="coordinateTuple", index=10)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("position described by a coordinate tuple")
     public Set<Object> coordinateTuple;
+
     /**
      * coordinate metadata to which this coordinate set is referenced
      * (Required)
      *
      */
-    @JsonProperty("coordinateMetadata")
+    @JsonProperty(value="coordinateMetadata", index=20)
     @JsonPropertyDescription("coordinate metadata to which this coordinate set is referenced")
     public Object coordinateMetadata;
 

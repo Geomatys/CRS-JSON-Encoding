@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -15,20 +14,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "entityType",
-    "coordinateEpoch"
-})
 @Generated("jsonschema2pojo")
 public class DataEpoch {
-
     /**
      *
      * (Required)
      *
      */
-    @JsonProperty("entityType")
+    @JsonProperty(value="entityType", index=0)
     public String entityType;
+
     /**
      * measure object
      * <p>
@@ -36,7 +31,7 @@ public class DataEpoch {
      * (Required)
      *
      */
-    @JsonProperty("coordinateEpoch")
+    @JsonProperty(value="coordinateEpoch", index=10)
     @JsonPropertyDescription("definition of a measure object")
     public Measure coordinateEpoch;
 
