@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * parameter value, ordered sequence of values, or reference to a file of parameter values
- *
+ * Parameter value, ordered sequence of values, or reference to a file of parameter values.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,11 +18,9 @@ public class OperationParameterValue
     extends GeneralParameterValue
 {
     /**
-     * value of the coordinate operation parameter
-     * (Required)
-     *
+     * Value of the coordinate operation parameter.
      */
-    @JsonProperty(value="parameterValue", index=100)
+    @JsonProperty(value="parameterValue", index=100, required=true)
     @JsonPropertyDescription("value of the coordinate operation parameter")
     public ParameterValue parameterValue;
 

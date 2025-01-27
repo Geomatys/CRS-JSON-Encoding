@@ -11,10 +11,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * A collection of two or more datums (or if geodetic or vertical, a collection of two or more reference frames) that are realizations of one Conventional Reference System and which for all but the highest accuracy requirements may be considered to be insignificantly different from each other.
- *
- * Note: Within the datum ensemble every frame or datum is constrained to be a realization of the same reference system.
- *
+ * A collection of two or more datums (or if geodetic or vertical, a collection of two or more reference frames)
+ * that are realizations of one Conventional Reference System and which for all but the highest accuracy requirements
+ * may be considered to be insignificantly different from each other.
+ * Within the datum ensemble every frame or datum is constrained to be a realization of the same reference system.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,24 +23,21 @@ public class DatumEnsemble
     extends ObjectUsage
 {
     /**
-     * inaccuracy introduced through use of this collection of reference frames or datums
-     * Note: It is an indication of the differences in coordinate values at all points between the various realizations that have been grouped into this datum ensemble.
-     * (Required)
-     *
+     * Datum or reference frame which is a member of this datum ensemble.
      */
-    @JsonProperty(value="ensembleAccuracy", index=100)
-    @JsonPropertyDescription("inaccuracy introduced through use of this collection of reference frames or datums\r\nNote: It is an indication of the differences in coordinate values at all points between the various realizations that have been grouped into this datum ensemble.")
-    public Object ensembleAccuracy;
-
-    /**
-     * datum or reference frame which is a member of this datum ensemble
-     * (Required)
-     *
-     */
-    @JsonProperty(value="datum", index=110)
+    @JsonProperty(value="datum", index=100, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("datum or reference frame which is a member of this datum ensemble")
     public Set<Object> datum;
+
+    /**
+     * Inaccuracy introduced through use of this collection of reference frames or datums.
+     * It is an indication of the differences in coordinate values at all points between
+     * the various realizations that have been grouped into this datum ensemble.
+     */
+    @JsonProperty(value="ensembleAccuracy", index=110, required=true)
+    @JsonPropertyDescription("inaccuracy introduced through use of this collection of reference frames or datums")
+    public Object ensembleAccuracy;
 
     // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 

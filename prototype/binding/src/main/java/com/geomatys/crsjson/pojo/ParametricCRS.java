@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * coordinate reference system having a parametric datum and a one-dimensional parametric coordinate system which uses parameter values or functions
- *
+ * Coordinate reference system having a parametric datum and a one-dimensional parametric coordinate system
+ * which uses parameter values or functions.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

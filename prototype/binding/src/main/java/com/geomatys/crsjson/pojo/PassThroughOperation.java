@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * specification of a subset of coordinate tuples that is subject to a coordinate operation
- *
+ * Specification of a subset of coordinate tuples that is subject to a coordinate operation.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,19 +20,17 @@ public class PassThroughOperation
     extends CoordinateOperation
 {
     /**
-     * ordered sequence of positive integers defining the positions in a source coordinate tuple of the coordinates affected by this pass-through operation
-     *
+     * Ordered sequence of positive integers defining the positions in a source coordinate tuple
+     * of the coordinates affected by this pass-through operation.
      */
     @JsonProperty(value="modifiedCoordinate", index=200)
     @JsonPropertyDescription("ordered sequence of positive integers defining the positions in a source coordinate tuple of the coordinates affected by this pass-through operation")
     public List<Integer> modifiedCoordinate;
 
     /**
-     * subset of a coordinate tuple that the coordinate operation will operate upon
-     * (Required)
-     *
+     * Subset of a coordinate tuple that the coordinate operation will operate upon.
      */
-    @JsonProperty(value="coordOperation", index=210)
+    @JsonProperty(value="coordOperation", index=210, required=true)
     @JsonPropertyDescription("subset of a coordinate tuple that the coordinate operation will operate upon")
     public Object coordOperation;
 

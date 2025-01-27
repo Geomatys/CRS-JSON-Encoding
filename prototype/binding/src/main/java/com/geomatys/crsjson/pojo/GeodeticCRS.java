@@ -11,9 +11,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * coordinate reference system associated with a geodetic reference frame and a three-dimensional Cartesian or spherical coordinate system
- * Note: If the geodetic reference frame is dynamic then the geodetic CRS is dynamic, else it is static.
- *
+ * Coordinate reference system associated with a geodetic reference frame
+ * and a three-dimensional Cartesian or spherical coordinate system.
+ * If the geodetic reference frame is dynamic then the geodetic CRS is dynamic, else it is static.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,8 +22,7 @@ public class GeodeticCRS
     extends SingleCRS
 {
     /**
-     * velocity model or deformation grid that may be applied to this geodetic coordinate reference system
-     *
+     * Velocity model or deformation grid that may be applied to this geodetic coordinate reference system.
      */
     @JsonProperty(value="velocityModel", index=300)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

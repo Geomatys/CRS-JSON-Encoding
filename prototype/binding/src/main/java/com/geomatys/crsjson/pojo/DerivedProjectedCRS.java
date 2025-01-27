@@ -7,8 +7,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS
- *
+ * A projected <abbr>CRS</abbr> derived from another <abbr>CRS</abbr>.
+ * A {@code DerivedProjectedCRS} has a projected coordinate reference system as its base <abbr>CRS</abbr>,
+ * thereby inheriting a geodetic reference frame,
+ * but also inheriting the distortion characteristics of the base projected <abbr>CRS</abbr>.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

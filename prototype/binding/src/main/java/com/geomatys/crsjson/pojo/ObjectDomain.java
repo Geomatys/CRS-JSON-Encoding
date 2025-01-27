@@ -9,29 +9,24 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * scope and validity of a CRS-related object
- *
+ * Scope and validity of a CRS-related object.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class ObjectDomain {
     /**
-     * description of usage, or limitations of usage, for which this object is valid
-     * Note: If unknown, enter "not known".
-     * (Required)
-     *
+     * Description of usage, or limitations of usage, for which this object is valid.
+     * If unknown, enter "not known".
      */
-    @JsonProperty(value="scope", index=10)
-    @JsonPropertyDescription("description of usage, or limitations of usage, for which this object is valid \r\nNote: If unknown, enter \"not known\".")
+    @JsonProperty(value="scope", index=10, required=true)
+    @JsonPropertyDescription("description of usage, or limitations of usage, for which this object is valid")
     public String scope;
 
     /**
-     * spatial and temporal extent in which this object is valid
-     * (Required)
-     *
+     * Spatial and temporal extent in which this object is valid.
      */
-    @JsonProperty(value="domainOfValidity", index=20)
+    @JsonProperty(value="domainOfValidity", index=20, required=true)
     @JsonPropertyDescription("spatial and temporal extent in which this object is valid")
     public Object domainOfValidity;
 

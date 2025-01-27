@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * definition of a coordinate system axis
- *
+ * Definition of a coordinate system axis
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,57 +18,53 @@ public class CoordinateSystemAxis
     extends IdentifiedObject
 {
     /**
-     * abbreviation used for this coordinate system axis; this abbreviation is also used to identify the coordinates in the coordinate tuple
+     * Abbreviation used for this coordinate system axis.
+     * This abbreviation is also used to identify the coordinates in the coordinate tuple.
      * Examples: X and Y.
-     * Note: when the standard symbol is a Greek character the abbreviation may differ from the symbol (for example to constrain symbols to other character sets).
-     * (Required)
+     *
+     * <p><b>Note:</b> when the standard symbol is a Greek character the abbreviation may differ from the symbol
+     * (for example to constrain symbols to other character sets).</p>
      *
      */
-    @JsonProperty(value="axisAbbrev", index=100)
-    @JsonPropertyDescription("abbreviation used for this coordinate system axis; this abbreviation is also used to identify the coordinates in the coordinate tuple\r\nExamples: X and Y. \r\nNote: when the standard symbol is a Greek character the abbreviation may differ from the symbol (for example to constrain symbols to other character sets).")
+    @JsonProperty(value="axisAbbrev", index=100, required=true)
+    @JsonPropertyDescription("abbreviation used for this coordinate system axis")
     public String axisAbbrev;
 
     /**
-     * direction of positive increase in the coordinate value for a coordinate system axis
-     * (Required)
-     *
+     * Direction of positive increase in the coordinate value for a coordinate system axis.
      */
-    @JsonProperty(value="axisDirection", index=110)
+    @JsonProperty(value="axisDirection", index=110, required=true)
     @JsonPropertyDescription("direction of positive increase in the coordinate value for a coordinate system axis")
     public String axisDirection;
 
     /**
-     * spatial unit or temporal quantity used for this coordinate system axis
-     * Note: The value of a coordinate in a coordinate tuple is recorded using this unit.
+     * Spatial unit or temporal quantity used for this coordinate system axis.
+     * The value of a coordinate in a coordinate tuple is recorded using this unit.
      * This element is omitted if this axis is part of a DateTimeTemporalCS or an OrdinalCS, and is provided in all other cases.
-     *
      */
     @JsonProperty(value="axisUnitID", index=120)
-    @JsonPropertyDescription("spatial unit or temporal quantity used for this coordinate system axis\r\nNote: The value of a coordinate in a coordinate tuple is recorded using this unit. \r\nThis element is omitted if this axis is part of a DateTimeTemporalCS or an OrdinalCS, and is provided in all other cases.")
+    @JsonPropertyDescription("spatial unit or temporal quantity used for this coordinate system axis")
     public String axisUnitID;
 
     /**
-     * minimum value normally allowed for this axis, in the unit for the axis
-     *
+     * Minimum value normally allowed for this axis, in the unit for the axis.
      */
     @JsonProperty(value="minimumValue", index=130)
     @JsonPropertyDescription("minimum value normally allowed for this axis, in the unit for the axis")
     public Double minimumValue;
 
     /**
-     * maximum value normally allowed for this axis, in the unit for the axis
-     *
+     * Maximum value normally allowed for this axis, in the unit for the axis.
      */
     @JsonProperty(value="maximumValue", index=140)
     @JsonPropertyDescription("maximum value normally allowed for this axis, in the unit for the axis")
     public Double maximumValue;
 
     /**
-     * meaning of the axis value range specified through minimumValue and maximumValue
-     *
+     * Meaning of the axis value range specified through minimum value and maximum value.
      */
     @JsonProperty(value="rangeMeaning", index=150)
-    @JsonPropertyDescription("meaning of the axis value range specified through minimumValue and maximumValue")
+    @JsonPropertyDescription("meaning of the axis value range specified through minimum value and maximum value")
     public String rangeMeaning;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

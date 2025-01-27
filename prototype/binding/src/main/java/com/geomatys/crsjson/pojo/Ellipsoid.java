@@ -9,9 +9,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis
- * Note: For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal centre of the Earth.
- *
+ * Geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis.
+ * For the Earth the ellipsoid is bi-axial with rotation about the polar axis.
+ * This results in an oblate ellipsoid with the midpoint of the foci located at the nominal centre of the Earth.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,34 +20,31 @@ public class Ellipsoid
     extends IdentifiedObject
 {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     * (Required)
-     *
+     * Length of the semi-major axis of the ellipsoid.
      */
-    @JsonProperty(value="semiMajorAxis", index=100)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonProperty(value="semiMajorAxis", index=100, required=true)
+    @JsonPropertyDescription("length of the semi-major axis of the ellipsoid")
     public Measure semiMajorAxis;
 
     /**
-     * definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoid
-     * Note: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis “degenerates” into the radius of the sphere.
-     * (Required)
-     *
+     * Definition of the second parameter that defines the shape of a biaxial ellipsoid,
+     * or the third parameter that defines a triaxial ellipsoid.
+     * A biaxial ellipsoid requires two defining parameters:
+     * a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis.
+     * When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required,
+     * namely the radius of the sphere.
+     * In that case, the semi-major axis “degenerates” into the radius of the sphere.
      */
-    @JsonProperty(value="secondDefiningParameter", index=110)
-    @JsonPropertyDescription("definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoid\r\nNote: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis \u201cdegenerates\u201d into the radius of the sphere.")
+    @JsonProperty(value="secondDefiningParameter", index=110, required=true)
+    @JsonPropertyDescription("definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoid")
     public SecondDefiningParameter secondDefiningParameter;
 
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     *
+     * Length of the semi-median axis of a triaxial ellipsoid.
+     * This parameter is not required for a biaxial ellipsoid.
      */
     @JsonProperty(value="semiMedianAxis", index=120)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonPropertyDescription("length of the semi-median axis of a triaxial ellipsoid")
     public Measure semiMedianAxis;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

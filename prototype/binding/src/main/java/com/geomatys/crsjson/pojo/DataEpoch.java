@@ -9,30 +9,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * time attribute of a coordinate set that is referenced to a dynamic CRS
- *
+ * Time attribute of a coordinate set that is referenced to a dynamic <abbr>CRS</abbr>.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class DataEpoch {
     /**
-     *
-     * (Required)
-     *
+     * The object type.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     * (Required)
-     *
+     * Date at which coordinates are referenced to a dynamic coordinate reference system,
+     * expressed as a decimal year in the Gregorian calendar.
+     * Example: 2017-03-25 in the Gregorian calendar is epoch 2017.23.
      */
     @JsonProperty(value="coordinateEpoch", index=10)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonPropertyDescription("date at which coordinates are referenced to a dynamic coordinate reference system, expressed as a decimal year in the Gregorian calendar")
     public Measure coordinateEpoch;
 
     // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════

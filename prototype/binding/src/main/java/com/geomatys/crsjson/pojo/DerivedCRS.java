@@ -9,9 +9,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * single coordinate reference system that is defined through the application of a specified coordinate conversion to the definition of a previously established single coordinate reference system referred to as the base CRS
- * Note:  A derived coordinate reference system inherits its datum (or datum ensemble) from its base CRS. The coordinate conversion between the base and derived coordinate reference system is implemented using the parameters and formula(s) specified in the definition of the coordinate conversion.
- *
+ * Single coordinate reference system that is defined through the application of a specified coordinate conversion to
+ * the definition of a previously established single coordinate reference system referred to as the base <abbr>CRS</abbr>.
+ * A derived coordinate reference system inherits its datum (or datum ensemble) from its base <abbr>CRS</abbr>.
+ * The coordinate conversion between the base and derived coordinate reference system is implemented using the
+ * parameters and formula(s) specified in the definition of the coordinate conversion.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,20 +22,16 @@ public class DerivedCRS
     extends SingleCRS
 {
     /**
-     * coordinate reference system that is the baseCRS for this derived coordinate reference system
-     * (Required)
-     *
+     * Coordinate reference system that is the base <abbr>CRS</abbr> for this derived coordinate reference system.
      */
-    @JsonProperty(value="baseCRS", index=300)
-    @JsonPropertyDescription("coordinate reference system that is the baseCRS for this derived coordinate reference system")
+    @JsonProperty(value="baseCRS", index=300, required=true)
+    @JsonPropertyDescription("coordinate reference system that is the base CRS for this derived coordinate reference system")
     public Object baseCRS;
 
     /**
-     * conversion that is a component of this derived coordinate reference system
-     * (Required)
-     *
+     * Conversion that is a component of this derived coordinate reference system.
      */
-    @JsonProperty(value="derivingConversion", index=310)
+    @JsonProperty(value="derivingConversion", index=310, required=true)
     @JsonPropertyDescription("conversion that is a component of this derived coordinate reference system")
     public Object derivingConversion;
 

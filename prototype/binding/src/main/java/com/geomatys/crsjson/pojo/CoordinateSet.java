@@ -11,38 +11,31 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * description of the coordinate tuples in a coordinate set
- * Note: A single coordinate tuple is treated as a special case of coordinate set containing only one member.
- *
+ * Description of the coordinate tuples in a coordinate set.
+ * A single coordinate tuple is treated as a special case of coordinate set containing only one member.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class CoordinateSet {
     /**
-     *
-     * (Required)
-     *
+     * The object type.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * position described by a coordinate tuple
-     * (Required)
-     *
+     * Position described by a coordinate tuple.
      */
-    @JsonProperty(value="coordinateTuple", index=10)
+    @JsonProperty(value="coordinateTuple", index=10, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("position described by a coordinate tuple")
     public Set<Object> coordinateTuple;
 
     /**
-     * coordinate metadata to which this coordinate set is referenced
-     * (Required)
-     *
+     * Coordinate metadata to which this coordinate set is referenced.
      */
-    @JsonProperty(value="coordinateMetadata", index=20)
+    @JsonProperty(value="coordinateMetadata", index=20, required=true)
     @JsonPropertyDescription("coordinate metadata to which this coordinate set is referenced")
     public Object coordinateMetadata;
 

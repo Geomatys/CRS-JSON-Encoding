@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * vertical reference frame in which some of the defining parameters have time dependency
+ * Vertical reference frame in which some of the defining parameters have time dependency.
  * Example: Defining station heights have velocity to account for post-glacial isostatic rebound motion.
- *
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,14 +19,12 @@ public class DynamicVerticalReferenceFrame
     extends VerticalReferenceFrame
 {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     * (Required)
-     *
+     * Epoch to which the coordinates of stations defining the dynamic vertical reference frame are referenced,
+     * expressed as a decimal year in the Gregorian calendar.
+     * Example: 2016,47.
      */
-    @JsonProperty(value="frameReferenceEpoch", index=300)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonProperty(value="frameReferenceEpoch", index=300, required=true)
+    @JsonPropertyDescription("epoch to which the coordinates of stations defining the dynamic vertical reference frame are referenced, expressed as a decimal year in the Gregorian calendar")
     public Measure frameReferenceEpoch;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
