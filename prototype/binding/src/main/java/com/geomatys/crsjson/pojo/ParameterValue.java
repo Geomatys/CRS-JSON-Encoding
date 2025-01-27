@@ -2,7 +2,6 @@
 package com.geomatys.crsjson.pojo;
 
 import java.util.List;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -16,7 +15,6 @@ import java.util.Arrays;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class ParameterValue {
     /**
      * Numeric value of the coordinate operation parameter with its associated unit.
@@ -87,8 +85,6 @@ public class ParameterValue {
     @JsonProperty(value="geographicObject", index=180)
     @JsonPropertyDescription("identifier of a geographic feature of which the coordinates are used as operation parameters")
     public Object geographicObject;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

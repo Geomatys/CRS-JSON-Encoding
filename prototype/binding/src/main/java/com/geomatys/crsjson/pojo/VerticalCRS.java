@@ -2,7 +2,6 @@
 package com.geomatys.crsjson.pojo;
 
 import java.util.Set;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -23,7 +22,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class VerticalCRS
     extends SingleCRS
 {
@@ -42,8 +40,6 @@ public class VerticalCRS
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("velocity model or deformation grid that is applied to this vertical coordinate reference system")
     public Set<Object> velocityModel;
-
-    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

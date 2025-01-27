@@ -2,7 +2,6 @@
 package com.geomatys.crsjson.pojo;
 
 import java.util.Set;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -31,7 +30,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class CoordinateOperation
     extends ObjectUsage
 {
@@ -89,8 +87,6 @@ public class CoordinateOperation
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("estimate(s) of the impact of this coordinate operation on point accuracy")
     public Set<Object> coordinateOperationAccuracy;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.function.Function;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -18,7 +17,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class IdentifiedObject {
     /**
      * The object type.
@@ -56,8 +54,6 @@ public class IdentifiedObject {
     @JsonProperty(value="remarks", index=40)
     @JsonPropertyDescription("comments on or information about this object, including data source information")
     public String remarks;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.
