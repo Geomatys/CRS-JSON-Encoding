@@ -18,7 +18,6 @@ public class AffineCS
     extends CoordinateSystem
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

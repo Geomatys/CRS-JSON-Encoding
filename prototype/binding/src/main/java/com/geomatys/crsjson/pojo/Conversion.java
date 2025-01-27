@@ -19,7 +19,6 @@ public class Conversion
     extends SingleOperation
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

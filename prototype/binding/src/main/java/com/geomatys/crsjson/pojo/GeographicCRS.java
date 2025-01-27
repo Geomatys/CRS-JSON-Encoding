@@ -18,7 +18,6 @@ public class GeographicCRS
     extends GeodeticCRS
 {
 
-
     // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 
     /**

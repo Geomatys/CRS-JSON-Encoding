@@ -55,7 +55,6 @@ public class Ellipsoid
     @JsonPropertyDescription("definition of a measure object")
     public Measure semiMedianAxis;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

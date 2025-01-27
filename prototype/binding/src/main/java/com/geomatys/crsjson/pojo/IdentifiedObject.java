@@ -69,7 +69,6 @@ public class IdentifiedObject {
     @JsonPropertyDescription("comments on or information about this object, including data source information")
     public String remarks;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
