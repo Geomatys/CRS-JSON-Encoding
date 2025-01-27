@@ -40,4 +40,11 @@ public class DataEpoch {
     @JsonPropertyDescription("definition of a measure object")
     public Measure coordinateEpoch;
 
+    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public DataEpoch() {
+    }
 }

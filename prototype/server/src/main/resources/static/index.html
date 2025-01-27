@@ -6,7 +6,7 @@
     <title>CRS-JSON prototype</title>
   </head>
   <body>
-    <h1>CRS-JSON prototype</h1>
+    <h1><abbr>CRS</abbr>-<abbr>JSON</abbr> prototype</h1>
     <p>
       This is a prototype of what <strong>could</strong> be a <abbr>JSON</abbr> encoding of <abbr>CRS</abbr> objects
       if that encoding was derived from the <abbr>UML</abbr> of the <abbr>ISO</abbr> 19111 abstract model.
@@ -43,6 +43,12 @@
       This is because the software uses version 9.9.1 of the <abbr>EPSG</abbr> database
       while datum ensembles were introduced in versions 10 and later.
       Upgrade to latest <abbr>EPSG</abbr> database will be done as soon as possible.
+    </p>
+
+    <h2>Validation</h2>
+    <p>
+      The output can be validated, for example, with <a href="https://www.jsonschemavalidator.net/">www.jsonschemavalidator.net</a>.
+      The schema to provide is <a href="https://raw.githubusercontent.com/opengeospatial/CRS-JSON-Encoding/refs/heads/main/uml2json/schemas/iso19111.json">here</a>.
     </p>
   </body>
 </html>

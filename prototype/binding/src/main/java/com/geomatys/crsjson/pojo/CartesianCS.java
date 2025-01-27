@@ -18,7 +18,6 @@ public class CartesianCS
     extends AffineCS
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

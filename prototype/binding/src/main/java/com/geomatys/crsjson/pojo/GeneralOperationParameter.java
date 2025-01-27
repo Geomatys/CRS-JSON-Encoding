@@ -17,7 +17,6 @@ public class GeneralOperationParameter
     extends IdentifiedObject
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

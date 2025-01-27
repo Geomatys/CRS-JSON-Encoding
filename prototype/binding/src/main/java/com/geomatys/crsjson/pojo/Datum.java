@@ -62,7 +62,6 @@ public class Datum
     @JsonPropertyDescription("name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frame\r\nExamples: \"ITRS\" for ITRF88 through ITRF2008 and ITRF2014, or \"EVRS\" for EVRF2000 and EVRF2007.")
     public Object conventionalRS;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

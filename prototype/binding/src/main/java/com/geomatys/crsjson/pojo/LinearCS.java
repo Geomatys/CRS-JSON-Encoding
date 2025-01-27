@@ -18,5 +18,22 @@ public class LinearCS
     extends CoordinateSystem
 {
 
+    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public LinearCS() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public LinearCS(final org.opengis.referencing.cs.CoordinateSystem impl) {
+        super(impl);
+        entityType = "LinearCS";
+    }
 }

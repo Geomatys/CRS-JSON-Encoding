@@ -18,7 +18,6 @@ public class VerticalCS
     extends CoordinateSystem
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

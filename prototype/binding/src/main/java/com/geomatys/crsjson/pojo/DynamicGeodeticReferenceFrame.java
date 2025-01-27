@@ -35,4 +35,22 @@ public class DynamicGeodeticReferenceFrame
     @JsonPropertyDescription("definition of a measure object")
     public Measure frameReferenceEpoch;
 
+    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public DynamicGeodeticReferenceFrame() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public DynamicGeodeticReferenceFrame(org.opengis.referencing.datum.GeodeticDatum impl) {
+        super(impl);
+        entityType = "DynamicGeodeticReferenceFrame";
+    }
 }

@@ -40,7 +40,6 @@ public class ObjectDomain {
     @JsonPropertyDescription("spatial and temporal extent in which this object is valid")
     public Object domainOfValidity;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

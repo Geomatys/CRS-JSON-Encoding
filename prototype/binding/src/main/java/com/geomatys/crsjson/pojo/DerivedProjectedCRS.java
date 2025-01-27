@@ -17,7 +17,6 @@ public class DerivedProjectedCRS
     extends DerivedCRS
 {
 
-
     // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 
     /**
