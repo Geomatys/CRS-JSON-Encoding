@@ -9,10 +9,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * definition of the position, scale and orientation of a geocentric Cartesian 3D coordinate system relative to the Earth
- * Note 1: It may also identify a defined ellipsoid (or sphere) that approximates the shape of the Earth and which is centred on and aligned to this geocentric coordinate system. Older geodetic datums define the location and orientation of a defined ellipsoid (or sphere) that approximates the shape of the earth.
- * Note 2: In 19111:2007 this class was called GeodeticDatum.
+ * Definition of the position, scale and orientation of a geocentric Cartesian 3D coordinate system relative to the Earth.
  *
+ * <p><b>Note 1:</b> It may also identify a defined ellipsoid (or sphere) that approximates
+ * the shape of the Earth and which is centred on and aligned to this geocentric coordinate system.
+ * Older geodetic datums define the location and orientation of a defined ellipsoid (or sphere)
+ * that approximates the shape of the earth.</p>
+ *
+ * <p><b>Note 2:</b> In 19111:2007 this class was called GeodeticDatum.</p>
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,17 +25,14 @@ public class GeodeticReferenceFrame
     extends Datum
 {
     /**
-     * prime meridian which is a component of this geodetic reference frame
-     * (Required)
-     *
+     * Prime meridian which is a component of this geodetic reference frame.
      */
-    @JsonProperty(value="primeMeridian", index=200)
+    @JsonProperty(value="primeMeridian", index=200, required=true)
     @JsonPropertyDescription("prime meridian which is a component of this geodetic reference frame")
     public Object primeMeridian;
 
     /**
-     * ellipsoid which is a component of this geodetic reference frame
-     *
+     * Ellipsoid which is a component of this geodetic reference frame.
      */
     @JsonProperty(value="ellipsoid", index=210)
     @JsonPropertyDescription("ellipsoid which is a component of this geodetic reference frame")

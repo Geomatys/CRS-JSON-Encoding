@@ -9,24 +9,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * specification of the coordinate operation method formula
- *
+ * Specification of the coordinate operation method formula.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class Formula {
     /**
-     * formula(s) or procedure used by the coordinate operation method
-     *
+     * Formula(s) or procedure used by the coordinate operation method.
      */
     @JsonProperty(value="formula", index=100)
     @JsonPropertyDescription("formula(s) or procedure used by the coordinate operation method")
     public String formula;
 
     /**
-     * reference to a publication giving the formula(s) or procedure used by the coordinate operation method
-     *
+     * Reference to a publication giving the formula(s) or procedure used by the coordinate operation method.
      */
     @JsonProperty(value="formulaCitation", index=110)
     @JsonPropertyDescription("reference to a publication giving the formula(s) or procedure used by the coordinate operation method")

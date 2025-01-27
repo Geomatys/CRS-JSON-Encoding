@@ -9,27 +9,22 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * operations supported in the Coordinate Operations package
- *
+ * Operations supported in the Coordinate Operations package.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class RegisterOperations {
     /**
-     *
-     * (Required)
-     *
+     * The object class.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * citation used by this register operation
-     * (Required)
-     *
+     * Citation used by this register operation.
      */
-    @JsonProperty(value="authority", index=10)
+    @JsonProperty(value="authority", index=10, required=true)
     @JsonPropertyDescription("citation used by this register operation")
     public Object authority;
 

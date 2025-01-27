@@ -11,8 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * definition of a group of related parameters used by a coordinate operation method
- *
+ * Definition of a group of related parameters used by a coordinate operation method.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,32 +20,28 @@ public class OperationParameterGroup
     extends GeneralOperationParameter
 {
     /**
-     * minimum number of times that values for this parameter group or parameter is required
-     * Note: If this attribute is omitted, the minimum number is one.
-     *
+     * Parameter that is a member of this parameter group.
      */
-    @JsonProperty(value="minimumOccurs", index=200)
-    @JsonPropertyDescription("minimum number of times that values for this parameter group or parameter is required\r\nNote: If this attribute is omitted, the minimum number is one.")
-    public Integer minimumOccurs;
-
-    /**
-     * maximum number of times that values for this parameter group or parameter can be included
-     * Note: If this attribute is omitted, the maximum number is one.
-     *
-     */
-    @JsonProperty(value="maximumOccurs", index=210)
-    @JsonPropertyDescription("maximum number of times that values for this parameter group or parameter can be included\r\nNote: If this attribute is omitted, the maximum number is one.")
-    public Integer maximumOccurs;
-
-    /**
-     * parameter that is a member of this parameter group
-     * (Required)
-     *
-     */
-    @JsonProperty(value="parameter", index=220)
+    @JsonProperty(value="parameter", index=200, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("parameter that is a member of this parameter group")
     public Set<Object> parameter;
+
+    /**
+     * Minimum number of times that values for this parameter group or parameter is required.
+     * If this attribute is omitted, the minimum number is one.
+     */
+    @JsonProperty(value="minimumOccurs", index=210)
+    @JsonPropertyDescription("minimum number of times that values for this parameter group or parameter is required")
+    public Integer minimumOccurs;
+
+    /**
+     * Maximum number of times that values for this parameter group or parameter can be included.
+     * If this attribute is omitted, the maximum number is one.
+     */
+    @JsonProperty(value="maximumOccurs", index=220)
+    @JsonPropertyDescription("maximum number of times that values for this parameter group or parameter can be included")
+    public Integer maximumOccurs;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 

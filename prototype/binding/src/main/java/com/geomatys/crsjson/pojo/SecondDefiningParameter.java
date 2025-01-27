@@ -9,41 +9,38 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoid
- * Note: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis “degenerates” into the radius of the sphere.
- *
+ * Definition of the second parameter that defines the shape of a biaxial ellipsoid,
+ * or the third parameter that defines a triaxial ellipsoid.
+ * A biaxial ellipsoid requires two defining parameters:
+ * a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis.
+ * When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required,
+ * namely the radius of the sphere. in that case, the semi-major axis “degenerates” into the radius of the sphere.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class SecondDefiningParameter {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     *
+     * Inverse flattening value of the ellipsoid.
      */
     @JsonProperty(value="inverseFlattening", index=100)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonPropertyDescription("inverse flattening value of the ellipsoid")
     public Measure inverseFlattening;
 
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     *
+     * Length of the semi-minor axis of the ellipsoid.
      */
     @JsonProperty(value="semiMinorAxis", index=110)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonPropertyDescription("length of the semi-minor axis of the ellipsoid")
     public Measure semiMinorAxis;
 
     /**
-     * ellipsoid is degenerate and is actually a sphere
-     * Note: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value “true” if the figure is a sphere.
-     *
+     * Ellipsoid is degenerate and is actually a sphere.
+     * The sphere is completely defined by the semi-major axis, which is the radius of the sphere.
+     * This attribute has the value {@code true} if the figure is a sphere.
      */
     @JsonProperty(value="isSphere", index=120)
-    @JsonPropertyDescription("ellipsoid is degenerate and is actually a sphere\r\nNote: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value \u201ctrue\u201d if the figure is a sphere.")
+    @JsonPropertyDescription("ellipsoid is degenerate and is actually a sphere")
     public Boolean isSphere;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

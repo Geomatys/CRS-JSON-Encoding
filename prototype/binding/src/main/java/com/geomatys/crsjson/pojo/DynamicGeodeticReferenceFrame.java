@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates
+ * Geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates.
  * Example: defining station coordinates having linear velocities to account for crustal motion.
- *
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,14 +19,12 @@ public class DynamicGeodeticReferenceFrame
     extends GeodeticReferenceFrame
 {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     * (Required)
-     *
+     * Epoch to which the coordinates of stations defining the dynamic geodetic reference frame are referenced,
+     * expressed as a decimal year in the Gregorian calendar.
+     * Example: 2016,47.
      */
-    @JsonProperty(value="frameReferenceEpoch", index=300)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonProperty(value="frameReferenceEpoch", index=300, required=true)
+    @JsonPropertyDescription("epoch to which the coordinates of stations defining the dynamic geodetic reference frame are referenced, expressed as a decimal year in the Gregorian calendar")
     public Measure frameReferenceEpoch;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

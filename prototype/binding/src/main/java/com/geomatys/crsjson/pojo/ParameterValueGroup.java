@@ -11,9 +11,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * group of related parameter values
- * Note: The same group can be repeated more than once in a coordinate operation or higher level ParameterValueGroup, if those instances contain different values of one or more ParameterValues which suitably distinguish among those groups.
- *
+ * Group of related parameter values.
+ * The same group can be repeated more than once in a coordinate operation or higher level {@link ParameterValueGroup},
+ * if those instances contain different values of one or more {@link ParameterValue}s which suitably distinguish among
+ * those groups.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,21 +23,17 @@ public class ParameterValueGroup
     extends GeneralParameterValue
 {
     /**
-     * value in this value group
-     * (Required)
-     *
+     * Value in this value group.
      */
-    @JsonProperty(value="parameterValue", index=100)
+    @JsonProperty(value="parameterValue", index=100, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("value in this value group")
     public Set<Object> parameterValue;
 
     /**
-     * parameter group associated with this value group
-     * (Required)
-     *
+     * Parameter group associated with this value group.
      */
-    @JsonProperty(value="group", index=110)
+    @JsonProperty(value="group", index=110, required=true)
     @JsonPropertyDescription("parameter group associated with this value group")
     public Object group;
 

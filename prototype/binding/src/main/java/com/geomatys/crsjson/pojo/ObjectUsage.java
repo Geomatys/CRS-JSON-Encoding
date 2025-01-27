@@ -11,8 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * usage of a CRS-related object
- *
+ * Usage of a CRS-related object.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,8 +20,7 @@ public class ObjectUsage
     extends IdentifiedObject
 {
     /**
-     * scope and validity of a CRS-related object
-     *
+     * Scope and validity of a CRS-related object.
      */
     @JsonProperty(value="domain", index=90)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble
- *
+ * Coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,25 +18,21 @@ public class SingleCRS
     extends Crs
 {
     /**
-     * datum that is a component of this single coordinate reference system
-     *
+     * Coordinate system that is a component of this single coordinate reference system.
      */
-    @JsonProperty(value="datum", index=200)
-    @JsonPropertyDescription("datum that is a component of this single coordinate reference system")
-    public Object datum;
-
-    /**
-     * coordinate system that is a component of this single coordinate reference system
-     * (Required)
-     *
-     */
-    @JsonProperty(value="coordinateSystem", index=210)
+    @JsonProperty(value="coordinateSystem", index=200, required=true)
     @JsonPropertyDescription("coordinate system that is a component of this single coordinate reference system")
     public Object coordinateSystem;
 
     /**
-     * datum ensemble that is a component of this single coordinate reference system
-     *
+     * Datum that is a component of this single coordinate reference system.
+     */
+    @JsonProperty(value="datum", index=210)
+    @JsonPropertyDescription("datum that is a component of this single coordinate reference system")
+    public Object datum;
+
+    /**
+     * Datum ensemble that is a component of this single coordinate reference system.
      */
     @JsonProperty(value="datumEnsemble", index=220)
     @JsonPropertyDescription("datum ensemble that is a component of this single coordinate reference system")

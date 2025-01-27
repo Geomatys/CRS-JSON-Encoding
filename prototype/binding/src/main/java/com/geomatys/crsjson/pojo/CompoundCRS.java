@@ -11,9 +11,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * coordinate reference system describing the position of points through two or more independent single coordinate reference systems
- * Note: two coordinate reference systems are independent of each other if coordinate values in one cannot be converted or transformed into coordinate values in the other.
- *
+ * Coordinate reference system describing the position of points
+ * through two or more independent single coordinate reference systems.
+ * Two coordinate reference systems are independent of each other if coordinate values
+ * in one cannot be converted or transformed into coordinate values in the other.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,11 +23,9 @@ public class CompoundCRS
     extends Crs
 {
     /**
-     * coordinate reference system that is a component of this compound coordinate reference system
-     * (Required)
-     *
+     * Coordinate reference system that is a component of this compound coordinate reference system.
      */
-    @JsonProperty(value="componentReferenceSystem", index=200)
+    @JsonProperty(value="componentReferenceSystem", index=200, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("coordinate reference system that is a component of this compound coordinate reference system")
     public Set<Object> componentReferenceSystem;

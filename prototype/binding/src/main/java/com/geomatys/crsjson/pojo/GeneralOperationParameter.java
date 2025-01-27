@@ -7,8 +7,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * definition of a parameter or group of parameters used by a coordinate operation method
- *
+ * Definition of a parameter or group of parameters used by a coordinate operation method.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

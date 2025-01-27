@@ -12,88 +12,77 @@ import java.util.Arrays;
 
 
 /**
- * value of the coordinate operation parameter
- *
+ * Value of the coordinate operation parameter.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class ParameterValue {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     *
+     * Numeric value of the coordinate operation parameter with its associated unit.
      */
     @JsonProperty(value="value", index=100)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonPropertyDescription("numeric value of the coordinate operation parameter with its associated unit")
     public Measure value;
 
     /**
-     * string value of a coordinate operation parameter
-     * Note: A string value does not have an associated unit.
-     *
+     * String value of a coordinate operation parameter.
+     * A string value does not have an associated unit.
      */
     @JsonProperty(value="stringValue", index=110)
-    @JsonPropertyDescription("string value of a coordinate operation parameter\r\nNote: A string value does not have an associated unit.")
+    @JsonPropertyDescription("string value of a coordinate operation parameter")
     public String stringValue;
 
     /**
-     * positive integer value of a coordinate operation parameter, usually used for a count
-     * Note: An integer value does not have an associated unit.
-     *
+     * Positive integer value of a coordinate operation parameter, usually used for a count.
+     * An integer value does not have an associated unit.
      */
     @JsonProperty(value="integerValue", index=120)
-    @JsonPropertyDescription("positive integer value of a coordinate operation parameter, usually used for a count\r\nNote: An integer value does not have an associated unit.")
+    @JsonPropertyDescription("positive integer value of a coordinate operation parameter, usually used for a count")
     public Integer integerValue;
 
     /**
-     * boolean value of a coordinate operation parameter
-     * Note: A Boolean value does not have an associated unit.
-     *
+     * Boolean value of a coordinate operation parameter.
+     * A Boolean value does not have an associated unit.
      */
     @JsonProperty(value="booleanValue", index=130)
-    @JsonPropertyDescription("boolean value of a coordinate operation parameter\r\nNote: A Boolean value does not have an associated unit.")
+    @JsonPropertyDescription("boolean value of a coordinate operation parameter")
     public Boolean booleanValue;
 
     /**
-     * ordered collection, i.e. sequence, of two or more numeric values of a coordinate operation parameter list, where each value has the same associated unit
-     *
+     * Ordered collection (sequence), of two or more numeric values of a coordinate operation parameter list,
+     * where each value has the same associated unit.
      */
     @JsonProperty(value="valueList", index=140)
     @JsonPropertyDescription("ordered collection, i.e. sequence, of two or more numeric values of a coordinate operation parameter list, where each value has the same associated unit")
     public List<Measure> valueList;
 
     /**
-     * ordered collection, i.e. sequence, of two or more integer values of a coordinate operation parameter list, usually used for counts
-     * Note: These integer values do not have an associated unit.
-     *
+     * Ordered collection (sequence), of two or more integer values of a coordinate operation parameter list, usually used for counts.
+     * These integer values do not have an associated unit.
      */
     @JsonProperty(value="integerValueList", index=150)
-    @JsonPropertyDescription("ordered collection, i.e. sequence, of two or more integer values of a coordinate operation parameter list, usually used for counts\r\nNote: These integer values do not have an associated unit.")
+    @JsonPropertyDescription("ordered collection, i.e. sequence, of two or more integer values of a coordinate operation parameter list, usually used for counts")
     public List<Integer> integerValueList;
 
     /**
-     * reference to a file or an identified part of a file containing one or more parameter values" and note changed to "Note: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents
-     *
+     * Reference to a file or an identified part of a file containing one or more parameter values.
+     * The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents.
      */
     @JsonProperty(value="valueFile", index=160)
-    @JsonPropertyDescription("reference to a file or an identified part of a file containing one or more parameter values\" and note changed to \"Note: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents")
+    @JsonPropertyDescription("reference to a file or an identified part of a file containing one or more parameter values")
     public String valueFile;
 
     /**
-     * citation for a reference to a file or an identified part of a file containing one or more parameter values
-     *
-     * Note: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents
-     *
+     * Citation for a reference to a file or an identified part of a file containing one or more parameter values.
+     * The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents.
      */
     @JsonProperty(value="valueFileCitation", index=170)
-    @JsonPropertyDescription("citation for a reference to a file or an identified part of a file containing one or more parameter values\r\n\r\nNote: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents")
+    @JsonPropertyDescription("citation for a reference to a file or an identified part of a file containing one or more parameter values")
     public Object valueFileCitation;
 
     /**
-     * identifier of a geographic feature of which the coordinates are used as operation parameters
-     *
+     * Identifier of a geographic feature of which the coordinates are used as operation parameters.
      */
     @JsonProperty(value="geographicObject", index=180)
     @JsonPropertyDescription("identifier of a geographic feature of which the coordinates are used as operation parameters")

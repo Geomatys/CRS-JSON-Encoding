@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * n-dimensional coordinate system in which every axis uses integers
- * Note: The number of associations shall be equal the dimension of the coordinate system.
- *
+ * <var>n</var>-dimensional coordinate system in which every axis uses integers.
+ * The number of associations shall be equal the dimension of the coordinate system.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,11 +19,9 @@ public class OrdinalCS
     extends CoordinateSystem
 {
     /**
-     * datatype of coordinate values
-     * (Required)
-     *
+     * Datatype of coordinate values.
      */
-    @JsonProperty(value="coordinateType", index=200)
+    @JsonProperty(value="coordinateType", index=200, required=true)
     @JsonPropertyDescription("datatype of coordinate values")
     public String coordinateType;
 

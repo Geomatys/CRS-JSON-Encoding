@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.
- * Note: A DateTimeTemporalCS shall have one axis association. It does not use axisUnitID; the temporal quantities are defined through the ISO 8601 representation.
- *
+ * One-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.
+ * A {@code DateTimeTemporalCS} shall have one axis association.
+ * It does not use {@code axisUnitID}; the temporal quantities are defined through the ISO 8601 representation.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

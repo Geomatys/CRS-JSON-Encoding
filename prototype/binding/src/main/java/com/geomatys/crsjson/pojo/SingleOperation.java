@@ -11,8 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * single (not concatenated) coordinate operation
- *
+ * Single (not concatenated) coordinate operation.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,8 +20,7 @@ public class SingleOperation
     extends CoordinateOperation
 {
     /**
-     * parameter value or parameter value group used by this single operation
-     *
+     * Parameter value or parameter value group used by this single operation.
      */
     @JsonProperty(value="parameterValue", index=200)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
@@ -30,11 +28,9 @@ public class SingleOperation
     public Set<Object> parameterValue;
 
     /**
-     * algorithm or procedure used by this single operation
-     * (Required)
-     *
+     * Algorithm or procedure used by this single operation.
      */
-    @JsonProperty(value="method", index=210)
+    @JsonProperty(value="method", index=210, required=true)
     @JsonPropertyDescription("algorithm or procedure used by this single operation")
     public Object method;
 

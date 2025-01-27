@@ -11,10 +11,15 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * coordinate reference system having a vertical reference frame and a one-dimensional vertical coordinate system used for recording gravity-related heights or depths; vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward.
- * Note 1: If the vertical reference frame is dynamic then the vertical CRS is dynamic, else it is static.
- * Note 2: Ellipsoidal heights cannot be captured in a vertical coordinate reference system. They exist only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system.
+ * Coordinate reference system having a vertical reference frame and a one-dimensional vertical coordinate system
+ * used for recording gravity-related heights or depths.
+ * Vertical <abbr>CRS</abbr>s make use of the direction of gravity to define the concept of height or depth,
+ * but the relationship with gravity may not be straightforward.
  *
+ * <p><b>Note 1:</b> If the vertical reference frame is dynamic then the vertical CRS is dynamic, else it is static.</p>
+ *
+ * <p><b>Note 2:</b> Ellipsoidal heights cannot be captured in a vertical coordinate reference system.
+ * They exist only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system.</p>
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,8 +28,7 @@ public class VerticalCRS
     extends SingleCRS
 {
     /**
-     * geoid model or height correction model that is associated with this vertical coordinate reference system
-     *
+     * Geoid model or height correction model that is associated with this vertical coordinate reference system.
      */
     @JsonProperty(value="geoidModel", index=300)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
@@ -32,8 +36,7 @@ public class VerticalCRS
     public Set<Object> geoidModel;
 
     /**
-     * velocity model or deformation grid that is applied to this vertical coordinate reference system
-     *
+     * Velocity model or deformation grid that is applied to this vertical coordinate reference system.
      */
     @JsonProperty(value="velocityModel", index=310)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

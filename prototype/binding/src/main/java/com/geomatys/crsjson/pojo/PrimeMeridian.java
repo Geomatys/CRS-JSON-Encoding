@@ -9,9 +9,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * origin meridian from which longitude values are determined
- * Note: The default value for prime meridian name is “Greenwich”. When the default applies, the value for the greenwichLongitude shall be 0 (degrees).
- *
+ * Origin meridian from which longitude values are determined.
+ * The default value for prime meridian name is “Greenwich”.
+ * When the default applies, the value for the {@link #greenwichLongitude} shall be 0 (degrees).
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,14 +20,16 @@ public class PrimeMeridian
     extends IdentifiedObject
 {
     /**
-     * measure object
-     * <p>
-     * definition of a measure object
-     * (Required)
+     * Longitude of the prime meridian measured from the internationally-recognised reference meridian.
+     * Positive eastward.
      *
+     * <p><b>Note 1:</b> Default value: 0 degrees.</p>
+     *
+     * <p><b>Note 2:</b> If the value of the prime meridian name is “Greenwich”
+     * then the value of {@code greenwichLongitude} is required to be 0 degrees.</p>
      */
-    @JsonProperty(value="greenwichLongitude", index=100)
-    @JsonPropertyDescription("definition of a measure object")
+    @JsonProperty(value="greenwichLongitude", index=100, required=true)
+    @JsonPropertyDescription("longitude of the prime meridian measured from the internationally-recognised reference meridian")
     public Measure greenwichLongitude;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

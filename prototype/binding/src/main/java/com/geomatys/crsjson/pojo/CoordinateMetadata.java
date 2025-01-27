@@ -9,44 +9,38 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * metadata required to reference coordinates
- *
+ * Metadata required to reference coordinates.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class CoordinateMetadata {
     /**
-     *
-     * (Required)
-     *
+     * The object type.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * identifier of the coordinate reference system to which a coordinate set is referenced
-     *
+     * Identifier of the coordinate reference system to which a coordinate set is referenced.
      */
     @JsonProperty(value="crsID", index=10)
     @JsonPropertyDescription("identifier of the coordinate reference system to which a coordinate set is referenced")
     public Object crsID;
 
     /**
-     * full definition of the coordinate reference system to which a coordinate set is referenced
-     *
+     * Full definition of the coordinate reference system to which a coordinate set is referenced.
      */
     @JsonProperty(value="crs", index=20)
     @JsonPropertyDescription("full definition of the coordinate reference system to which a coordinate set is referenced")
     public Object crs;
 
     /**
-     * epoch at which a coordinate set referenced to a dynamic CRS is valid
-     * Note: Required if the CRS is dynamic, otherwise should no be given.
-     *
+     * Epoch at which a coordinate set referenced to a dynamic CRS is valid.
+     * Required if the <abbr>CRS</abbr> is dynamic, otherwise should no be given.
      */
     @JsonProperty(value="coordinateEpoch", index=30)
-    @JsonPropertyDescription("epoch at which a coordinate set referenced to a dynamic CRS is valid \r\nNote: Required if the CRS is dynamic, otherwise should no be given.")
+    @JsonPropertyDescription("epoch at which a coordinate set referenced to a dynamic CRS is valid")
     public Object coordinateEpoch;
 
     // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════

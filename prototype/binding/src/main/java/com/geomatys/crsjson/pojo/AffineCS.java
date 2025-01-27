@@ -7,9 +7,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal
- * Note: The number of associations shall equal the dimension of the coordinate system.
- *
+ * Two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal.
+ * The number of associations shall equal the dimension of the coordinate system.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

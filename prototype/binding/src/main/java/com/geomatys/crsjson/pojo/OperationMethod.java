@@ -11,8 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * method (algorithm or procedure) used to perform the coordinate operation
- *
+ * Method (algorithm or procedure) used to perform the coordinate operation.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,17 +20,14 @@ public class OperationMethod
     extends IdentifiedObject
 {
     /**
-     * specification of the coordinate operation method formula
-     * (Required)
-     *
+     * Specification of the coordinate operation method formula.
      */
-    @JsonProperty(value="formulaReference", index=100)
+    @JsonProperty(value="formulaReference", index=100, required=true)
     @JsonPropertyDescription("specification of the coordinate operation method formula")
     public Formula formulaReference;
 
     /**
-     * parameter or parameter group used by this coordinate operation method
-     *
+     * Parameter or parameter group used by this coordinate operation method.
      */
     @JsonProperty(value="parameter", index=110)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

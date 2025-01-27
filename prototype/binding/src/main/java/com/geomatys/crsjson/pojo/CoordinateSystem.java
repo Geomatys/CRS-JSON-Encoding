@@ -12,9 +12,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * non-repeating sequence of coordinate system axes that spans a given coordinate space
- * Note: A coordinate system is derived from a set of mathematical rules for specifying how coordinates in a given space are to be assigned to points. The coordinate values in a coordinate tuple shall be recorded in the order in which the coordinate system axes associations are recorded.
- *
+ * Non-repeating sequence of coordinate system axes that spans a given coordinate space.
+ * A coordinate system is derived from a set of mathematical rules for specifying how coordinates
+ * in a given space are to be assigned to points.
+ * The coordinate values in a coordinate tuple shall be recorded in the order
+ * in which the coordinate system axes associations are recorded.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,11 +25,9 @@ public class CoordinateSystem
     extends IdentifiedObject
 {
     /**
-     * coordinate system axis that is a component of this coordinate system
-     * (Required)
-     *
+     * Coordinate system axis that is a component of this coordinate system.
      */
-    @JsonProperty(value="axis", index=100)
+    @JsonProperty(value="axis", index=100, required=true)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("coordinate system axis that is a component of this coordinate system")
     public Set<Object> axis;
