@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -16,14 +15,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "greenwichLongitude"
-})
 @Generated("jsonschema2pojo")
 public class PrimeMeridian
     extends IdentifiedObject
 {
-
     /**
      * measure object
      * <p>
@@ -31,7 +26,7 @@ public class PrimeMeridian
      * (Required)
      *
      */
-    @JsonProperty("greenwichLongitude")
+    @JsonProperty(value="greenwichLongitude", index=100)
     @JsonPropertyDescription("definition of a measure object")
     public Measure greenwichLongitude;
 

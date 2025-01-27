@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -18,24 +17,20 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "velocityModel",
-    "definingTransformation"
-})
 @Generated("jsonschema2pojo")
 public class GeodeticCRS
     extends SingleCRS
 {
-
     /**
      * velocity model or deformation grid that may be applied to this geodetic coordinate reference system
      *
      */
-    @JsonProperty("velocityModel")
+    @JsonProperty(value="velocityModel", index=300)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("velocity model or deformation grid that may be applied to this geodetic coordinate reference system")
     public Set<Object> velocityModel;
-    @JsonProperty("definingTransformation")
+
+    @JsonProperty(value="definingTransformation", index=310)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     public Set<Object> definingTransformation;
 

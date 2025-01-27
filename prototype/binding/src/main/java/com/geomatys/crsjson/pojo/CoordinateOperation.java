@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -18,71 +17,67 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "operationVersion",
-    "coordinateOperationAccuracy",
-    "targetCoordinateEpoch",
-    "sourceCoordinateEpoch",
-    "sourceCRS",
-    "interpolationCRS",
-    "targetCRS"
-})
 @Generated("jsonschema2pojo")
 public class CoordinateOperation
     extends ObjectUsage
 {
-
     /**
      * version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters)
      * Condition: Mandatory when describing a coordinate transformation or point motion operation, and should not be supplied for a coordinate conversion.
      *
      */
-    @JsonProperty("operationVersion")
+    @JsonProperty(value="operationVersion", index=100)
     @JsonPropertyDescription("version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters) \r\nCondition: Mandatory when describing a coordinate transformation or point motion operation, and should not be supplied for a coordinate conversion.")
     public String operationVersion;
+
     /**
      * estimate(s) of the impact of this coordinate operation on point accuracy
      * Note: Gives position error estimates for target coordinates of this coordinate operation, assuming no errors in source coordinates.
      *
      */
-    @JsonProperty("coordinateOperationAccuracy")
+    @JsonProperty(value="coordinateOperationAccuracy", index=110)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("estimate(s) of the impact of this coordinate operation on point accuracy\r\nNote: Gives position error estimates for target coordinates of this coordinate operation, assuming no errors in source coordinates.")
     public Set<Object> coordinateOperationAccuracy;
+
     /**
      * coordinate epoch of the coordinate set output from this coordinate operation
      *
      */
-    @JsonProperty("targetCoordinateEpoch")
+    @JsonProperty(value="targetCoordinateEpoch", index=160)
     @JsonPropertyDescription("coordinate epoch of the coordinate set output from this coordinate operation")
     public Object targetCoordinateEpoch;
+
     /**
      * coordinate epoch of the coordinate set input into this coordinate operation
      *
      */
-    @JsonProperty("sourceCoordinateEpoch")
+    @JsonProperty(value="sourceCoordinateEpoch", index=150)
     @JsonPropertyDescription("coordinate epoch of the coordinate set input into this coordinate operation")
     public Object sourceCoordinateEpoch;
+
     /**
      * coordinate reference system to which the coordinate set input into this coordinate operation is referenced
      *
      */
-    @JsonProperty("sourceCRS")
+    @JsonProperty(value="sourceCRS", index=120)
     @JsonPropertyDescription("coordinate reference system to which the coordinate set input into this coordinate operation is referenced")
     public Object sourceCRS;
+
     /**
      * "coordinate reference system to which gridded data files are referenced which this coordinate operation uses to  transform coordinates between two other coordinate reference systems
      * Note: InterpolationCRS is only used when it is different from both sourceCRS and targetCRS."
      *
      */
-    @JsonProperty("interpolationCRS")
+    @JsonProperty(value="interpolationCRS", index=140)
     @JsonPropertyDescription("\"coordinate reference system to which gridded data files are referenced which this coordinate operation uses to  transform coordinates between two other coordinate reference systems\r\nNote: InterpolationCRS is only used when it is different from both sourceCRS and targetCRS.\"")
     public Object interpolationCRS;
+
     /**
      * coordinate reference system to which the coordinate set output from this coordinate operation is referenced
      *
      */
-    @JsonProperty("targetCRS")
+    @JsonProperty(value="targetCRS", index=130)
     @JsonPropertyDescription("coordinate reference system to which the coordinate set output from this coordinate operation is referenced")
     public Object targetCRS;
 

@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -16,19 +15,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "realizationMethod"
-})
 @Generated("jsonschema2pojo")
 public class VerticalReferenceFrame
     extends Datum
 {
-
     /**
      * specification of the method by which the vertical reference frame is realized
      *
      */
-    @JsonProperty("realizationMethod")
+    @JsonProperty(value="realizationMethod", index=200)
     @JsonPropertyDescription("specification of the method by which the vertical reference frame is realized")
     public String realizationMethod;
 

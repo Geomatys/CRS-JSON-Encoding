@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -18,20 +17,16 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "componentReferenceSystem"
-})
 @Generated("jsonschema2pojo")
 public class CompoundCRS
     extends Crs
 {
-
     /**
      * coordinate reference system that is a component of this compound coordinate reference system
      * (Required)
      *
      */
-    @JsonProperty("componentReferenceSystem")
+    @JsonProperty(value="componentReferenceSystem", index=200)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("coordinate reference system that is a component of this compound coordinate reference system")
     public Set<Object> componentReferenceSystem;
