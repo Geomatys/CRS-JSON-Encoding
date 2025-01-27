@@ -9,29 +9,22 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * measure object
- * <p>
- * definition of a measure object
- *
+ * Value with its unit of measurement.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class Measure {
     /**
-     *
-     * (Required)
-     *
+     * The value.
      */
-    @JsonProperty(value="value", index=10)
+    @JsonProperty(value="value", index=10, required=true)
     public Double value;
 
     /**
-     *
-     * (Required)
-     *
+     * The unit of measurement.
      */
-    @JsonProperty(value="uom", index=20)
+    @JsonProperty(value="uom", index=20, required=true)
     public String uom;
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════

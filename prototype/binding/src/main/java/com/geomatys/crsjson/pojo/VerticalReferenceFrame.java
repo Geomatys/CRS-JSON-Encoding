@@ -9,9 +9,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * textual description and/or a set of parameters identifying a particular reference level surface used as a zero-height or zero-depth surface, including its position with respect to the Earth
- * Note: In 19111:2007 this class was called VerticalDatum.
+ * Textual description and/or a set of parameters identifying a particular reference level surface
+ * used as a zero-height or zero-depth surface, including its position with respect to the Earth.
  *
+ * <p><b>Note:</b> In 19111:2007 this class was called {@code VerticalDatum}.</p>
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,8 +21,7 @@ public class VerticalReferenceFrame
     extends Datum
 {
     /**
-     * specification of the method by which the vertical reference frame is realized
-     *
+     * Specification of the method by which the vertical reference frame is realized.
      */
     @JsonProperty(value="realizationMethod", index=200)
     @JsonPropertyDescription("specification of the method by which the vertical reference frame is realized")

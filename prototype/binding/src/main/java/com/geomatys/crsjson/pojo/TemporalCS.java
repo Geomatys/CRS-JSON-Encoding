@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * one-dimensional coordinate system used to record time
- * Note: A TemporalCS shall have one axis association.
- *
+ * One-dimensional coordinate system used to record time.
+ * A {@code TemporalCS} shall have one axis association.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,13 +18,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public class TemporalCS
     extends CoordinateSystem
 {
-
     /**
-     * datatype of coordinate values
-     * (Required)
-     *
+     * Datatype of coordinate values.
      */
-    @JsonProperty(value="coordinateType", index=200)
+    @JsonProperty(value="coordinateType", index=200, required=true)
     @JsonPropertyDescription("datatype of coordinate values")
     public String coordinateType;
 

@@ -10,9 +10,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * definition of the relationship of a temporal coordinate system to an object
- * Note: The object is normally time on the Earth.
- *
+ * Definition of the relationship of a temporal coordinate system to an object.
+ * The object is normally time on the Earth.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,20 +20,16 @@ public class TemporalDatum
     extends Datum
 {
     /**
-     * date and time to which temporal coordinates are referenced, expressed in conformance with ISO 8601
-     * (Required)
-     *
+     * Date and time to which temporal coordinates are referenced, expressed in conformance with ISO 8601.
      */
-    @JsonProperty(value="origin", index=200)
+    @JsonProperty(value="origin", index=200, required=true)
     @JsonPropertyDescription("date and time to which temporal coordinates are referenced, expressed in conformance with ISO 8601")
     public Date origin;
 
     /**
-     * specification of the calendar to which a temporal origin is referenced
-     * (Required)
-     *
+     * Specification of the calendar to which a temporal origin is referenced.
      */
-    @JsonProperty(value="calendar", index=210)
+    @JsonProperty(value="calendar", index=210, required=true)
     @JsonPropertyDescription("specification of the calendar to which a temporal origin is referenced")
     public String calendar;
 

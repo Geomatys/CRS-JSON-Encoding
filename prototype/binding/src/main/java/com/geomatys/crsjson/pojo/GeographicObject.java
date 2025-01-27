@@ -11,24 +11,21 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * identification of an object used as a parameter in a coordinate transformation, point motion operation or coordinate conversion
- *
+ * Identification of an object used as a parameter in a coordinate transformation,
+ * point motion operation or coordinate conversion.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class GeographicObject {
     /**
-     *
-     * (Required)
-     *
+     * The object type.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * identifier of the geographic object
-     *
+     * Identifier of the geographic object.
      */
     @JsonProperty(value="identifier", index=10)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

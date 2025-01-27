@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * coordinate reference system associated with a geodetic reference frame and a two- or three-dimensional ellipsoidal coordinate system
- * Note: If the geodetic reference frame is dynamic then the geographic CRS is dynamic, else it is static.
- *
+ * Coordinate reference system associated with a geodetic reference frame
+ * and a two- or three-dimensional ellipsoidal coordinate system.
+ * If the geodetic reference frame is dynamic then the geographic <abbr>CRS</abbr> is dynamic, else it is static.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

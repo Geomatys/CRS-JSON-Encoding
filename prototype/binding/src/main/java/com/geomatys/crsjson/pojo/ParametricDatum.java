@@ -11,8 +11,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
- * textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth
- *
+ * Textual description and/or a set of parameters identifying a particular reference surface
+ * used as the origin of a parametric coordinate system, including its position with respect to the Earth.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,8 +21,7 @@ public class ParametricDatum
     extends Datum
 {
     /**
-     * parameter used to define the parametric datum
-     *
+     * Parameter used to define the parametric datum.
      */
     @JsonProperty(value="datumDefiningParameter", index=200)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)

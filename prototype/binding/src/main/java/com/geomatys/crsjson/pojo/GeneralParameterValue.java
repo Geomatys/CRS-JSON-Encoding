@@ -9,27 +9,22 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * parameter value or group of parameter values
- *
+ * Parameter value or group of parameter values.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("jsonschema2pojo")
 public class GeneralParameterValue {
     /**
-     *
-     * (Required)
-     *
+     * The object type.
      */
-    @JsonProperty(value="entityType", index=0)
+    @JsonProperty(value="entityType", index=0, required=true)
     public String entityType;
 
     /**
-     * parameter or parameter group which has this value or value group
-     * (Required)
-     *
+     * Parameter or parameter group which has this value or value group.
      */
-    @JsonProperty(value="parameter", index=10)
+    @JsonProperty(value="parameter", index=10, required=true)
     @JsonPropertyDescription("parameter or parameter group which has this value or value group")
     public Object parameter;
 

@@ -7,9 +7,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height
- * Note: An EllipsoidalCS shall have two or three associations; the number of associations shall equal the dimension of the coordinate system.
- *
+ * Two- or three-dimensional coordinate system in which position is specified by geodetic latitude,
+ * geodetic longitude, and (in the three-dimensional case) ellipsoidal height.
+ * An {@code EllipsoidalCS} shall have two or three associations.
+ * The number of associations shall equal the dimension of the coordinate system.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

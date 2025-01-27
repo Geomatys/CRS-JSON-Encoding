@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
- * three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system
- * Note: A CylindricalCS shall have three axis associations.
- *
+ * Three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system
+ * extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system.
+ * A {@code CylindricalCS} shall have three axis associations.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)

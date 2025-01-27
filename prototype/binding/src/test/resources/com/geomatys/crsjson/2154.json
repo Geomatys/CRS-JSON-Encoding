@@ -6,6 +6,29 @@
   "domain" : [ {
     "scope" : "Large and medium scale topographic mapping and engineering survey."
   } ],
+  "coordinateSystem" : {
+    "entityType" : "CartesianCS",
+    "name" : "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.",
+    "identifier" : [ "4499" ],
+    "remarks" : "Used in projected and engineering coordinate reference systems.",
+    "axis" : [ {
+      "entityType" : "CoordinateSystemAxis",
+      "name" : "Easting",
+      "identifier" : [ "41" ],
+      "remarks" : "East pointing axis used in 2D projected coordinate systems.",
+      "axisAbbrev" : "X",
+      "axisDirection" : "east",
+      "axisUnitID" : "m"
+    }, {
+      "entityType" : "CoordinateSystemAxis",
+      "name" : "Northing",
+      "identifier" : [ "42" ],
+      "remarks" : "North pointing axis used in 2D projected coordinate systems.",
+      "axisAbbrev" : "Y",
+      "axisDirection" : "north",
+      "axisUnitID" : "m"
+    } ]
+  },
   "datum" : {
     "entityType" : "GeodeticReferenceFrame",
     "name" : "Réseau Géodésique Français 1993",
@@ -43,29 +66,6 @@
       }
     }
   },
-  "coordinateSystem" : {
-    "entityType" : "CartesianCS",
-    "name" : "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.",
-    "identifier" : [ "4499" ],
-    "remarks" : "Used in projected and engineering coordinate reference systems.",
-    "axis" : [ {
-      "entityType" : "CoordinateSystemAxis",
-      "name" : "Easting",
-      "identifier" : [ "41" ],
-      "remarks" : "East pointing axis used in 2D projected coordinate systems.",
-      "axisAbbrev" : "X",
-      "axisDirection" : "east",
-      "axisUnitID" : "m"
-    }, {
-      "entityType" : "CoordinateSystemAxis",
-      "name" : "Northing",
-      "identifier" : [ "42" ],
-      "remarks" : "North pointing axis used in 2D projected coordinate systems.",
-      "axisAbbrev" : "Y",
-      "axisDirection" : "north",
-      "axisUnitID" : "m"
-    } ]
-  },
   "baseCRS" : {
     "entityType" : "GeographicCRS",
     "name" : "RGF93",
@@ -75,6 +75,35 @@
     "domain" : [ {
       "scope" : "Geodetic survey, air, land and sea navigation and safety of life purposes. Horizontal component of 3D system."
     } ],
+    "coordinateSystem" : {
+      "entityType" : "EllipsoidalCS",
+      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
+      "identifier" : [ "6422" ],
+      "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
+      "axis" : [ {
+        "entityType" : "CoordinateSystemAxis",
+        "name" : "Geodetic latitude",
+        "identifier" : [ "106" ],
+        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "axisAbbrev" : "Lat",
+        "axisDirection" : "north",
+        "axisUnitID" : "°",
+        "minimumValue" : -90.0,
+        "maximumValue" : 90.0,
+        "rangeMeaning" : "exact"
+      }, {
+        "entityType" : "CoordinateSystemAxis",
+        "name" : "Geodetic longitude",
+        "identifier" : [ "107" ],
+        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "axisAbbrev" : "Lon",
+        "axisDirection" : "east",
+        "axisUnitID" : "°",
+        "minimumValue" : -180.0,
+        "maximumValue" : 180.0,
+        "rangeMeaning" : "wraparound"
+      } ]
+    },
     "datum" : {
       "entityType" : "GeodeticReferenceFrame",
       "name" : "Réseau Géodésique Français 1993",
@@ -111,35 +140,6 @@
           "isSphere" : false
         }
       }
-    },
-    "coordinateSystem" : {
-      "entityType" : "EllipsoidalCS",
-      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
-      "identifier" : [ "6422" ],
-      "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
-      "axis" : [ {
-        "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic latitude",
-        "identifier" : [ "106" ],
-        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
-        "axisAbbrev" : "Lat",
-        "axisDirection" : "north",
-        "axisUnitID" : "°",
-        "minimumValue" : -90.0,
-        "maximumValue" : 90.0,
-        "rangeMeaning" : "exact"
-      }, {
-        "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic longitude",
-        "identifier" : [ "107" ],
-        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
-        "axisAbbrev" : "Lon",
-        "axisDirection" : "east",
-        "axisUnitID" : "°",
-        "minimumValue" : -180.0,
-        "maximumValue" : 180.0,
-        "rangeMeaning" : "wraparound"
-      } ]
     }
   },
   "derivingConversion" : {
