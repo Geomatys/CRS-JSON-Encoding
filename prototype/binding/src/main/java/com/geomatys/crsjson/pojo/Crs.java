@@ -17,7 +17,6 @@ public class Crs
     extends ObjectUsage
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

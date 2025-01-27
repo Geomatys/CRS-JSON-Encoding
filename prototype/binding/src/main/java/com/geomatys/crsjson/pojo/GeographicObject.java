@@ -40,4 +40,11 @@ public class GeographicObject {
     @JsonPropertyDescription("identifier of the geographic object")
     public Set<Object> identifier;
 
+    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public GeographicObject() {
+    }
 }

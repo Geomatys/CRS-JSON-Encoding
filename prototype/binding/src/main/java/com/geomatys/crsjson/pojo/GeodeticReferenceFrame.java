@@ -42,7 +42,6 @@ public class GeodeticReferenceFrame
     @JsonPropertyDescription("ellipsoid which is a component of this geodetic reference frame")
     public Object ellipsoid;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

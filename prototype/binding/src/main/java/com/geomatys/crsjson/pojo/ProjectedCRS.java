@@ -18,8 +18,6 @@ public class ProjectedCRS
     extends DerivedCRS
 {
 
-
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
@@ -36,5 +34,6 @@ public class ProjectedCRS
      */
     public ProjectedCRS(final org.opengis.referencing.crs.ProjectedCRS impl) {
         super(impl);
+        entityType = "ProjectedCRS";
     }
 }

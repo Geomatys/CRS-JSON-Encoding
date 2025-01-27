@@ -18,7 +18,6 @@ public class OperationParameter
     extends GeneralOperationParameter
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

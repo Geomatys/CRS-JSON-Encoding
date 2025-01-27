@@ -168,7 +168,7 @@
       "scope" : "Large and medium scale topographic mapping and engineering survey."
     } ]
   },
-  "entityType" : "DerivedCRS",
+  "entityType" : "ProjectedCRS",
   "name" : "RGF93 / Lambert-93",
   "identifier" : [ "2154" ],
   "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)" ],

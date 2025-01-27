@@ -18,7 +18,6 @@ public class EllipsoidalCS
     extends CoordinateSystem
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

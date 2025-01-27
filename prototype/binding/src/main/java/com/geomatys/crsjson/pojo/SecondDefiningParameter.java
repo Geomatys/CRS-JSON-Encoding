@@ -51,7 +51,6 @@ public class SecondDefiningParameter {
     @JsonPropertyDescription("ellipsoid is degenerate and is actually a sphere\r\nNote: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value \u201ctrue\u201d if the figure is a sphere.")
     public Boolean isSphere;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

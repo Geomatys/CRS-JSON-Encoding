@@ -35,7 +35,6 @@ public class PrimeMeridian
     @JsonPropertyDescription("definition of a measure object")
     public Measure greenwichLongitude;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

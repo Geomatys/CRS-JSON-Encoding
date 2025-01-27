@@ -18,7 +18,6 @@ public class Transformation
     extends SingleOperation
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

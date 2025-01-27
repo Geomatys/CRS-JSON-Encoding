@@ -39,7 +39,6 @@ public class Measure {
     @JsonProperty("uom")
     public String uom;
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**

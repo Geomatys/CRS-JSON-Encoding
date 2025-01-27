@@ -47,4 +47,22 @@ public class DatumEnsemble
     @JsonPropertyDescription("datum or reference frame which is a member of this datum ensemble")
     public Set<Object> datum;
 
+    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
+
+    /**
+     * Creates a new instance with all values initialized to null.
+     */
+    public DatumEnsemble() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     * The argument is an implementation of an external project such as Apache SIS or PROJ.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     */
+    public DatumEnsemble(final org.opengis.referencing.datum.Datum impl) {
+        super(impl);
+        entityType = "DatumEnsemble";
+    }
 }

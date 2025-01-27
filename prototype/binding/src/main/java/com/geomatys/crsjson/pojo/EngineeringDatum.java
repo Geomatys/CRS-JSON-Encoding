@@ -18,7 +18,6 @@ public class EngineeringDatum
     extends Datum
 {
 
-
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
