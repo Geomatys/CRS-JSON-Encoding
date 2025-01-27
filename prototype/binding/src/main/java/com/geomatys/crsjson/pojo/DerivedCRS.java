@@ -1,7 +1,6 @@
 
 package com.geomatys.crsjson.pojo;
 
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class DerivedCRS
     extends SingleCRS
 {
@@ -34,8 +32,6 @@ public class DerivedCRS
     @JsonProperty(value="derivingConversion", index=310, required=true)
     @JsonPropertyDescription("conversion that is a component of this derived coordinate reference system")
     public Object derivingConversion;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

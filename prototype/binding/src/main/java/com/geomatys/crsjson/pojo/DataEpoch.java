@@ -1,7 +1,6 @@
 
 package com.geomatys.crsjson.pojo;
 
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -13,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class DataEpoch {
     /**
      * The object type.
@@ -29,8 +27,6 @@ public class DataEpoch {
     @JsonProperty(value="coordinateEpoch", index=10)
     @JsonPropertyDescription("date at which coordinates are referenced to a dynamic coordinate reference system, expressed as a decimal year in the Gregorian calendar")
     public Measure coordinateEpoch;
-
-    // ════════════════════════════ Codes below this point were added/removed manually ════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

@@ -1,7 +1,6 @@
 
 package com.geomatys.crsjson.pojo;
 
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -12,13 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class ParametricCRS
     extends SingleCRS
 {
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
-
     /**
      * Creates a new instance with all values initialized to null.
      */

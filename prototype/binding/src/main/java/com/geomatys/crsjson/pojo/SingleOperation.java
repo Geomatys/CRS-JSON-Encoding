@@ -2,7 +2,6 @@
 package com.geomatys.crsjson.pojo;
 
 import java.util.Set;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class SingleOperation
     extends CoordinateOperation
 {
@@ -33,8 +31,6 @@ public class SingleOperation
     @JsonProperty(value="method", index=210, required=true)
     @JsonPropertyDescription("algorithm or procedure used by this single operation")
     public Object method;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

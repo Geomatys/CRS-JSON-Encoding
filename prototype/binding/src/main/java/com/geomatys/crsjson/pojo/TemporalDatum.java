@@ -2,7 +2,6 @@
 package com.geomatys.crsjson.pojo;
 
 import java.util.Date;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class TemporalDatum
     extends Datum
 {
@@ -32,8 +30,6 @@ public class TemporalDatum
     @JsonProperty(value="calendar", index=210, required=true)
     @JsonPropertyDescription("specification of the calendar to which a temporal origin is referenced")
     public String calendar;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

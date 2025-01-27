@@ -3,7 +3,6 @@ package com.geomatys.crsjson.pojo;
 
 import java.util.List;
 import java.util.Arrays;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class PassThroughOperation
     extends CoordinateOperation
 {
@@ -33,8 +31,6 @@ public class PassThroughOperation
     @JsonProperty(value="coordOperation", index=210, required=true)
     @JsonPropertyDescription("subset of a coordinate tuple that the coordinate operation will operate upon")
     public Object coordOperation;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.

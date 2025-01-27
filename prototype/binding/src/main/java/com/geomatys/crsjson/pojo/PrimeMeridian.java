@@ -1,7 +1,6 @@
 
 package com.geomatys.crsjson.pojo;
 
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("jsonschema2pojo")
 public class PrimeMeridian
     extends IdentifiedObject
 {
@@ -31,8 +29,6 @@ public class PrimeMeridian
     @JsonProperty(value="greenwichLongitude", index=100, required=true)
     @JsonPropertyDescription("longitude of the prime meridian measured from the internationally-recognised reference meridian")
     public Measure greenwichLongitude;
-
-    // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 
     /**
      * Creates a new instance with all values initialized to null.
