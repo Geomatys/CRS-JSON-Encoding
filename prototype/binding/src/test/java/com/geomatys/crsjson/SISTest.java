@@ -15,6 +15,7 @@
  */
 package com.geomatys.crsjson;
 
+import java.util.Locale;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -39,6 +40,7 @@ public class SISTest {
      * Creates a new test case.
      */
     public SISTest() {
+        Locale.setDefault(Locale.CANADA);
         writer = new Writer();
     }
 

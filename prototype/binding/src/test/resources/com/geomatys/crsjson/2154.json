@@ -130,32 +130,32 @@
         "entityType" : "OperationParameter",
         "name" : "Latitude of false origin",
         "identifier" : [ "8821" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       }, {
         "entityType" : "OperationParameter",
         "name" : "Longitude of false origin",
         "identifier" : [ "8822" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       }, {
         "entityType" : "OperationParameter",
         "name" : "Latitude of 1st standard parallel",
         "identifier" : [ "8823" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       }, {
         "entityType" : "OperationParameter",
         "name" : "Latitude of 2nd standard parallel",
         "identifier" : [ "8824" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       }, {
         "entityType" : "OperationParameter",
         "name" : "Easting at false origin",
         "identifier" : [ "8826" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       }, {
         "entityType" : "OperationParameter",
         "name" : "Northing at false origin",
         "identifier" : [ "8827" ],
-        "remarks" : "L’opération inverse utilise la même valeur pour ce paramètre."
+        "remarks" : "Inverse operation uses the same parameter value."
       } ],
       "entityType" : "OperationMethod",
       "name" : "Lambert Conic Conformal (2SP)",
