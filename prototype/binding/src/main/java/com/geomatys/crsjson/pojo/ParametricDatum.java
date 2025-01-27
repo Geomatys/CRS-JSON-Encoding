@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -17,19 +16,15 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "datumDefiningParameter"
-})
 @Generated("jsonschema2pojo")
 public class ParametricDatum
     extends Datum
 {
-
     /**
      * parameter used to define the parametric datum
      *
      */
-    @JsonProperty("datumDefiningParameter")
+    @JsonProperty(value="datumDefiningParameter", index=200)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("parameter used to define the parametric datum")
     public Set<Object> datumDefiningParameter;

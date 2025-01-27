@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -22,20 +21,16 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "coordOperation"
-})
 @Generated("jsonschema2pojo")
 public class ConcatenatedOperation
     extends CoordinateOperation
 {
-
     /**
      * coordinate operation that is a step in the sequence forming this concatenated coordinate operation
      * (Required)
      *
      */
-    @JsonProperty("coordOperation")
+    @JsonProperty(value="coordOperation", index=200)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("coordinate operation that is a step in the sequence forming this concatenated coordinate operation")
     public Set<Object> coordOperation;

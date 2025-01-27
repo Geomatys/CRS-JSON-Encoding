@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -15,36 +14,32 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "datum",
-    "coordinateSystem",
-    "datumEnsemble"
-})
 @Generated("jsonschema2pojo")
 public class SingleCRS
     extends Crs
 {
-
     /**
      * datum that is a component of this single coordinate reference system
      *
      */
-    @JsonProperty("datum")
+    @JsonProperty(value="datum", index=200)
     @JsonPropertyDescription("datum that is a component of this single coordinate reference system")
     public Object datum;
+
     /**
      * coordinate system that is a component of this single coordinate reference system
      * (Required)
      *
      */
-    @JsonProperty("coordinateSystem")
+    @JsonProperty(value="coordinateSystem", index=210)
     @JsonPropertyDescription("coordinate system that is a component of this single coordinate reference system")
     public Object coordinateSystem;
+
     /**
      * datum ensemble that is a component of this single coordinate reference system
      *
      */
-    @JsonProperty("datumEnsemble")
+    @JsonProperty(value="datumEnsemble", index=220)
     @JsonPropertyDescription("datum ensemble that is a component of this single coordinate reference system")
     public Object datumEnsemble;
 

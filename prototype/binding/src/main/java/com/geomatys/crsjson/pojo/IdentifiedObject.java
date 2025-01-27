@@ -9,7 +9,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -20,52 +19,48 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "entityType",
-    "name",
-    "identifier",
-    "alias",
-    "remarks"
-})
 @Generated("jsonschema2pojo")
 public class IdentifiedObject {
-
     /**
      *
      * (Required)
      *
      */
-    @JsonProperty("entityType")
+    @JsonProperty(value="entityType", index=0)
     public String entityType;
+
     /**
      * primary name by which this object is identified
      * (Required)
      *
      */
-    @JsonProperty("name")
+    @JsonProperty(value="name", index=10)
     @JsonPropertyDescription("primary name by which this object is identified")
     public Object name;
+
     /**
      * identifier which references elsewhere the object's defining information; alternatively an identifier by which this object can be referenced
      *
      */
-    @JsonProperty("identifier")
+    @JsonProperty(value="identifier", index=20)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("identifier which references elsewhere the object's defining information; alternatively an identifier by which this object can be referenced")
     public Set<Object> identifier;
+
     /**
      * alternative name by which this object is identified
      *
      */
-    @JsonProperty("alias")
+    @JsonProperty(value="alias", index=30)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("alternative name by which this object is identified")
     public Set<String> alias;
+
     /**
      * comments on or information about this object, including data source information
      *
      */
-    @JsonProperty("remarks")
+    @JsonProperty(value="remarks", index=40)
     @JsonPropertyDescription("comments on or information about this object, including data source information")
     public String remarks;
 

@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -17,23 +16,18 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "domain"
-})
 @Generated("jsonschema2pojo")
 public class ObjectUsage
     extends IdentifiedObject
 {
-
     /**
      * scope and validity of a CRS-related object
      *
      */
-    @JsonProperty("domain")
+    @JsonProperty(value="domain", index=90)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("scope and validity of a CRS-related object")
     public Set<ObjectDomain> domain;
-
 
     // ════════════════════════════════ Codes below this point were added manually ════════════════════════════════
 

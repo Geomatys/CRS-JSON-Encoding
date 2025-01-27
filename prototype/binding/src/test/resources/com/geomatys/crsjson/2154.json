@@ -1,4 +1,71 @@
 {
+  "entityType" : "ProjectedCRS",
+  "name" : "RGF93 / Lambert-93",
+  "identifier" : [ "2154" ],
+  "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)" ],
+  "domain" : [ {
+    "scope" : "Large and medium scale topographic mapping and engineering survey."
+  } ],
+  "datum" : {
+    "entityType" : "GeodeticReferenceFrame",
+    "name" : "Réseau Géodésique Français 1993",
+    "identifier" : [ "6171" ],
+    "alias" : [ "RGF93" ],
+    "domain" : [ {
+      "scope" : "Geodetic survey."
+    } ],
+    "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
+    "primeMeridian" : {
+      "entityType" : "PrimeMeridian",
+      "name" : "Greenwich",
+      "identifier" : [ "8901" ],
+      "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+      "greenwichLongitude" : {
+        "value" : 0.0,
+        "uom" : "°"
+      }
+    },
+    "ellipsoid" : {
+      "entityType" : "Ellipsoid",
+      "name" : "GRS 1980",
+      "identifier" : [ "7019" ],
+      "alias" : [ "International 1979" ],
+      "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
+      "semiMajorAxis" : {
+        "value" : 6378137.0,
+        "uom" : "m"
+      },
+      "secondDefiningParameter" : {
+        "inverseFlattening" : {
+          "value" : 298.257222101
+        },
+        "isSphere" : false
+      }
+    }
+  },
+  "coordinateSystem" : {
+    "entityType" : "CartesianCS",
+    "name" : "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.",
+    "identifier" : [ "4499" ],
+    "remarks" : "Used in projected and engineering coordinate reference systems.",
+    "axis" : [ {
+      "entityType" : "CoordinateSystemAxis",
+      "name" : "Easting",
+      "identifier" : [ "41" ],
+      "remarks" : "East pointing axis used in 2D projected coordinate systems.",
+      "axisAbbrev" : "X",
+      "axisDirection" : "east",
+      "axisUnitID" : "m"
+    }, {
+      "entityType" : "CoordinateSystemAxis",
+      "name" : "Northing",
+      "identifier" : [ "42" ],
+      "remarks" : "North pointing axis used in 2D projected coordinate systems.",
+      "axisAbbrev" : "Y",
+      "axisDirection" : "north",
+      "axisUnitID" : "m"
+    } ]
+  },
   "baseCRS" : {
     "entityType" : "GeographicCRS",
     "name" : "RGF93",
@@ -9,17 +76,30 @@
       "scope" : "Geodetic survey, air, land and sea navigation and safety of life purposes. Horizontal component of 3D system."
     } ],
     "datum" : {
+      "entityType" : "GeodeticReferenceFrame",
+      "name" : "Réseau Géodésique Français 1993",
+      "identifier" : [ "6171" ],
+      "alias" : [ "RGF93" ],
+      "domain" : [ {
+        "scope" : "Geodetic survey."
+      } ],
+      "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
       "primeMeridian" : {
-        "greenwichLongitude" : {
-          "value" : 0.0,
-          "uom" : "°"
-        },
         "entityType" : "PrimeMeridian",
         "name" : "Greenwich",
         "identifier" : [ "8901" ],
-        "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS)."
+        "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+        "greenwichLongitude" : {
+          "value" : 0.0,
+          "uom" : "°"
+        }
       },
       "ellipsoid" : {
+        "entityType" : "Ellipsoid",
+        "name" : "GRS 1980",
+        "identifier" : [ "7019" ],
+        "alias" : [ "International 1979" ],
+        "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
         "semiMajorAxis" : {
           "value" : 6378137.0,
           "uom" : "m"
@@ -29,103 +109,99 @@
             "value" : 298.257222101
           },
           "isSphere" : false
-        },
-        "entityType" : "Ellipsoid",
-        "name" : "GRS 1980",
-        "identifier" : [ "7019" ],
-        "alias" : [ "International 1979" ],
-        "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s."
-      },
-      "entityType" : "GeodeticReferenceFrame",
-      "name" : "Réseau Géodésique Français 1993",
-      "identifier" : [ "6171" ],
-      "alias" : [ "RGF93" ],
-      "domain" : [ {
-        "scope" : "Geodetic survey."
-      } ],
-      "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0"
+        }
+      }
     },
     "coordinateSystem" : {
+      "entityType" : "EllipsoidalCS",
+      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
+      "identifier" : [ "6422" ],
+      "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
+        "entityType" : "CoordinateSystemAxis",
+        "name" : "Geodetic latitude",
+        "identifier" : [ "106" ],
+        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
         "axisUnitID" : "°",
         "minimumValue" : -90.0,
         "maximumValue" : 90.0,
-        "rangeMeaning" : "exact",
-        "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic latitude",
-        "identifier" : [ "106" ],
-        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems."
+        "rangeMeaning" : "exact"
       }, {
+        "entityType" : "CoordinateSystemAxis",
+        "name" : "Geodetic longitude",
+        "identifier" : [ "107" ],
+        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
         "axisUnitID" : "°",
         "minimumValue" : -180.0,
         "maximumValue" : 180.0,
-        "rangeMeaning" : "wraparound",
-        "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic longitude",
-        "identifier" : [ "107" ],
-        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems."
-      } ],
-      "entityType" : "EllipsoidalCS",
-      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
-      "identifier" : [ "6422" ],
-      "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems."
+        "rangeMeaning" : "wraparound"
+      } ]
     }
   },
   "derivingConversion" : {
+    "entityType" : "Conversion",
+    "name" : "Lambert-93",
+    "identifier" : [ "18085" ],
+    "domain" : [ {
+      "scope" : "Large and medium scale topographic mapping and engineering survey."
+    } ],
     "parameterValue" : [ {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 46.3,
           "uom" : "D.MS"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     }, {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 3.0,
           "uom" : "D.MS"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     }, {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 49.0,
           "uom" : "D.MS"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     }, {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 44.0,
           "uom" : "D.MS"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     }, {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 700000.0,
           "uom" : "m"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     }, {
+      "entityType" : "OperationParameterValue",
       "parameterValue" : {
         "value" : {
           "value" : 6600000.0,
           "uom" : "m"
         }
-      },
-      "entityType" : "OperationParameterValue"
+      }
     } ],
     "method" : {
+      "entityType" : "OperationMethod",
+      "name" : "Lambert Conic Conformal (2SP)",
+      "identifier" : [ "9802" ],
       "parameter" : [ {
         "entityType" : "OperationParameter",
         "name" : "Latitude of false origin",
@@ -156,83 +232,7 @@
         "name" : "Northing at false origin",
         "identifier" : [ "8827" ],
         "remarks" : "Inverse operation uses the same parameter value."
-      } ],
-      "entityType" : "OperationMethod",
-      "name" : "Lambert Conic Conformal (2SP)",
-      "identifier" : [ "9802" ]
-    },
-    "entityType" : "Conversion",
-    "name" : "Lambert-93",
-    "identifier" : [ "18085" ],
-    "domain" : [ {
-      "scope" : "Large and medium scale topographic mapping and engineering survey."
-    } ]
-  },
-  "entityType" : "ProjectedCRS",
-  "name" : "RGF93 / Lambert-93",
-  "identifier" : [ "2154" ],
-  "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)" ],
-  "domain" : [ {
-    "scope" : "Large and medium scale topographic mapping and engineering survey."
-  } ],
-  "datum" : {
-    "primeMeridian" : {
-      "greenwichLongitude" : {
-        "value" : 0.0,
-        "uom" : "°"
-      },
-      "entityType" : "PrimeMeridian",
-      "name" : "Greenwich",
-      "identifier" : [ "8901" ],
-      "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS)."
-    },
-    "ellipsoid" : {
-      "semiMajorAxis" : {
-        "value" : 6378137.0,
-        "uom" : "m"
-      },
-      "secondDefiningParameter" : {
-        "inverseFlattening" : {
-          "value" : 298.257222101
-        },
-        "isSphere" : false
-      },
-      "entityType" : "Ellipsoid",
-      "name" : "GRS 1980",
-      "identifier" : [ "7019" ],
-      "alias" : [ "International 1979" ],
-      "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s."
-    },
-    "entityType" : "GeodeticReferenceFrame",
-    "name" : "Réseau Géodésique Français 1993",
-    "identifier" : [ "6171" ],
-    "alias" : [ "RGF93" ],
-    "domain" : [ {
-      "scope" : "Geodetic survey."
-    } ],
-    "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0"
-  },
-  "coordinateSystem" : {
-    "axis" : [ {
-      "axisAbbrev" : "X",
-      "axisDirection" : "east",
-      "axisUnitID" : "m",
-      "entityType" : "CoordinateSystemAxis",
-      "name" : "Easting",
-      "identifier" : [ "41" ],
-      "remarks" : "East pointing axis used in 2D projected coordinate systems."
-    }, {
-      "axisAbbrev" : "Y",
-      "axisDirection" : "north",
-      "axisUnitID" : "m",
-      "entityType" : "CoordinateSystemAxis",
-      "name" : "Northing",
-      "identifier" : [ "42" ],
-      "remarks" : "North pointing axis used in 2D projected coordinate systems."
-    } ],
-    "entityType" : "CartesianCS",
-    "name" : "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.",
-    "identifier" : [ "4499" ],
-    "remarks" : "Used in projected and engineering coordinate reference systems."
+      } ]
+    }
   }
 }

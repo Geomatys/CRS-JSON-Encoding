@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -16,17 +15,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "anchorDefinition",
-    "anchorEpoch",
-    "publicationDate",
-    "conventionalRS"
-})
 @Generated("jsonschema2pojo")
 public class Datum
     extends ObjectUsage
 {
-
     /**
      * description, possibly including coordinates of an identified point or points, of the relationship used to anchor a coordinate system to the Earth or alternate object
      * Note: For modern geodetic reference frames the anchor may be a set of station coordinates; if the reference frame is dynamic it will also include coordinate velocities. For a traditional geodetic datum, the anchor may be a point known as the fundamental point, which is traditionally the point where the relationship between geoid and ellipsoid is defined, together with a direction from that point.
@@ -34,31 +26,34 @@ public class Datum
      * - For an engineering datum, the anchor may be an identified physical point with the orientation defined relative to the object.
      *
      */
-    @JsonProperty("anchorDefinition")
+    @JsonProperty(value="anchorDefinition", index=100)
     @JsonPropertyDescription("description, possibly including coordinates of an identified point or points, of the relationship used to anchor a coordinate system to the Earth or alternate object \r\nNote: For modern geodetic reference frames the anchor may be a set of station coordinates; if the reference frame is dynamic it will also include coordinate velocities. For a traditional geodetic datum, the anchor may be a point known as the fundamental point, which is traditionally the point where the relationship between geoid and ellipsoid is defined, together with a direction from that point.\r\n- For a vertical reference frame the anchor may be the zero level at one or more defined locations or a conventionally defined surface. \r\n- For an engineering datum, the anchor may be an identified physical point with the orientation defined relative to the object.")
     public String anchorDefinition;
+
     /**
      * measure object
      * <p>
      * definition of a measure object
      *
      */
-    @JsonProperty("anchorEpoch")
+    @JsonProperty(value="anchorEpoch", index=110)
     @JsonPropertyDescription("definition of a measure object")
     public Measure anchorEpoch;
+
     /**
      * date on which the datum definition was published
      *
      */
-    @JsonProperty("publicationDate")
+    @JsonProperty(value="publicationDate", index=120)
     @JsonPropertyDescription("date on which the datum definition was published")
     public String publicationDate;
+
     /**
      * name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frame
      * Examples: "ITRS" for ITRF88 through ITRF2008 and ITRF2014, or "EVRS" for EVRF2000 and EVRF2007.
      *
      */
-    @JsonProperty("conventionalRS")
+    @JsonProperty(value="conventionalRS", index=130)
     @JsonPropertyDescription("name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frame\r\nExamples: \"ITRS\" for ITRF88 through ITRF2008 and ITRF2014, or \"EVRS\" for EVRF2000 and EVRF2007.")
     public Object conventionalRS;
 

@@ -5,7 +5,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
@@ -15,26 +14,22 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "entityType",
-    "authority"
-})
 @Generated("jsonschema2pojo")
 public class RegisterOperations {
-
     /**
      *
      * (Required)
      *
      */
-    @JsonProperty("entityType")
+    @JsonProperty(value="entityType", index=0)
     public String entityType;
+
     /**
      * citation used by this register operation
      * (Required)
      *
      */
-    @JsonProperty("authority")
+    @JsonProperty(value="authority", index=10)
     @JsonPropertyDescription("citation used by this register operation")
     public Object authority;
 

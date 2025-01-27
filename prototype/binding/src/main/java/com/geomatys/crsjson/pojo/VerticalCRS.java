@@ -6,7 +6,6 @@ import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -19,28 +18,24 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "geoidModel",
-    "velocityModel"
-})
 @Generated("jsonschema2pojo")
 public class VerticalCRS
     extends SingleCRS
 {
-
     /**
      * geoid model or height correction model that is associated with this vertical coordinate reference system
      *
      */
-    @JsonProperty("geoidModel")
+    @JsonProperty(value="geoidModel", index=300)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("geoid model or height correction model that is associated with this vertical coordinate reference system")
     public Set<Object> geoidModel;
+
     /**
      * velocity model or deformation grid that is applied to this vertical coordinate reference system
      *
      */
-    @JsonProperty("velocityModel")
+    @JsonProperty(value="velocityModel", index=310)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("velocity model or deformation grid that is applied to this vertical coordinate reference system")
     public Set<Object> velocityModel;
