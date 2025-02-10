@@ -15,13 +15,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CoordinateSet {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class CoordinateSet extends Entity {
     /**
      * Position described by a coordinate tuple.
      */

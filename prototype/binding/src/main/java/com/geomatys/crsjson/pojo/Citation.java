@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Citation {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class Citation extends Entity {
     /**
      * Name by which the cited resource is known.
      */
@@ -40,6 +34,6 @@ public class Citation {
      */
     public Citation(final org.opengis.metadata.citation.Citation impl) {
         entityType = "Citation";
-        title = IdentifiedObject.text(impl.getTitle());
+        title = text(impl.getTitle());
     }
 }

@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Identifier {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class Identifier extends Entity {
     /**
      * Person or party responsible for maintenance of the namespace.
      */
@@ -64,14 +58,16 @@ public class Identifier {
      */
     protected Identifier(final org.opengis.metadata.Identifier impl) {
         entityType = "Identifier";
-        var c = impl.getAuthority();
-        if (c != null) {
-            authority = new Citation(c);
-        }
-        code = impl.getCode();
-        if (impl instanceof org.opengis.referencing.ReferenceIdentifier r) {
-            codeSpace = r.getCodeSpace();
-            version   = r.getVersion();
+        if (impl != null) {
+            var c = impl.getAuthority();
+            if (c != null) {
+                authority = new Citation(c);
+            }
+            code = impl.getCode();
+            if (impl instanceof org.opengis.referencing.ReferenceIdentifier r) {
+                codeSpace = r.getCodeSpace();
+                version   = r.getVersion();
+            }
         }
     }
 }

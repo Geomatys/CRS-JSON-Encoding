@@ -14,13 +14,7 @@ import java.util.Set;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class QualityElement {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class QualityElement extends Entity {
     /**
      * Value (or set of values) obtained from applying a data quality measure.
      */
@@ -43,7 +37,7 @@ public class QualityElement {
      */
     protected QualityElement(org.opengis.metadata.quality.Element impl) {
         entityType = "QualityElement";
-        result = IdentifiedObject.many(impl.getResults(), QualityResult::create);
+        result = many(impl.getResults(), QualityResult::create);
         if (result != null && result.removeIf(QualityResult::isEmpty)) {
             if (result.isEmpty()) {
                 result = null;

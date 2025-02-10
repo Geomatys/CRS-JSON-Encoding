@@ -182,6 +182,7 @@
       "alias" : [ "NAD83", "NAD83(1986)", "NAD83(Original)" ],
       "remarks" : "Although the 1986 adjustment included connections to Greenland and Mexico, it has not been adopted there. In Canada and US, replaced NAD27.",
       "domain" : [ {
+        "entityType" : "ObjectDomain",
         "scope" : "Topographic mapping.",
         "domainOfValidity" : {
           "entityType" : "Extent",
@@ -405,6 +406,7 @@
       "alias" : [ "WGS 84" ],
       "remarks" : "EPSG::6326 has been the then current realization. No distinction is made between the original and subsequent (G730, G873, G1150, G1674 and G1762) WGS 84 frames. Since 1997, WGS 84 has been maintained within 10cm of the then current ITRF.",
       "domain" : [ {
+        "entityType" : "ObjectDomain",
         "scope" : "Satellite navigation.",
         "domainOfValidity" : {
           "entityType" : "Extent",

@@ -14,13 +14,7 @@ import java.util.Set;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Extent {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class Extent extends Entity {
     /**
      * The spatial and temporal extent for the referring object.
      */
@@ -50,7 +44,7 @@ public class Extent {
      */
     protected Extent(org.opengis.metadata.extent.Extent impl) {
         entityType = "Extent";
-        description = IdentifiedObject.text(impl.getDescription());
-        geographicElement = IdentifiedObject.many(impl.getGeographicElements(), GeographicExtent::create);
+        description = text(impl.getDescription());
+        geographicElement = many(impl.getGeographicElements(), GeographicExtent::create);
     }
 }

@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Formula {
+public class Formula extends Entity {
     /**
      * Formula(s) or procedure used by the coordinate operation method.
      */
@@ -40,8 +40,9 @@ public class Formula {
      * @param impl implementation of a GeoAPI object to serialize.
      */
     public Formula(final org.opengis.referencing.operation.Formula impl) {
+        entityType = "Formula";
         if (impl != null) {
-            formula = IdentifiedObject.text(impl.getFormula());
+            formula = text(impl.getFormula());
             // TODO: missing formulaCitation.
         }
     }

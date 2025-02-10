@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class RegisterOperations {
-    /**
-     * The object class.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class RegisterOperations extends Entity {
     /**
      * Citation used by this register operation.
      */
@@ -40,6 +34,8 @@ public class RegisterOperations {
      */
     public RegisterOperations(final org.opengis.referencing.AuthorityFactory impl) {
         entityType = "RegisterOperations";
-        authority = impl.getAuthority();
+        if (impl != null) {
+            authority = impl.getAuthority();
+        }
     }
 }
