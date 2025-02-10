@@ -86,7 +86,7 @@ public class CoordinateOperation
     @JsonProperty(value="coordinateOperationAccuracy", index=160)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("estimate(s) of the impact of this coordinate operation on point accuracy")
-    public Set<Object> coordinateOperationAccuracy;
+    public Set<PositionalAccuracy> coordinateOperationAccuracy;
 
     /**
      * Creates a new instance with all values initialized to null.
@@ -108,11 +108,17 @@ public class CoordinateOperation
         super(impl);
         entityType = "CoordinateOperation";
         operationVersion = impl.getOperationVersion();
+        coordinateOperationAccuracy = many(impl.getCoordinateOperationAccuracy(), PositionalAccuracy::new);
+        if (coordinateOperationAccuracy != null && coordinateOperationAccuracy.removeIf(PositionalAccuracy::isEmpty)) {
+            if (coordinateOperationAccuracy.isEmpty()) {
+                coordinateOperationAccuracy = null;
+            }
+        }
         if (withCRS) {
             sourceCRS = CRS.create(impl.getSourceCRS());
             targetCRS = CRS.create(impl.getTargetCRS());
         }
-        // TODO: missing coordinateOperationAccuracy, sourceCoordinateEpoch, targetCoordinateEpoch, interpolationCRS.
+        // TODO: missing sourceCoordinateEpoch, targetCoordinateEpoch, interpolationCRS.
     }
 
     /**

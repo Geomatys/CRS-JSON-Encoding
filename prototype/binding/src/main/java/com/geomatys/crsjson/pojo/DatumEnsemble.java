@@ -35,7 +35,7 @@ public class DatumEnsemble
      */
     @JsonProperty(value="ensembleAccuracy", index=110, required=true)
     @JsonPropertyDescription("inaccuracy introduced through use of this collection of reference frames or datums")
-    public Object ensembleAccuracy;
+    public PositionalAccuracy ensembleAccuracy;
 
     /**
      * Creates a new instance with all values initialized to null.

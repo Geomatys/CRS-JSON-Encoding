@@ -15,6 +15,16 @@ path to a directory containing the JAR files of a GeoAPI implementation):
 binding/src/main/shell/console <implementation>
 ```
 
+Example of implementations are given in the next sub-sections.
+After the shell has been launcher, use `printCRS(…)` or `printOperation(…)`.
+Examples:
+
+```
+printCRS("EPSG:4326")
+printOperation("EPSG:1188")
+```
+
+
 ### Testing with Apache SIS
 For test convenience, [Apache SIS](https://sis.apache.org/) is available with the following shortcut:
 
