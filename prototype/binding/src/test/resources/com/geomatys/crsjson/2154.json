@@ -22,7 +22,18 @@
   } ],
   "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)" ],
   "domain" : [ {
-    "scope" : "Large and medium scale topographic mapping and engineering survey."
+    "scope" : "Large and medium scale topographic mapping and engineering survey.",
+    "domainOfValidity" : {
+      "entityType" : "Extent",
+      "description" : "France - onshore and offshore, mainland and Corsica.",
+      "geographicElement" : [ {
+        "entityType" : "GeographicBoundingBox",
+        "westBoundLongitude" : -9.86,
+        "eastBoundLongitude" : 10.38,
+        "southBoundLatitude" : 41.15,
+        "northBoundLatitude" : 51.56
+      } ]
+    }
   } ],
   "coordinateSystem" : {
     "entityType" : "CartesianCS",
@@ -125,7 +136,18 @@
     } ],
     "alias" : [ "RGF93" ],
     "domain" : [ {
-      "scope" : "Geodetic survey."
+      "scope" : "Geodetic survey.",
+      "domainOfValidity" : {
+        "entityType" : "Extent",
+        "description" : "France - onshore and offshore, mainland and Corsica.",
+        "geographicElement" : [ {
+          "entityType" : "GeographicBoundingBox",
+          "westBoundLongitude" : -9.86,
+          "eastBoundLongitude" : 10.38,
+          "southBoundLatitude" : 41.15,
+          "northBoundLatitude" : 51.56
+        } ]
+      }
     } ],
     "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
     "primeMeridian" : {
@@ -217,7 +239,18 @@
     "alias" : [ "RGF93 (lat-lon)" ],
     "remarks" : "See CRS code 7084 for alternate system with axes reversed used by IGN for GIS purposes.",
     "domain" : [ {
-      "scope" : "Geodetic survey, air, land and sea navigation and safety of life purposes. Horizontal component of 3D system."
+      "scope" : "Geodetic survey, air, land and sea navigation and safety of life purposes. Horizontal component of 3D system.",
+      "domainOfValidity" : {
+        "entityType" : "Extent",
+        "description" : "France - onshore and offshore, mainland and Corsica.",
+        "geographicElement" : [ {
+          "entityType" : "GeographicBoundingBox",
+          "westBoundLongitude" : -9.86,
+          "eastBoundLongitude" : 10.38,
+          "southBoundLatitude" : 41.15,
+          "northBoundLatitude" : 51.56
+        } ]
+      }
     } ],
     "coordinateSystem" : {
       "entityType" : "EllipsoidalCS",
@@ -326,7 +359,18 @@
       } ],
       "alias" : [ "RGF93" ],
       "domain" : [ {
-        "scope" : "Geodetic survey."
+        "scope" : "Geodetic survey.",
+        "domainOfValidity" : {
+          "entityType" : "Extent",
+          "description" : "France - onshore and offshore, mainland and Corsica.",
+          "geographicElement" : [ {
+            "entityType" : "GeographicBoundingBox",
+            "westBoundLongitude" : -9.86,
+            "eastBoundLongitude" : 10.38,
+            "southBoundLatitude" : 41.15,
+            "northBoundLatitude" : 51.56
+          } ]
+        }
       } ],
       "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
       "primeMeridian" : {
@@ -417,7 +461,18 @@
       "version" : "9.9.1"
     } ],
     "domain" : [ {
-      "scope" : "Large and medium scale topographic mapping and engineering survey."
+      "scope" : "Large and medium scale topographic mapping and engineering survey.",
+      "domainOfValidity" : {
+        "entityType" : "Extent",
+        "description" : "France - mainland onshore.",
+        "geographicElement" : [ {
+          "entityType" : "GeographicBoundingBox",
+          "westBoundLongitude" : -4.87,
+          "eastBoundLongitude" : 8.23,
+          "southBoundLatitude" : 42.33,
+          "northBoundLatitude" : 51.14
+        } ]
+      }
     } ],
     "parameterValue" : [ {
       "entityType" : "OperationParameterValue",
