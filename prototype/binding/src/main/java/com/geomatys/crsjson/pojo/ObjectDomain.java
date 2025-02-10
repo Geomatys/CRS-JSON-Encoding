@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ObjectDomain {
+public class ObjectDomain extends Entity {
     /**
      * Description of usage, or limitations of usage, for which this object is valid.
      * If unknown, enter "not known".
@@ -41,7 +41,8 @@ public class ObjectDomain {
      * @param impl implementation of a GeoAPI object to serialize.
      */
     public ObjectDomain(org.opengis.referencing.datum.Datum impl) {
-        scope = IdentifiedObject.text(impl.getScope());
+        entityType = "ObjectDomain";
+        scope = text(impl.getScope());
         domainOfValidity = domain(impl.getDomainOfValidity());
     }
 
@@ -52,7 +53,7 @@ public class ObjectDomain {
      * @param impl implementation of a GeoAPI object to serialize.
      */
     public ObjectDomain(org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
-        scope = IdentifiedObject.text(impl.getScope());
+        scope = text(impl.getScope());
         domainOfValidity = domain(impl.getDomainOfValidity());
     }
 
@@ -63,7 +64,7 @@ public class ObjectDomain {
      * @param impl implementation of a GeoAPI object to serialize.
      */
     public ObjectDomain(org.opengis.referencing.operation.CoordinateOperation impl) {
-        scope = IdentifiedObject.text(impl.getScope());
+        scope = text(impl.getScope());
         domainOfValidity = domain(impl.getDomainOfValidity());
     }
 
