@@ -49,7 +49,7 @@ public class ParameterValueGroup
      */
     public ParameterValueGroup(final org.opengis.parameter.ParameterValueGroup impl) {
         entityType = "ParameterValueGroup";
-        parameterValue = IdentifiedObject.many(impl.values(), GeneralParameterValue::create);
+        parameterValue = many(impl.values(), GeneralParameterValue::create);
         group = parameter;  // TODO: redundancy in the UML.
     }
 }

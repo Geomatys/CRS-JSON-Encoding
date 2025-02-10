@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CoordinateMetadata {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class CoordinateMetadata extends Entity {
     /**
      * Identifier of the coordinate reference system to which a coordinate set is referenced.
      */

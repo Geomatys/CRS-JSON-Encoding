@@ -136,6 +136,7 @@
     } ],
     "alias" : [ "RGF93" ],
     "domain" : [ {
+      "entityType" : "ObjectDomain",
       "scope" : "Geodetic survey.",
       "domainOfValidity" : {
         "entityType" : "Extent",
@@ -359,6 +360,7 @@
       } ],
       "alias" : [ "RGF93" ],
       "domain" : [ {
+        "entityType" : "ObjectDomain",
         "scope" : "Geodetic survey.",
         "domainOfValidity" : {
           "entityType" : "Extent",

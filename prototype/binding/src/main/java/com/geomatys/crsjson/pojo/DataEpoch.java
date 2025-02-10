@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DataEpoch {
-    /**
-     * The object type.
-     */
-    @JsonProperty(value="entityType", index=0, required=true)
-    public String entityType;
-
+public class DataEpoch extends Entity {
     /**
      * Date at which coordinates are referenced to a dynamic coordinate reference system,
      * expressed as a decimal year in the Gregorian calendar.
