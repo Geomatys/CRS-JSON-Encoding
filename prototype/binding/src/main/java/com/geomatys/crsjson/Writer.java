@@ -70,7 +70,7 @@ public class Writer {
      * @throws JsonProcessingException if an error occurred during the serialization.
      */
     public String write(final CoordinateReferenceSystem impl) throws JsonProcessingException {
-        return mapper.writeValueAsString(com.geomatys.crsjson.pojo.Crs.create(impl));
+        return mapper.writeValueAsString(com.geomatys.crsjson.pojo.CRS.create(impl));
     }
 
     /**

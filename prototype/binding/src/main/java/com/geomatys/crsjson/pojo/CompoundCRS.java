@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompoundCRS
-    extends Crs
+    extends CRS
 {
     /**
      * Coordinate reference system that is a component of this compound coordinate reference system.
@@ -43,6 +43,6 @@ public class CompoundCRS
     public CompoundCRS(final org.opengis.referencing.crs.CompoundCRS impl) {
         super(impl);
         entityType = "CompoundCRS";
-        componentReferenceSystem = many(impl.getComponents(), Crs::create);
+        componentReferenceSystem = many(impl.getComponents(), CRS::create);
     }
 }
