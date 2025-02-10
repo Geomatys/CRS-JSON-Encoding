@@ -63,10 +63,8 @@ public class DerivedCRS
      * @return the POJO to serialize.
      */
     public static DerivedCRS createDerived(final org.opengis.referencing.crs.GeneralDerivedCRS impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.referencing.crs.DerivedCRS   subtype -> new DerivedProjectedCRS(subtype);
             case org.opengis.referencing.crs.ProjectedCRS subtype -> new ProjectedCRS(subtype);
             default -> new DerivedCRS(impl);

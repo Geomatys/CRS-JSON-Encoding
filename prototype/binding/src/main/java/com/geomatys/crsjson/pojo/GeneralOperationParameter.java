@@ -41,10 +41,8 @@ public class GeneralOperationParameter
      * @return the POJO to serialize.
      */
     public static GeneralOperationParameter create(org.opengis.parameter.GeneralParameterDescriptor impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.parameter.ParameterDescriptor<?>   subtype -> new OperationParameter     (subtype);
             case org.opengis.parameter.ParameterDescriptorGroup subtype -> new OperationParameterGroup(subtype);
             default -> new GeneralOperationParameter(impl);
