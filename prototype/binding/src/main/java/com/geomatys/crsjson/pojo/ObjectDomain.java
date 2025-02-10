@@ -26,7 +26,7 @@ public class ObjectDomain {
      */
     @JsonProperty(value="domainOfValidity", index=20, required=true)
     @JsonPropertyDescription("spatial and temporal extent in which this object is valid")
-    public Object domainOfValidity;
+    public Extent domainOfValidity;
 
     /**
      * Creates a new instance with all values initialized to null.
@@ -73,8 +73,7 @@ public class ObjectDomain {
      * @param impl the domain of validity to serialize, or {@code null} if none.
      * @return the domain to serialize, or {@code null} if none.
      */
-    private static Object domain(org.opengis.metadata.extent.Extent impl) {
-        // TODO
-        return null;
+    private static Extent domain(org.opengis.metadata.extent.Extent impl) {
+        return (impl != null) ? new Extent(impl) : null;
     }
 }
