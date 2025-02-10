@@ -172,4 +172,19 @@ public class Registry {
             System.out.println(e);
         }
     }
+
+    /**
+     * Convenience method printing the coordinate operation identified by the given code.
+     * The result is sent to the standard output stream.
+     *
+     * @param  code  the authority code of the operation to format.
+     */
+    @SuppressWarnings("UseOfSystemOutOrSystemErr")
+    public static void printOperation(final String code) {
+        try {
+            System.out.println(INSTANCE.format(Type.OPERATION, code));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
