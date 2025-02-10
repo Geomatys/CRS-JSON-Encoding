@@ -51,7 +51,7 @@ public class DerivedCRS
     protected DerivedCRS(final org.opengis.referencing.crs.GeneralDerivedCRS impl) {
         super(impl);
         entityType = "DerivedCRS";
-        baseCRS = Crs.create(impl.getBaseCRS());
+        baseCRS = CRS.create(impl.getBaseCRS());
         derivingConversion = new Conversion(impl.getConversionFromBase(), false);
     }
 
