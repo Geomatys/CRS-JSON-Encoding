@@ -28,7 +28,7 @@ public class GeographicObject {
     @JsonProperty(value="identifier", index=10)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("identifier of the geographic object")
-    public Set<Object> identifier;
+    public Set<Identifier> identifier;
 
     /**
      * Creates a new instance with all values initialized to null.
