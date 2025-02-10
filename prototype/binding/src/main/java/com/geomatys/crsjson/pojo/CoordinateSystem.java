@@ -63,10 +63,8 @@ public class CoordinateSystem
      * @return the POJO to serialize.
      */
     public static CoordinateSystem create(org.opengis.referencing.cs.CoordinateSystem impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.referencing.cs.CartesianCS   subtype -> new CartesianCS  (subtype);
             case org.opengis.referencing.cs.SphericalCS   subtype -> new SphericalCS  (subtype);
             case org.opengis.referencing.cs.EllipsoidalCS subtype -> new EllipsoidalCS(subtype);

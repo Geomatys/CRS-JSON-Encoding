@@ -41,10 +41,8 @@ public class Crs
      * @return the POJO to serialize.
      */
     public static Crs create(org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.referencing.crs.GeneralDerivedCRS subtype -> DerivedCRS.createDerived(subtype);
             case org.opengis.referencing.crs.CompoundCRS       subtype -> new CompoundCRS(subtype);
             case org.opengis.referencing.crs.GeographicCRS     subtype -> new GeographicCRS(subtype);

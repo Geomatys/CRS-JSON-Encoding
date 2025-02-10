@@ -123,10 +123,8 @@ public class CoordinateOperation
      * @return the POJO to serialize.
      */
     public static CoordinateOperation create(org.opengis.referencing.operation.CoordinateOperation impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.referencing.operation.ConcatenatedOperation subtype -> new ConcatenatedOperation(subtype);
             case org.opengis.referencing.operation.PassThroughOperation  subtype -> new PassThroughOperation (subtype);
             case org.opengis.referencing.operation.Transformation        subtype -> new Transformation       (subtype);
