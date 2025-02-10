@@ -109,8 +109,8 @@ public class CoordinateOperation
         entityType = "CoordinateOperation";
         operationVersion = impl.getOperationVersion();
         if (withCRS) {
-            sourceCRS = Crs.create(impl.getSourceCRS());
-            targetCRS = Crs.create(impl.getTargetCRS());
+            sourceCRS = CRS.create(impl.getSourceCRS());
+            targetCRS = CRS.create(impl.getTargetCRS());
         }
         // TODO: missing coordinateOperationAccuracy, sourceCoordinateEpoch, targetCoordinateEpoch, interpolationCRS.
     }

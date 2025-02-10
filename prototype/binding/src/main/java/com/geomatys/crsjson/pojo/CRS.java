@@ -10,13 +10,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Crs
+public class CRS
     extends ObjectUsage
 {
     /**
      * Creates a new instance with all values initialized to null.
      */
-    protected Crs() {
+    protected CRS() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class Crs
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    protected Crs(final org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
+    protected CRS(final org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
         super(impl);
         entityType = "CRS";
     }
@@ -40,7 +40,7 @@ public class Crs
      * @param impl implementation of a GeoAPI object to serialize.
      * @return the POJO to serialize.
      */
-    public static Crs create(org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
+    public static CRS create(org.opengis.referencing.crs.CoordinateReferenceSystem impl) {
         return switch (impl) {
             case null -> null;
             case org.opengis.referencing.crs.GeneralDerivedCRS subtype -> DerivedCRS.createDerived(subtype);
@@ -50,7 +50,7 @@ public class Crs
             case org.opengis.referencing.crs.VerticalCRS       subtype -> new VerticalCRS(subtype);
             case org.opengis.referencing.crs.EngineeringCRS    subtype -> new EngineeringCRS(subtype);
             case org.opengis.referencing.crs.SingleCRS         subtype -> new SingleCRS(subtype);
-            default -> new Crs(impl);
+            default -> new CRS(impl);
         };
     }
 }
