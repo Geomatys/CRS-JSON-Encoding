@@ -54,10 +54,8 @@ public class GeneralParameterValue {
      * @return the POJO to serialize.
      */
     public static GeneralParameterValue create(org.opengis.parameter.GeneralParameterValue impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.parameter.ParameterValue<?>   subtype -> new OperationParameterValue(subtype);
             case org.opengis.parameter.ParameterValueGroup subtype -> new ParameterValueGroup    (subtype);
             default -> new GeneralParameterValue(impl);

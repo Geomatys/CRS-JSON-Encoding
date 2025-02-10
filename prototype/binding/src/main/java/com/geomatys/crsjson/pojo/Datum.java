@@ -92,10 +92,8 @@ public class Datum
      * @return the POJO to serialize.
      */
     public static Datum create(org.opengis.referencing.datum.Datum impl) {
-        if (impl == null) {
-            return null;
-        }
         return switch (impl) {
+            case null -> null;
             case org.opengis.referencing.datum.GeodeticDatum    subtype -> new GeodeticReferenceFrame(subtype);
             case org.opengis.referencing.datum.VerticalDatum    subtype -> new VerticalReferenceFrame(subtype);
             case org.opengis.referencing.datum.TemporalDatum    subtype -> new TemporalDatum         (subtype);
