@@ -55,6 +55,15 @@ public class WriteTest {
     }
 
     /**
+     * Creates an identifier with the given code.
+     */
+    private static Identifier identifier(String code) {
+        var identifier = new Identifier();
+        identifier.code = code;
+        return identifier;
+    }
+
+    /**
      * Tests writing an {@link IdentifiedObject}.
      *
      * @throws JsonProcessingException if an error occurred while writing the JSON document.
@@ -63,14 +72,18 @@ public class WriteTest {
     public void testIdentifiedObject() throws JsonProcessingException {
         var object = new IdentifiedObject();
         object.entityType = "IdentifiedObject";
-        object.name = "WGS 84";
-        object.identifier = Set.of("EPSG:4326");
+        object.name = identifier("WGS 84");
+        object.identifier = Set.of(identifier("EPSG:4326"));
         object.remarks = "This is a test of CRS-JSON.";
         assertLinesMatch(Arrays.asList(
                 "{",
                 "  \"entityType\" : \"IdentifiedObject\",",
-                "  \"name\" : \"WGS 84\",",
-                "  \"identifier\" : [ \"EPSG:4326\" ],",
+                "  \"name\" : {",
+                "    \"code\" : \"WGS 84\"",
+                "  },",
+                "  \"identifier\" : [ {",
+                "    \"code\" : \"EPSG:4326\"",
+                "  } ],",
                 "  \"remarks\" : \"This is a test of CRS-JSON.\"",
                 "}"),
                 write(object));

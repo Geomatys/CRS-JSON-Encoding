@@ -24,7 +24,7 @@ public class CoordinateMetadata {
      */
     @JsonProperty(value="crsID", index=10)
     @JsonPropertyDescription("identifier of the coordinate reference system to which a coordinate set is referenced")
-    public Object crsID;
+    public Identifier crsID;
 
     /**
      * Full definition of the coordinate reference system to which a coordinate set is referenced.

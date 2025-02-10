@@ -29,7 +29,7 @@ public class IdentifiedObject {
      */
     @JsonProperty(value="name", index=10, required=true)
     @JsonPropertyDescription("primary name by which this object is identified")
-    public Object name;
+    public Identifier name;
 
     /**
      * Identifier which references elsewhere the object's defining information.
@@ -38,7 +38,7 @@ public class IdentifiedObject {
     @JsonProperty(value="identifier", index=20)
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("identifier which references elsewhere the object's defining information")
-    public Set<Object> identifier;
+    public Set<Identifier> identifier;
 
     /**
      * Alternative name by which this object is identified.
@@ -72,8 +72,8 @@ public class IdentifiedObject {
      */
     protected IdentifiedObject(final org.opengis.referencing.IdentifiedObject impl) {
         entityType = "IdentifiedObject";
-        name       = code(impl.getName());
-        identifier = many(impl.getIdentifiers(), IdentifiedObject::code);
+        name       = new Identifier(impl.getName());
+        identifier = many(impl.getIdentifiers(), Identifier::new);
         alias      = many(impl.getAlias(), org.opengis.util.GenericName::toString);
         remarks    = text(impl.getRemarks());
     }
@@ -86,16 +86,6 @@ public class IdentifiedObject {
      */
     static String text(org.opengis.util.InternationalString impl) {
         return (impl != null) ? impl.toString() : null;
-    }
-
-    /**
-     * Returns the string to marshal for the given identifier, or {@code null} if none.
-     *
-     * @param  impl  the identifier, or {@code null}.
-     * @return the string to marshal, or {@code null} if none.
-     */
-    private static String code(org.opengis.metadata.Identifier impl) {
-        return (impl != null) ? impl.getCode() : null;
     }
 
     /**

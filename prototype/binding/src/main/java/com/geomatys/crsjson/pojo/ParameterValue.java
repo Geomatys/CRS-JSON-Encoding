@@ -84,7 +84,7 @@ public class ParameterValue {
      */
     @JsonProperty(value="geographicObject", index=180)
     @JsonPropertyDescription("identifier of a geographic feature of which the coordinates are used as operation parameters")
-    public Object geographicObject;
+    public GeographicObject geographicObject;
 
     /**
      * Creates a new instance with all values initialized to null.

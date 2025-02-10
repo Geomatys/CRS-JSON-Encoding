@@ -1,7 +1,25 @@
 {
   "entityType" : "Transformation",
-  "name" : "NAD83 to WGS 84 (1)",
-  "identifier" : [ "1188" ],
+  "name" : {
+    "entityType" : "Identifier",
+    "authority" : {
+      "entityType" : "Citation",
+      "title" : "EPSG Geodetic Parameter Dataset"
+    },
+    "code" : "NAD83 to WGS 84 (1)",
+    "codeSpace" : "EPSG",
+    "version" : "9.9.1"
+  },
+  "identifier" : [ {
+    "entityType" : "Identifier",
+    "authority" : {
+      "entityType" : "Citation",
+      "title" : "EPSG Geodetic Parameter Dataset"
+    },
+    "code" : "1188",
+    "codeSpace" : "EPSG",
+    "version" : "9.9.1"
+  } ],
   "alias" : [ "NAR-A, NAR-B, NAR-C AND NAR-D" ],
   "remarks" : "Derived at 354 stations.",
   "domain" : [ {
@@ -9,8 +27,26 @@
   } ],
   "sourceCRS" : {
     "entityType" : "GeographicCRS",
-    "name" : "NAD83",
-    "identifier" : [ "4269" ],
+    "name" : {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "NAD83",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    },
+    "identifier" : [ {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "4269",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    } ],
     "alias" : [ "NAD83(1986)", "270", "NAD 83 (1986) - LatLon", "NAD83(Original)" ],
     "remarks" : "Longitude is POSITIVE EAST. The adjustment included connections to Greenland and Mexico but the system was not adopted there. For applications with an accuracy of better than 1m replaced by NAD83(HARN) in the US and PRVI and by NAD83(CSRS) in Canada.",
     "domain" : [ {
@@ -18,13 +54,49 @@
     } ],
     "coordinateSystem" : {
       "entityType" : "EllipsoidalCS",
-      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
-      "identifier" : [ "6422" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "6422",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
         "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic latitude",
-        "identifier" : [ "106" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Geodetic latitude",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "106",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
@@ -34,8 +106,26 @@
         "rangeMeaning" : "exact"
       }, {
         "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic longitude",
-        "identifier" : [ "107" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Geodetic longitude",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "107",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
@@ -47,8 +137,26 @@
     },
     "datum" : {
       "entityType" : "GeodeticReferenceFrame",
-      "name" : "North American Datum 1983",
-      "identifier" : [ "6269" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "North American Datum 1983",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "6269",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "alias" : [ "NAD83", "NAD83(1986)", "NAD83(Original)" ],
       "remarks" : "Although the 1986 adjustment included connections to Greenland and Mexico, it has not been adopted there. In Canada and US, replaced NAD27.",
       "domain" : [ {
@@ -57,8 +165,26 @@
       "anchorDefinition" : "Origin at geocentre.",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
-        "name" : "Greenwich",
-        "identifier" : [ "8901" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Greenwich",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "8901",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
         "greenwichLongitude" : {
           "value" : 0.0,
@@ -67,8 +193,26 @@
       },
       "ellipsoid" : {
         "entityType" : "Ellipsoid",
-        "name" : "GRS 1980",
-        "identifier" : [ "7019" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "GRS 1980",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "7019",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "alias" : [ "International 1979" ],
         "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
         "semiMajorAxis" : {
@@ -86,20 +230,74 @@
   },
   "targetCRS" : {
     "entityType" : "GeographicCRS",
-    "name" : "WGS 84",
-    "identifier" : [ "4326" ],
+    "name" : {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "WGS 84",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    },
+    "identifier" : [ {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "4326",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    } ],
     "domain" : [ {
       "scope" : "Horizontal component of 3D system. Used by the GPS satellite navigation system and for NATO military geodetic surveying."
     } ],
     "coordinateSystem" : {
       "entityType" : "EllipsoidalCS",
-      "name" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
-      "identifier" : [ "6422" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "6422",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
         "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic latitude",
-        "identifier" : [ "106" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Geodetic latitude",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "106",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
@@ -109,8 +307,26 @@
         "rangeMeaning" : "exact"
       }, {
         "entityType" : "CoordinateSystemAxis",
-        "name" : "Geodetic longitude",
-        "identifier" : [ "107" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Geodetic longitude",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "107",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
@@ -122,8 +338,26 @@
     },
     "datum" : {
       "entityType" : "GeodeticReferenceFrame",
-      "name" : "World Geodetic System 1984",
-      "identifier" : [ "6326" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "World Geodetic System 1984",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "6326",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "alias" : [ "WGS 84" ],
       "remarks" : "EPSG::6326 has been the then current realization. No distinction is made between the original and subsequent (G730, G873, G1150, G1674 and G1762) WGS 84 frames. Since 1997, WGS 84 has been maintained within 10cm of the then current ITRF.",
       "domain" : [ {
@@ -132,8 +366,26 @@
       "anchorDefinition" : "Defined through a consistent set of station coordinates. These have changed with time: by 0.7m on 1994-06-29 (G730), a further 0.2m on 1997-01-29 (G873),  0.06m on 2002-01-20 (G1150), 0.2m on 2012-02-08 (G1674) and 0.02m on 2013-10-16 (G1762).",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
-        "name" : "Greenwich",
-        "identifier" : [ "8901" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "Greenwich",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "8901",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
         "greenwichLongitude" : {
           "value" : 0.0,
@@ -142,8 +394,26 @@
       },
       "ellipsoid" : {
         "entityType" : "Ellipsoid",
-        "name" : "WGS 84",
-        "identifier" : [ "7030" ],
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "WGS 84",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "7030",
+          "codeSpace" : "EPSG",
+          "version" : "9.9.1"
+        } ],
         "alias" : [ "WGS84" ],
         "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
         "semiMajorAxis" : {
@@ -197,26 +467,98 @@
   } ],
   "method" : {
     "entityType" : "OperationMethod",
-    "name" : "Geocentric translations (geog2D domain)",
-    "identifier" : [ "9603" ],
+    "name" : {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "Geocentric translations (geog2D domain)",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    },
+    "identifier" : [ {
+      "entityType" : "Identifier",
+      "authority" : {
+        "entityType" : "Citation",
+        "title" : "EPSG Geodetic Parameter Dataset"
+      },
+      "code" : "9603",
+      "codeSpace" : "EPSG",
+      "version" : "9.9.1"
+    } ],
     "alias" : [ "Geocentric Translations" ],
     "remarks" : "See methods 1031 and 1035 for similar tfms operating between other CRSs types.",
     "parameter" : [ {
       "entityType" : "OperationParameter",
-      "name" : "X-axis translation",
-      "identifier" : [ "8605" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "X-axis translation",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "8605",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "alias" : [ "tX" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."
     }, {
       "entityType" : "OperationParameter",
-      "name" : "Y-axis translation",
-      "identifier" : [ "8606" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "Y-axis translation",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "8606",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "alias" : [ "tY" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."
     }, {
       "entityType" : "OperationParameter",
-      "name" : "Z-axis translation",
-      "identifier" : [ "8607" ],
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "Z-axis translation",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "8607",
+        "codeSpace" : "EPSG",
+        "version" : "9.9.1"
+      } ],
       "alias" : [ "tZ" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."
     } ]
