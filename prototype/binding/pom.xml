@@ -126,7 +126,7 @@
               <silent>true</silent>
               <includeScope>test</includeScope>
               <excludeScope>runtime</excludeScope>
-              <excludeArtifactIds>junit-jupiter-api,junit-platform-commons,opentest4j,apiguardian-api</excludeArtifactIds>
+              <includeArtifactIds>sis-utility,sis-metadata,sis-referencing,sis-embedded-data,jakarta.xml.bind-api,jakarta.activation-api,derby,derbyshared,derbytools</includeArtifactIds>
               <outputDirectory>${project.build.directory}/apache-sis</outputDirectory>
             </configuration>
           </execution>
