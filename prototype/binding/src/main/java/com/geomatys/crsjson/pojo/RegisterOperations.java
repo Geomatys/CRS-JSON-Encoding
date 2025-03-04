@@ -34,6 +34,8 @@ public class RegisterOperations extends Entity {
      */
     public RegisterOperations(final org.opengis.referencing.AuthorityFactory impl) {
         entityType = "RegisterOperations";
-        authority = impl.getAuthority();
+        if (impl != null) {
+            authority = impl.getAuthority();
+        }
     }
 }

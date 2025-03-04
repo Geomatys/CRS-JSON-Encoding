@@ -58,14 +58,16 @@ public class Identifier extends Entity {
      */
     protected Identifier(final org.opengis.metadata.Identifier impl) {
         entityType = "Identifier";
-        var c = impl.getAuthority();
-        if (c != null) {
-            authority = new Citation(c);
-        }
-        code = impl.getCode();
-        if (impl instanceof org.opengis.referencing.ReferenceIdentifier r) {
-            codeSpace = r.getCodeSpace();
-            version   = r.getVersion();
+        if (impl != null) {
+            var c = impl.getAuthority();
+            if (c != null) {
+                authority = new Citation(c);
+            }
+            code = impl.getCode();
+            if (impl instanceof org.opengis.referencing.ReferenceIdentifier r) {
+                codeSpace = r.getCodeSpace();
+                version   = r.getVersion();
+            }
         }
     }
 }
