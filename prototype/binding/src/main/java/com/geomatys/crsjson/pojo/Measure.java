@@ -60,7 +60,7 @@ public class Measure {
     static String uom(Unit<?> unit) {
         if (unit != null) {
             String uom = unit.getSymbol();
-            if (!uom.isBlank()) {
+            if (uom != null && !uom.isBlank()) {
                 return uom;
             }
         }
