@@ -8,15 +8,18 @@ mvn package
 ```
 
 ## Command-line application
-For testing on a Unix command line (replace `<implementation>` by the absolute
-path to a directory containing the JAR files of a GeoAPI implementation):
+This demo provides a `console` command-line (Unix) which expects an implementation to be specified in argument.
+The argument is a directory relative to `console` containing the JAR files of a [GeoAPI 3.0](https://www.geoapi.org/) implementation.
+This demo has been tested with [Apache SIS](https://sis.apache.org/), [GeoTools](https://github.com/Geomatys/geoapi-gt-wrappers) and
+[PROJ](https://github.com/OSGeo/PROJ-JNI) implementations.
+For test convenience, the above `mvn package` command collects the Apache SIS files in a `apache-sis` sub-directory.
+Therefore, the following command-line works out of the box:
 
 ```shell
-binding/src/main/shell/console <implementation>
+binding/src/main/shell/console apache-sis
 ```
 
-Example of implementations are given in the next sub-sections.
-After the shell has been launcher, use `printCRS(…)` or `printOperation(…)`.
+After the shell has been launched, use `printCRS(…)` or `printOperation(…)`.
 Examples:
 
 ```
@@ -24,13 +27,6 @@ printCRS("EPSG:4326")
 printOperation("EPSG:1188")
 ```
 
-
-### Testing with Apache SIS
-For test convenience, [Apache SIS](https://sis.apache.org/) is available with the following shortcut:
-
-```shell
-binding/src/main/shell/console apache-sis
-```
 
 ### Testing with PROJ
 [PROJ-JNI](https://github.com/OSGeo/PROJ-JNI) requires a local build
