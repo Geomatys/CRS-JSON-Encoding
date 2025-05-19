@@ -27,7 +27,7 @@ The encoding rule is based upon the requirements classes from the
 
 Further comments regarding the encoding:
 
-* Default value for tagged value `inlineOrByReference` for association roles is 'inlineOrByReference',
+* Default value for association roles is `inlineOrByReference',
   so that experiments can be made with encoding all JSON objects inline (or by reference).
 * Since no JSON Schema definitions exist for some of the external schema types used in ISO 19111
   (`MD_Identifier`, `DQ_PositionalAccuracy`, `DirectPosition`, `EX_Extent`, `CI_Citation`, `TM_ReferenceSystem`),
@@ -36,6 +36,18 @@ Further comments regarding the encoding:
 * The documentation of a model element (from the Enterprise Architect notes field)
   is encoded in the `description` annotation of elements in the resulting JSON Schema.
 * References to JSON Schema definitions use JSON Pointer, not the anchor based notation.
+
+# Code lists
+Code list values are described in XML files following a schema defined by the
+[OASIS Genericode standard](https://docs.oasis-open.org/codelist/genericode/v1.0/os/genericode-v1.0-os.html).
+Examples:
+
+* [AxisDirections.xml](./schemas/AxisDirections.xml)
+
+JSON parsers do not need to parse those XML documents.
+Those XML files are rather for validators, as a complement to JSON schema validators.
+Their use may require extra validation performed by OGC-specific software,
+but this is already the current practice with CITE tests validating GML documents.
 
 # Model issues
 
