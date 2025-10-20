@@ -35,7 +35,7 @@
 
   <name>Run CRS-JSON prototype as a web server</name>
   <description>
-    Run the code of the `binding` module as a web server.
+    Run the code of the `binding` sub-project as a web server.
   </description>
   <licenses>
     <license>

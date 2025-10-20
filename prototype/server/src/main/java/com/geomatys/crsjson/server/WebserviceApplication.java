@@ -21,7 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * The application launcher.
- * See the {@code README.md} file in the root directory of this module.
+ * See the {@code README.md} file in the root directory of this sub-project.
  */
 @SpringBootApplication
 public class WebserviceApplication {

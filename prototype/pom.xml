@@ -42,6 +42,11 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
     </license>
   </licenses>
+  <scm>
+    <url>https://github.com/Geomatys/CRS-JSON-Encoding</url>
+    <connection>scm:git:https://github.com/Geomatys/CRS-JSON-Encoding.git</connection>
+    <developerConnection>scm:git:https://github.com/Geomatys/CRS-JSON-Encoding.git</developerConnection>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,6 +64,11 @@
         <groupId>org.jsonschema2pojo</groupId>
         <artifactId>jsonschema2pojo-core</artifactId>
         <version>1.2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.17.2</version> <!-- Version used by Schema to POJO. -->
       </dependency>
       <dependency>
         <groupId>org.opengis</groupId>
@@ -113,6 +123,7 @@
   </build>
 
   <modules>
+    <module>generator</module>
     <module>binding</module>
     <module>server</module>
   </modules>
