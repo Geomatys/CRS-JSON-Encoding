@@ -6,9 +6,9 @@
       "entityType" : "Citation",
       "title" : "EPSG Geodetic Parameter Dataset"
     },
-    "code" : "RGF93 / Lambert-93",
+    "code" : "RGF93 v1 / Lambert-93",
     "codeSpace" : "EPSG",
-    "version" : "9.9.1"
+    "version" : "12.026"
   },
   "identifier" : [ {
     "entityType" : "Identifier",
@@ -18,20 +18,32 @@
     },
     "code" : "2154",
     "codeSpace" : "EPSG",
-    "version" : "9.9.1"
+    "version" : "12.026"
   } ],
-  "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)" ],
+  "alias" : [ "(FR_RGF93 / LAMB93 - see alias remarks)", "RGF93 / Lambert-93" ],
   "domain" : [ {
-    "scope" : "Large and medium scale topographic mapping and engineering survey.",
+    "scope" : "Engineering survey, topographic mapping.",
     "domainOfValidity" : {
       "entityType" : "Extent",
-      "description" : "France - onshore and offshore, mainland and Corsica.",
+      "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
       "geographicElement" : [ {
         "entityType" : "GeographicBoundingBox",
         "westBoundLongitude" : -9.86,
         "eastBoundLongitude" : 10.38,
         "southBoundLatitude" : 41.15,
         "northBoundLatitude" : 51.56
+      }, {
+        "entityType" : "GeographicDescription",
+        "geographicIdentifier" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "France",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        }
       } ]
     }
   } ],
@@ -45,7 +57,7 @@
       },
       "code" : "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -55,7 +67,7 @@
       },
       "code" : "4499",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
     "remarks" : "Used in projected and engineering coordinate reference systems.",
     "axis" : [ {
@@ -68,7 +80,7 @@
         },
         "code" : "Easting",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -78,9 +90,8 @@
         },
         "code" : "41",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
-      "remarks" : "East pointing axis used in 2D projected coordinate systems.",
       "axisAbbrev" : "X",
       "axisDirection" : "east",
       "axisUnitID" : "m"
@@ -94,7 +105,7 @@
         },
         "code" : "Northing",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -104,9 +115,8 @@
         },
         "code" : "42",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
-      "remarks" : "North pointing axis used in 2D projected coordinate systems.",
       "axisAbbrev" : "Y",
       "axisDirection" : "north",
       "axisUnitID" : "m"
@@ -120,9 +130,9 @@
         "entityType" : "Citation",
         "title" : "EPSG Geodetic Parameter Dataset"
       },
-      "code" : "Réseau Géodésique Français 1993",
+      "code" : "Réseau Géodesique Français 1993 v1",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -132,25 +142,38 @@
       },
       "code" : "6171",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
-    "alias" : [ "RGF93" ],
+    "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Réseau Géodesique Français 1993" ],
+    "remarks" : "RGF93 v1 is a realization of ETRS89. Replaced by RGF93 v2 (datum code 1312) from 2010-06-18.",
     "domain" : [ {
       "entityType" : "ObjectDomain",
-      "scope" : "Geodetic survey.",
+      "scope" : "Geodesy.",
       "domainOfValidity" : {
         "entityType" : "Extent",
-        "description" : "France - onshore and offshore, mainland and Corsica.",
+        "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
           "westBoundLongitude" : -9.86,
           "eastBoundLongitude" : 10.38,
           "southBoundLatitude" : 41.15,
           "northBoundLatitude" : 51.56
+        }, {
+          "entityType" : "GeographicDescription",
+          "geographicIdentifier" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "France",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          }
         } ]
       }
     } ],
-    "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
+    "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0. Derived from long-term GNSS observations at 23 points aligned to ETRF93 @ 1993.0 through fundamental points at Grasse, Toulouse and Brest. Network supplemented in 1994 and 1995 by approx. 1000 additional stations.",
     "primeMeridian" : {
       "entityType" : "PrimeMeridian",
       "name" : {
@@ -161,7 +184,7 @@
         },
         "code" : "Greenwich",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -171,7 +194,7 @@
         },
         "code" : "8901",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
       "greenwichLongitude" : {
@@ -189,7 +212,7 @@
         },
         "code" : "GRS 1980",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -199,7 +222,7 @@
         },
         "code" : "7019",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "alias" : [ "International 1979" ],
       "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
@@ -223,9 +246,9 @@
         "entityType" : "Citation",
         "title" : "EPSG Geodetic Parameter Dataset"
       },
-      "code" : "RGF93",
+      "code" : "RGF93 v1",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -235,21 +258,33 @@
       },
       "code" : "4171",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
-    "alias" : [ "RGF93 (lat-lon)" ],
-    "remarks" : "See CRS code 7084 for alternate system with axes reversed used by IGN for GIS purposes.",
+    "alias" : [ "RGF93 v1 (lat-lon)", "RGF93" ],
+    "remarks" : "See CRS code 7084 for alternate system with axes reversed used by IGN for GIS purposes. Replaced by RGF93 v2 (CRS code 9777) from 2010-06-18.",
     "domain" : [ {
-      "scope" : "Geodetic survey, air, land and sea navigation and safety of life purposes. Horizontal component of 3D system.",
+      "scope" : "Horizontal component of 3D system.",
       "domainOfValidity" : {
         "entityType" : "Extent",
-        "description" : "France - onshore and offshore, mainland and Corsica.",
+        "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
           "westBoundLongitude" : -9.86,
           "eastBoundLongitude" : 10.38,
           "southBoundLatitude" : 41.15,
           "northBoundLatitude" : 51.56
+        }, {
+          "entityType" : "GeographicDescription",
+          "geographicIdentifier" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "France",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          }
         } ]
       }
     } ],
@@ -263,7 +298,7 @@
         },
         "code" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -273,7 +308,7 @@
         },
         "code" : "6422",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
@@ -286,7 +321,7 @@
           },
           "code" : "Geodetic latitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -296,9 +331,9 @@
           },
           "code" : "106",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
         "axisUnitID" : "°",
@@ -315,7 +350,7 @@
           },
           "code" : "Geodetic longitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -325,9 +360,9 @@
           },
           "code" : "107",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
         "axisUnitID" : "°",
@@ -344,9 +379,9 @@
           "entityType" : "Citation",
           "title" : "EPSG Geodetic Parameter Dataset"
         },
-        "code" : "Réseau Géodésique Français 1993",
+        "code" : "Réseau Géodesique Français 1993 v1",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -356,25 +391,38 @@
         },
         "code" : "6171",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
-      "alias" : [ "RGF93" ],
+      "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Réseau Géodesique Français 1993" ],
+      "remarks" : "RGF93 v1 is a realization of ETRS89. Replaced by RGF93 v2 (datum code 1312) from 2010-06-18.",
       "domain" : [ {
         "entityType" : "ObjectDomain",
-        "scope" : "Geodetic survey.",
+        "scope" : "Geodesy.",
         "domainOfValidity" : {
           "entityType" : "Extent",
-          "description" : "France - onshore and offshore, mainland and Corsica.",
+          "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
           "geographicElement" : [ {
             "entityType" : "GeographicBoundingBox",
             "westBoundLongitude" : -9.86,
             "eastBoundLongitude" : 10.38,
             "southBoundLatitude" : 41.15,
             "northBoundLatitude" : 51.56
+          }, {
+            "entityType" : "GeographicDescription",
+            "geographicIdentifier" : {
+              "entityType" : "Identifier",
+              "authority" : {
+                "entityType" : "Citation",
+                "title" : "EPSG Geodetic Parameter Dataset"
+              },
+              "code" : "France",
+              "codeSpace" : "EPSG",
+              "version" : "12.026"
+            }
           } ]
         }
       } ],
-      "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0",
+      "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0. Derived from long-term GNSS observations at 23 points aligned to ETRF93 @ 1993.0 through fundamental points at Grasse, Toulouse and Brest. Network supplemented in 1994 and 1995 by approx. 1000 additional stations.",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
         "name" : {
@@ -385,7 +433,7 @@
           },
           "code" : "Greenwich",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -395,7 +443,7 @@
           },
           "code" : "8901",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
         "greenwichLongitude" : {
@@ -413,7 +461,7 @@
           },
           "code" : "GRS 1980",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -423,7 +471,7 @@
           },
           "code" : "7019",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "alias" : [ "International 1979" ],
         "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
@@ -450,7 +498,7 @@
       },
       "code" : "Lambert-93",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -460,19 +508,31 @@
       },
       "code" : "18085",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
     "domain" : [ {
-      "scope" : "Large and medium scale topographic mapping and engineering survey.",
+      "scope" : "Engineering survey, topographic mapping.",
       "domainOfValidity" : {
         "entityType" : "Extent",
-        "description" : "France - mainland onshore.",
+        "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
-          "westBoundLongitude" : -4.87,
-          "eastBoundLongitude" : 8.23,
-          "southBoundLatitude" : 42.33,
-          "northBoundLatitude" : 51.14
+          "westBoundLongitude" : -9.86,
+          "eastBoundLongitude" : 10.38,
+          "southBoundLatitude" : 41.15,
+          "northBoundLatitude" : 51.56
+        }, {
+          "entityType" : "GeographicDescription",
+          "geographicIdentifier" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "France",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          }
         } ]
       }
     } ],
@@ -535,7 +595,7 @@
         },
         "code" : "Lambert Conic Conformal (2SP)",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -545,7 +605,7 @@
         },
         "code" : "9802",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "parameter" : [ {
         "entityType" : "OperationParameter",
@@ -557,7 +617,7 @@
           },
           "code" : "Latitude of false origin",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -567,7 +627,7 @@
           },
           "code" : "8821",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       }, {
@@ -580,7 +640,7 @@
           },
           "code" : "Longitude of false origin",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -590,7 +650,7 @@
           },
           "code" : "8822",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       }, {
@@ -603,7 +663,7 @@
           },
           "code" : "Latitude of 1st standard parallel",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -613,7 +673,7 @@
           },
           "code" : "8823",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       }, {
@@ -626,7 +686,7 @@
           },
           "code" : "Latitude of 2nd standard parallel",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -636,7 +696,7 @@
           },
           "code" : "8824",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       }, {
@@ -649,7 +709,7 @@
           },
           "code" : "Easting at false origin",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -659,7 +719,7 @@
           },
           "code" : "8826",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       }, {
@@ -672,7 +732,7 @@
           },
           "code" : "Northing at false origin",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -682,7 +742,7 @@
           },
           "code" : "8827",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "Inverse operation uses the same parameter value."
       } ]

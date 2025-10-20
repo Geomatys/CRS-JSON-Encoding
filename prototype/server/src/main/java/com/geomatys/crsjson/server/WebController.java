@@ -49,7 +49,7 @@ public final class WebController {
      * @param  code  the <abbr>EPSG</abbr> code.
      * @return the <abbr>JSON</abbr> encoding.
      */
-    @GetMapping(value = "/def/crs/epsg/9.9.1/{code}", produces = "application/json")
+    @GetMapping(value = "/def/crs/epsg/12.026/{code}", produces = "application/json")
     public ResponseEntity<String> getCRS(@PathVariable("code") int code) {
         return format(Type.CRS, code);
     }
@@ -60,7 +60,7 @@ public final class WebController {
      * @param  code  the <abbr>EPSG</abbr> code.
      * @return the <abbr>JSON</abbr> encoding.
      */
-    @GetMapping(value = "/def/cs/epsg/9.9.1/{code}", produces = "application/json")
+    @GetMapping(value = "/def/cs/epsg/12.026/{code}", produces = "application/json")
     public ResponseEntity<String> getCS(@PathVariable("code") int code) {
         return format(Type.CS, code);
     }
@@ -71,7 +71,7 @@ public final class WebController {
      * @param  code  the <abbr>EPSG</abbr> code.
      * @return the <abbr>JSON</abbr> encoding.
      */
-    @GetMapping(value = "/def/datum/epsg/9.9.1/{code}", produces = "application/json")
+    @GetMapping(value = "/def/datum/epsg/12.026/{code}", produces = "application/json")
     public ResponseEntity<String> getDatum(@PathVariable("code") int code) {
         return format(Type.DATUM, code);
     }
@@ -82,7 +82,7 @@ public final class WebController {
      * @param  code  the <abbr>EPSG</abbr> code.
      * @return the <abbr>JSON</abbr> encoding.
      */
-    @GetMapping(value = "/def/coordinateOperation/epsg/9.9.1/{code}", produces = "application/json")
+    @GetMapping(value = "/def/coordinateOperation/epsg/12.026/{code}", produces = "application/json")
     public ResponseEntity<String> getOperation(@PathVariable("code") int code) {
         return format(Type.OPERATION, code);
     }
