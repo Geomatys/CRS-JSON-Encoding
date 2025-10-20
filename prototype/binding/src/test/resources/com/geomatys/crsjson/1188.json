@@ -8,7 +8,7 @@
     },
     "code" : "NAD83 to WGS 84 (1)",
     "codeSpace" : "EPSG",
-    "version" : "9.9.1"
+    "version" : "12.026"
   },
   "identifier" : [ {
     "entityType" : "Identifier",
@@ -18,12 +18,12 @@
     },
     "code" : "1188",
     "codeSpace" : "EPSG",
-    "version" : "9.9.1"
+    "version" : "12.026"
   } ],
   "alias" : [ "NAR-A, NAR-B, NAR-C AND NAR-D" ],
-  "remarks" : "Derived at 354 stations.",
+  "remarks" : "Derived at 354 stations. Accuracy 2m in each axis.",
   "domain" : [ {
-    "scope" : "Accuracy 2m in each axis.",
+    "scope" : "Military survey.",
     "domainOfValidity" : {
       "entityType" : "Extent",
       "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. United States (USA) - Alabama; Alaska (mainland); Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming.",
@@ -33,6 +33,18 @@
         "eastBoundLongitude" : -47.74,
         "southBoundLatitude" : 23.81,
         "northBoundLatitude" : 86.46
+      }, {
+        "entityType" : "GeographicDescription",
+        "geographicIdentifier" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "North America - Canada and USA (CONUS, Alaska mainland)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        }
       } ]
     }
   } ],
@@ -46,7 +58,7 @@
       },
       "code" : "NAD83",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -56,21 +68,33 @@
       },
       "code" : "4269",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
     "alias" : [ "NAD83(1986)", "270", "NAD 83 (1986) - LatLon", "NAD83(Original)" ],
     "remarks" : "Longitude is POSITIVE EAST. The adjustment included connections to Greenland and Mexico but the system was not adopted there. For applications with an accuracy of better than 1m replaced by NAD83(HARN) in the US and PRVI and by NAD83(CSRS) in Canada.",
     "domain" : [ {
-      "scope" : "Geodetic survey.",
+      "scope" : "Geodesy.",
       "domainOfValidity" : {
         "entityType" : "Extent",
-        "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands.  British Virgin Islands.",
+        "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
           "westBoundLongitude" : 167.65,
-          "eastBoundLongitude" : -47.74,
+          "eastBoundLongitude" : -40.73,
           "southBoundLatitude" : 14.92,
-          "northBoundLatitude" : 86.46
+          "northBoundLatitude" : 86.45
+        }, {
+          "entityType" : "GeographicDescription",
+          "geographicIdentifier" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "North America - NAD83",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          }
         } ]
       }
     } ],
@@ -84,7 +108,7 @@
         },
         "code" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -94,7 +118,7 @@
         },
         "code" : "6422",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
@@ -107,7 +131,7 @@
           },
           "code" : "Geodetic latitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -117,9 +141,9 @@
           },
           "code" : "106",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
         "axisUnitID" : "°",
@@ -136,7 +160,7 @@
           },
           "code" : "Geodetic longitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -146,9 +170,9 @@
           },
           "code" : "107",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
         "axisUnitID" : "°",
@@ -167,7 +191,7 @@
         },
         "code" : "North American Datum 1983",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -177,26 +201,38 @@
         },
         "code" : "6269",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
-      "alias" : [ "NAD83", "NAD83(1986)", "NAD83(Original)" ],
+      "alias" : [ "NAD83(1986)", "NAD83", "NAD83(Original)" ],
       "remarks" : "Although the 1986 adjustment included connections to Greenland and Mexico, it has not been adopted there. In Canada and US, replaced NAD27.",
       "domain" : [ {
         "entityType" : "ObjectDomain",
         "scope" : "Topographic mapping.",
         "domainOfValidity" : {
           "entityType" : "Extent",
-          "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands.  British Virgin Islands.",
+          "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.",
           "geographicElement" : [ {
             "entityType" : "GeographicBoundingBox",
             "westBoundLongitude" : 167.65,
-            "eastBoundLongitude" : -47.74,
+            "eastBoundLongitude" : -40.73,
             "southBoundLatitude" : 14.92,
-            "northBoundLatitude" : 86.46
+            "northBoundLatitude" : 86.45
+          }, {
+            "entityType" : "GeographicDescription",
+            "geographicIdentifier" : {
+              "entityType" : "Identifier",
+              "authority" : {
+                "entityType" : "Citation",
+                "title" : "EPSG Geodetic Parameter Dataset"
+              },
+              "code" : "North America - NAD83",
+              "codeSpace" : "EPSG",
+              "version" : "12.026"
+            }
           } ]
         }
       } ],
-      "anchorDefinition" : "Origin at geocentre.",
+      "anchorDefinition" : "NAD83 Doppler Transit stations in NWL 9D were aligned with the BIH Conventional Terrestrial Reference Frame (BTS) at epoch 1984.0 using an internationally adopted transformation. NAD83 is now known to be non-geocentric by about 2.2 meters.",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
         "name" : {
@@ -207,7 +243,7 @@
           },
           "code" : "Greenwich",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -217,7 +253,7 @@
           },
           "code" : "8901",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
         "greenwichLongitude" : {
@@ -235,7 +271,7 @@
           },
           "code" : "GRS 1980",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -245,7 +281,7 @@
           },
           "code" : "7019",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
         "alias" : [ "International 1979" ],
         "remarks" : "Adopted by IUGG 1979 Canberra.  Inverse flattening is derived from geocentric gravitational constant GM = 3986005e8 m*m*m/s/s; dynamic form factor J2 = 108263e-8 and Earth's angular velocity = 7292115e-11 rad/s.",
@@ -272,7 +308,7 @@
       },
       "code" : "WGS 84",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -282,19 +318,31 @@
       },
       "code" : "4326",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
     "domain" : [ {
-      "scope" : "Horizontal component of 3D system. Used by the GPS satellite navigation system and for NATO military geodetic surveying.",
+      "scope" : "Horizontal component of 3D system.",
       "domainOfValidity" : {
         "entityType" : "Extent",
-        "description" : "World.",
+        "description" : "World: Afghanistan; Albania; Algeria; American Samoa; Andorra; Angola; Anguilla; Antarctica; Antigua and Barbuda; Argentina; Armenia; Aruba; Australia; Austria; Azerbaijan; Bahamas; Bahrain; Bangladesh; Barbados; Belgium; Belarus; Belize; Benin; Bermuda; Bhutan; Bolivia; BES Islands - Bonaire, St Eustatius and Saba; Bosnia and Herzegovina; Botswana; Bouvet Island; Brazil; British Indian Ocean Territory; British Virgin Islands; Brunei; Bulgaria; Burkina Faso; Burundi; Cambodia; Cameroon; Canada; Cape Verde; Cayman Islands; Central African Republic; Chad; Chile; China; Christmas Island; Cocos (Keeling) Islands; Colombia; Comoros; Congo; Congo DR (Zaire); Cook Islands; Costa Rica; Côte d'Ivoire (Ivory Coast); Croatia; Cuba; Curacao; Cyprus; Czechia; Denmark; Djibouti; Dominica; Dominican Republic; East Timor; Ecuador; Egypt; El Salvador; Equatorial Guinea; Eritrea; Estonia; Eswatini (Swaziland); Ethiopia; Falkland Islands (Malvinas); Faroe Islands; Fiji; Finland; France; French Guiana; French Polynesia; French Southern Territories; Gabon; Gambia; Georgia; Germany; Ghana; Gibraltar; Greece; Greenland; Grenada; Guadeloupe; Guam; Guatemala; Guinea; Guinea-Bissau; Guyana; Haiti; Heard Island and McDonald Islands; Honduras; Hong Kong; Hungary; Iceland; India; Indonesia; Iran; Iraq; Ireland; Israel; Italy; Jamaica; Japan; Jordan; Kazakhstan; Kenya; Kiribati; Democratic People's Republic of Korea (North Korea), Republic of Korea (South Korea), Kosovo; Kuwait; Kyrgyzstan; Laos; Latvia; Lebanon; Lesotho; Liberia; Libya; Liechtenstein; Lithuania; Luxembourg; Macao; Madagascar; Malawi; Malaysia; Maldives; Mali; Malta; Marshall Islands; Martinique; Mauritania; Mauritius; Mayotte; Mexico; Micronesia; Moldova; Monaco; Mongolia; Montenegro; Montserrat; Morocco; Mozambique; Myanmar (Burma); Namibia; Nauru; Nepal; Netherlands; New Caledonia; New Zealand; Nicaragua; Niger; Nigeria; Niue; Norfolk Island; North Macedonia; Northern Mariana Islands; Norway; Oman; Pakistan; Palau; Palestine; Panama; Papua New Guinea (PNG); Paraguay; Peru; Philippines; Pitcairn; Poland; Portugal; Puerto Rico; Qatar; Reunion; Romania; Russia; Rwanda; St Barthelemy; St Helena, Ascension and Tristan da Cunha; St Kitts and Nevis; St Lucia; St Maarten; St Martin; St Pierre and Miquelon; St Vincent and the Grenadines; Samoa; San Marino; Sao Tome and Principe; Saudi Arabia; Senegal; Serbia; Seychelles; Sierra Leone; Singapore; Slovakia; Slovenia; Solomon Islands; Somalia; South Africa; South Georgia and the South Sandwich Islands; South Sudan; Spain; Sri Lanka; Sudan; Suriname; Svalbard and Jan Mayen; Sweden; Switzerland; Syria; Taiwan; Tajikistan; Tanzania; Thailand; Togo; Tokelau; Tonga; Trinidad and Tobago; Tunisia; Türkiye (Turkey); Turkmenistan; Turks and Caicos Islands; Tuvalu; Uganda; Ukraine; United Arab Emirates (UAE); United Kingdom (UK); United States (USA); US Minor Outlying Islands; US Virgin Islands; Uruguay; Uzbekistan; Vanuatu; Vatican; Venezuela; Vietnam; Wallis and Futuna; Western Sahara; Yemen; Zambia; Zimbabwe.",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
           "westBoundLongitude" : -180.0,
           "eastBoundLongitude" : 180.0,
           "southBoundLatitude" : -90.0,
           "northBoundLatitude" : 90.0
+        }, {
+          "entityType" : "GeographicDescription",
+          "geographicIdentifier" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World (by country)",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          }
         } ]
       }
     } ],
@@ -308,7 +356,7 @@
         },
         "code" : "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -318,7 +366,7 @@
         },
         "code" : "6422",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "remarks" : "Coordinates referenced to this CS are in degrees. Any degree representation (e.g. DMSH, decimal, etc.) may be used but that used must be declared for the user by the supplier of data. Used in geographic 2D coordinate reference systems.",
       "axis" : [ {
@@ -331,7 +379,7 @@
           },
           "code" : "Geodetic latitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -341,9 +389,9 @@
           },
           "code" : "106",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the equatorial plane to the perpendicular to the ellipsoid through a given point, northwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lat",
         "axisDirection" : "north",
         "axisUnitID" : "°",
@@ -360,7 +408,7 @@
           },
           "code" : "Geodetic longitude",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         },
         "identifier" : [ {
           "entityType" : "Identifier",
@@ -370,9 +418,9 @@
           },
           "code" : "107",
           "codeSpace" : "EPSG",
-          "version" : "9.9.1"
+          "version" : "12.026"
         } ],
-        "remarks" : "Angle from the prime meridian plane to the meridian plane passing through the given point, eastwards usually treated as positive.\nUsed in geographic 2D and geographic 3D coordinate reference systems.",
+        "remarks" : "Used in geographic 2D and geographic 3D coordinate reference systems.",
         "axisAbbrev" : "Lon",
         "axisDirection" : "east",
         "axisUnitID" : "°",
@@ -380,110 +428,6 @@
         "maximumValue" : 180.0,
         "rangeMeaning" : "wraparound"
       } ]
-    },
-    "datum" : {
-      "entityType" : "GeodeticReferenceFrame",
-      "name" : {
-        "entityType" : "Identifier",
-        "authority" : {
-          "entityType" : "Citation",
-          "title" : "EPSG Geodetic Parameter Dataset"
-        },
-        "code" : "World Geodetic System 1984",
-        "codeSpace" : "EPSG",
-        "version" : "9.9.1"
-      },
-      "identifier" : [ {
-        "entityType" : "Identifier",
-        "authority" : {
-          "entityType" : "Citation",
-          "title" : "EPSG Geodetic Parameter Dataset"
-        },
-        "code" : "6326",
-        "codeSpace" : "EPSG",
-        "version" : "9.9.1"
-      } ],
-      "alias" : [ "WGS 84" ],
-      "remarks" : "EPSG::6326 has been the then current realization. No distinction is made between the original and subsequent (G730, G873, G1150, G1674 and G1762) WGS 84 frames. Since 1997, WGS 84 has been maintained within 10cm of the then current ITRF.",
-      "domain" : [ {
-        "entityType" : "ObjectDomain",
-        "scope" : "Satellite navigation.",
-        "domainOfValidity" : {
-          "entityType" : "Extent",
-          "description" : "World.",
-          "geographicElement" : [ {
-            "entityType" : "GeographicBoundingBox",
-            "westBoundLongitude" : -180.0,
-            "eastBoundLongitude" : 180.0,
-            "southBoundLatitude" : -90.0,
-            "northBoundLatitude" : 90.0
-          } ]
-        }
-      } ],
-      "anchorDefinition" : "Defined through a consistent set of station coordinates. These have changed with time: by 0.7m on 1994-06-29 (G730), a further 0.2m on 1997-01-29 (G873),  0.06m on 2002-01-20 (G1150), 0.2m on 2012-02-08 (G1674) and 0.02m on 2013-10-16 (G1762).",
-      "primeMeridian" : {
-        "entityType" : "PrimeMeridian",
-        "name" : {
-          "entityType" : "Identifier",
-          "authority" : {
-            "entityType" : "Citation",
-            "title" : "EPSG Geodetic Parameter Dataset"
-          },
-          "code" : "Greenwich",
-          "codeSpace" : "EPSG",
-          "version" : "9.9.1"
-        },
-        "identifier" : [ {
-          "entityType" : "Identifier",
-          "authority" : {
-            "entityType" : "Citation",
-            "title" : "EPSG Geodetic Parameter Dataset"
-          },
-          "code" : "8901",
-          "codeSpace" : "EPSG",
-          "version" : "9.9.1"
-        } ],
-        "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
-        "greenwichLongitude" : {
-          "value" : 0.0,
-          "uom" : "°"
-        }
-      },
-      "ellipsoid" : {
-        "entityType" : "Ellipsoid",
-        "name" : {
-          "entityType" : "Identifier",
-          "authority" : {
-            "entityType" : "Citation",
-            "title" : "EPSG Geodetic Parameter Dataset"
-          },
-          "code" : "WGS 84",
-          "codeSpace" : "EPSG",
-          "version" : "9.9.1"
-        },
-        "identifier" : [ {
-          "entityType" : "Identifier",
-          "authority" : {
-            "entityType" : "Citation",
-            "title" : "EPSG Geodetic Parameter Dataset"
-          },
-          "code" : "7030",
-          "codeSpace" : "EPSG",
-          "version" : "9.9.1"
-        } ],
-        "alias" : [ "WGS84" ],
-        "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
-        "semiMajorAxis" : {
-          "value" : 6378137.0,
-          "uom" : "m"
-        },
-        "secondDefiningParameter" : {
-          "inverseFlattening" : {
-            "value" : 298.257223563
-          },
-          "isSphere" : false
-        }
-      }
     }
   },
   "operationVersion" : "DMA-N Am",
@@ -532,7 +476,7 @@
       },
       "code" : "Geocentric translations (geog2D domain)",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     },
     "identifier" : [ {
       "entityType" : "Identifier",
@@ -542,7 +486,7 @@
       },
       "code" : "9603",
       "codeSpace" : "EPSG",
-      "version" : "9.9.1"
+      "version" : "12.026"
     } ],
     "alias" : [ "Geocentric Translations" ],
     "remarks" : "See methods 1031 and 1035 for similar tfms operating between other CRSs types.",
@@ -556,7 +500,7 @@
         },
         "code" : "X-axis translation",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -566,7 +510,7 @@
         },
         "code" : "8605",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "alias" : [ "tX" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."
@@ -580,7 +524,7 @@
         },
         "code" : "Y-axis translation",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -590,7 +534,7 @@
         },
         "code" : "8606",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "alias" : [ "tY" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."
@@ -604,7 +548,7 @@
         },
         "code" : "Z-axis translation",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       },
       "identifier" : [ {
         "entityType" : "Identifier",
@@ -614,7 +558,7 @@
         },
         "code" : "8607",
         "codeSpace" : "EPSG",
-        "version" : "9.9.1"
+        "version" : "12.026"
       } ],
       "alias" : [ "tZ" ],
       "remarks" : "Inverse operation uses this parameter value with opposite sign."

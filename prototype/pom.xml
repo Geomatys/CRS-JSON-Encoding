@@ -48,6 +48,70 @@
     <maven.compiler.release>23</maven.compiler.release>
   </properties>
 
+  <!--
+    Note that the `server` sub-project cannot inherit from this parent.
+    We have to ensure manually that these dependencies are consistent.
+  -->
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jsonschema2pojo</groupId>
+        <artifactId>jsonschema2pojo-core</artifactId>
+        <version>1.2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.opengis</groupId>
+        <artifactId>geoapi</artifactId>
+        <version>3.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sis.core</groupId>
+        <artifactId>sis-referencing</artifactId>
+        <version>1.5</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sis.non-free</groupId>
+        <artifactId>sis-embedded-data</artifactId>
+        <version>1.5</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>10.15.2.0</version> <!-- Version number used by Apache SIS. -->
+      </dependency>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbytools</artifactId>
+        <version>10.15.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.10.1</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.2</version>
+        <configuration>
+          <systemProperties>
+            <property>
+              <name>derby.stream.error.file</name>
+              <value>${project.build.directory}/derby.log</value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <modules>
     <module>binding</module>
     <module>server</module>

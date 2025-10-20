@@ -56,7 +56,7 @@ to the HTML file `server/src/main/resources/static/index.html`.
 For requesting a CRS-JSON draft file, visit for example:
 
 ```
-http://localhost:8080/def/crs/epsg/9.9.1/2154
+http://localhost:8080/def/crs/epsg/12.026/2154
 ```
 
 Replace `2154` by the desired EPSG code.
