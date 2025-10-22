@@ -29,6 +29,7 @@
       "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. United States (USA) - Alabama; Alaska (mainland); Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming.",
       "geographicElement" : [ {
         "entityType" : "GeographicBoundingBox",
+        "extentTypeCode" : 1,
         "westBoundLongitude" : -172.54,
         "eastBoundLongitude" : -47.74,
         "southBoundLatitude" : 23.81,
@@ -79,6 +80,7 @@
         "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
+          "extentTypeCode" : 1,
           "westBoundLongitude" : 167.65,
           "eastBoundLongitude" : -40.73,
           "southBoundLatitude" : 14.92,
@@ -213,6 +215,7 @@
           "description" : "North America - onshore and offshore: Canada - Alberta; British Columbia; Manitoba; New Brunswick; Newfoundland and Labrador; Northwest Territories; Nova Scotia; Nunavut; Ontario; Prince Edward Island; Quebec; Saskatchewan; Yukon. Puerto Rico. United States (USA) - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands. British Virgin Islands.",
           "geographicElement" : [ {
             "entityType" : "GeographicBoundingBox",
+            "extentTypeCode" : 1,
             "westBoundLongitude" : 167.65,
             "eastBoundLongitude" : -40.73,
             "southBoundLatitude" : 14.92,
@@ -233,6 +236,7 @@
         }
       } ],
       "anchorDefinition" : "NAD83 Doppler Transit stations in NWL 9D were aligned with the BIH Conventional Terrestrial Reference Frame (BTS) at epoch 1984.0 using an internationally adopted transformation. NAD83 is now known to be non-geocentric by about 2.2 meters.",
+      "publicationDate" : "1986",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
         "name" : {
@@ -327,6 +331,7 @@
         "description" : "World: Afghanistan; Albania; Algeria; American Samoa; Andorra; Angola; Anguilla; Antarctica; Antigua and Barbuda; Argentina; Armenia; Aruba; Australia; Austria; Azerbaijan; Bahamas; Bahrain; Bangladesh; Barbados; Belgium; Belarus; Belize; Benin; Bermuda; Bhutan; Bolivia; BES Islands - Bonaire, St Eustatius and Saba; Bosnia and Herzegovina; Botswana; Bouvet Island; Brazil; British Indian Ocean Territory; British Virgin Islands; Brunei; Bulgaria; Burkina Faso; Burundi; Cambodia; Cameroon; Canada; Cape Verde; Cayman Islands; Central African Republic; Chad; Chile; China; Christmas Island; Cocos (Keeling) Islands; Colombia; Comoros; Congo; Congo DR (Zaire); Cook Islands; Costa Rica; Côte d'Ivoire (Ivory Coast); Croatia; Cuba; Curacao; Cyprus; Czechia; Denmark; Djibouti; Dominica; Dominican Republic; East Timor; Ecuador; Egypt; El Salvador; Equatorial Guinea; Eritrea; Estonia; Eswatini (Swaziland); Ethiopia; Falkland Islands (Malvinas); Faroe Islands; Fiji; Finland; France; French Guiana; French Polynesia; French Southern Territories; Gabon; Gambia; Georgia; Germany; Ghana; Gibraltar; Greece; Greenland; Grenada; Guadeloupe; Guam; Guatemala; Guinea; Guinea-Bissau; Guyana; Haiti; Heard Island and McDonald Islands; Honduras; Hong Kong; Hungary; Iceland; India; Indonesia; Iran; Iraq; Ireland; Israel; Italy; Jamaica; Japan; Jordan; Kazakhstan; Kenya; Kiribati; Democratic People's Republic of Korea (North Korea), Republic of Korea (South Korea), Kosovo; Kuwait; Kyrgyzstan; Laos; Latvia; Lebanon; Lesotho; Liberia; Libya; Liechtenstein; Lithuania; Luxembourg; Macao; Madagascar; Malawi; Malaysia; Maldives; Mali; Malta; Marshall Islands; Martinique; Mauritania; Mauritius; Mayotte; Mexico; Micronesia; Moldova; Monaco; Mongolia; Montenegro; Montserrat; Morocco; Mozambique; Myanmar (Burma); Namibia; Nauru; Nepal; Netherlands; New Caledonia; New Zealand; Nicaragua; Niger; Nigeria; Niue; Norfolk Island; North Macedonia; Northern Mariana Islands; Norway; Oman; Pakistan; Palau; Palestine; Panama; Papua New Guinea (PNG); Paraguay; Peru; Philippines; Pitcairn; Poland; Portugal; Puerto Rico; Qatar; Reunion; Romania; Russia; Rwanda; St Barthelemy; St Helena, Ascension and Tristan da Cunha; St Kitts and Nevis; St Lucia; St Maarten; St Martin; St Pierre and Miquelon; St Vincent and the Grenadines; Samoa; San Marino; Sao Tome and Principe; Saudi Arabia; Senegal; Serbia; Seychelles; Sierra Leone; Singapore; Slovakia; Slovenia; Solomon Islands; Somalia; South Africa; South Georgia and the South Sandwich Islands; South Sudan; Spain; Sri Lanka; Sudan; Suriname; Svalbard and Jan Mayen; Sweden; Switzerland; Syria; Taiwan; Tajikistan; Tanzania; Thailand; Togo; Tokelau; Tonga; Trinidad and Tobago; Tunisia; Türkiye (Turkey); Turkmenistan; Turks and Caicos Islands; Tuvalu; Uganda; Ukraine; United Arab Emirates (UAE); United Kingdom (UK); United States (USA); US Minor Outlying Islands; US Virgin Islands; Uruguay; Uzbekistan; Vanuatu; Vatican; Venezuela; Vietnam; Wallis and Futuna; Western Sahara; Yemen; Zambia; Zimbabwe.",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
+          "extentTypeCode" : 1,
           "westBoundLongitude" : -180.0,
           "eastBoundLongitude" : 180.0,
           "southBoundLatitude" : -90.0,
@@ -428,11 +433,1208 @@
         "maximumValue" : 180.0,
         "rangeMeaning" : "wraparound"
       } ]
+    },
+    "datumEnsemble" : {
+      "entityType" : "DatumEnsemble",
+      "name" : {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "World Geodetic System 1984 ensemble",
+        "codeSpace" : "EPSG",
+        "version" : "12.026"
+      },
+      "identifier" : [ {
+        "entityType" : "Identifier",
+        "authority" : {
+          "entityType" : "Citation",
+          "title" : "EPSG Geodetic Parameter Dataset"
+        },
+        "code" : "6326",
+        "codeSpace" : "EPSG",
+        "version" : "12.026"
+      } ],
+      "alias" : [ "WGS 84", "World Geodetic System 1984" ],
+      "remarks" : "EPSG::6326 has been the then current realization. No distinction is made between the original and subsequent (G730, G873, G1150, G1674, G1762, G2139 and G2296) WGS 84 frames. Since 1997, WGS 84 has been maintained within 10cm of the then current ITRF.",
+      "domain" : [ {
+        "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+        "domainOfValidity" : {
+          "entityType" : "Extent",
+          "description" : "World.",
+          "geographicElement" : [ {
+            "entityType" : "GeographicBoundingBox",
+            "extentTypeCode" : 1,
+            "westBoundLongitude" : -180.0,
+            "eastBoundLongitude" : 180.0,
+            "southBoundLatitude" : -90.0,
+            "northBoundLatitude" : 90.0
+          }, {
+            "entityType" : "GeographicDescription",
+            "geographicIdentifier" : {
+              "entityType" : "Identifier",
+              "authority" : {
+                "entityType" : "Citation",
+                "title" : "EPSG Geodetic Parameter Dataset"
+              },
+              "code" : "World",
+              "codeSpace" : "EPSG",
+              "version" : "12.026"
+            }
+          } ]
+        }
+      } ],
+      "datum" : [ {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (Transit)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1166",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (Transit)" ],
+        "remarks" : "The NSWC 9Z-2 origin shifted by -4.5 m along the Z-axis, scale changed by -0.6 x 10E-6 and the reference meridian rotated westward by 0.814\" to be aligned to the BTS at epoch 1984.0. Replaced by World Geodetic System 1984 (G730) from 1994-06-29.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 5 GPS tracking stations in the Transit doppler positioning NSWC 9Z-2 reference frame transformed to be aligned to the BIH Conventional Terrestrial Reference Frame (BTS) at epoch 1984.0.",
+        "publicationDate" : "1987-01-01",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G730)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1152",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G730)" ],
+        "remarks" : "Replaces the original Transit-derived World Geodetic System 1984 from 1994-06-29. Replaced by World Geodetic System 1984 (G873) from 1997-01-29.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 10 GPS tracking stations adjusted to a subset of ITRF92 stations at epoch 1994.0. The reference epoch for ITRF92 is 1988.0; the ITRF92 station coordinates were transformed to 1994.0 using the NNR-NUVEL1 plate motion model.",
+        "publicationDate" : "1994-06-29",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G873)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1153",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G873)" ],
+        "remarks" : "Replaces World Geodetic System 1984 (G730) from 1997-01-29. Replaced by World Geodetic System 1984 (G1150) from 2002-01-20.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 13 GPS tracking stations adjusted to a subset of ITRF94 stations at epoch 1997.0. The reference epoch for the adjustment was 1994.0 and the coordinates were propagated to 1997.0 using the NNR-NUVEL-1A plate motion model.",
+        "publicationDate" : "1997-01-29",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G1150)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1154",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G1150)" ],
+        "remarks" : "Replaces World Geodetic System 1984 (G873) from 2002-01-20. Replaced by World Geodetic System 1984 (G1674) from 2012-02-08.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 17 GPS tracking stations adjusted to a subset of 49 IGS stations. Observations made in February 2001. The reference epoch for ITRF2000 is 1997.0; station coordinates were transformed to 2001.0 using IERS station velocities.",
+        "publicationDate" : "2002-01-20",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G1674)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1155",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G1674)" ],
+        "remarks" : "Replaces World Geodetic System 1984 (G1150) from 2012-02-08. Replaced by World Geodetic System 1984 (G1762) from 2013-10-16.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 15 GPS tracking stations adjusted to a subset of IGS stations at epoch 2005.0. The IGS station coordinates are considered to be equivalent to ITRF2008.",
+        "publicationDate" : "2012-02-08",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G1762)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1156",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G1762)", "World Geodetic System 1984 (G1762')" ],
+        "remarks" : "Replaces WGS 84 (G1674) from 2013-10-16. Frame was redesignated WGS 84 (G1762') after coordinates of 7 NGA tracking stations were changed following station moves and antenna updates 2014-08 to 2015-06. Replaced by WGS 84 (G2139) from 2021-01-03.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 19 GPS tracking stations adjusted to a subset of IGb08 stations at epoch 2005.0 using observations made in May 2013. The IGb08 coordinates are considered to be equivalent to ITRF2008.",
+        "publicationDate" : "2013-10-16",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G2139)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1309",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G2139)" ],
+        "remarks" : "Replaces World Geodetic System 1984 (G1762) from 2021-01-03. Tracking station coordinate changes on 2021-03-28 when NGA implemented IGS definition of antenna phase centre offset. Replaced by  World Geodetic System 1984 (G2296) from 2024-01-07.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Defined through coordinates of 19 GPS tracking stations aligned with a subset of IGb14 stations at epoch 2016.0. The IGb14 station coordinates are considered to be equivalent to ITRF2014.",
+        "publicationDate" : "2021-01-03",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      }, {
+        "entityType" : "GeodeticReferenceFrame",
+        "name" : {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "World Geodetic System 1984 (G2296)",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        },
+        "identifier" : [ {
+          "entityType" : "Identifier",
+          "authority" : {
+            "entityType" : "Citation",
+            "title" : "EPSG Geodetic Parameter Dataset"
+          },
+          "code" : "1383",
+          "codeSpace" : "EPSG",
+          "version" : "12.026"
+        } ],
+        "alias" : [ "WGS 84 (G2296)" ],
+        "remarks" : "WGS 84 (G2296) is considered to be aligned to IGS20 and  ITRF2020 at all epochs. Replaces World Geodetic System 1984 (G2139) from 2024-01-07.",
+        "domain" : [ {
+          "entityType" : "ObjectDomain",
+          "scope" : "Geodesy. Navigation and positioning using GPS satellite system.",
+          "domainOfValidity" : {
+            "entityType" : "Extent",
+            "description" : "World.",
+            "geographicElement" : [ {
+              "entityType" : "GeographicBoundingBox",
+              "extentTypeCode" : 1,
+              "westBoundLongitude" : -180.0,
+              "eastBoundLongitude" : 180.0,
+              "southBoundLatitude" : -90.0,
+              "northBoundLatitude" : 90.0
+            }, {
+              "entityType" : "GeographicDescription",
+              "geographicIdentifier" : {
+                "entityType" : "Identifier",
+                "authority" : {
+                  "entityType" : "Citation",
+                  "title" : "EPSG Geodetic Parameter Dataset"
+                },
+                "code" : "World",
+                "codeSpace" : "EPSG",
+                "version" : "12.026"
+              }
+            } ]
+          }
+        } ],
+        "anchorDefinition" : "Aligned to IGS20 through a 7.4 year (2016-01 to 2023-05) time series of daily positions and derived velocities of the 17 WGS 84 tracking stations, determined by Precise Point Positioning (PPP) using IGS precise orbits, clocks and antenna calibrations.",
+        "publicationDate" : "2024-01-02",
+        "conventionalRS" : {
+          "entityType" : "IdentifiedObject",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "World Geodetic System 1984",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "1024",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "Conventional RS for WGS 84 datum ensemble"
+        },
+        "primeMeridian" : {
+          "entityType" : "PrimeMeridian",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "Greenwich",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "8901",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "remarks" : "The international reference meridian as defined first by the 1884 International Meridian Conference and later by the Bureau International de l'Heure (BIH) and then the International Earth Rotation Service (IERS).",
+          "greenwichLongitude" : {
+            "value" : 0.0,
+            "uom" : "°"
+          }
+        },
+        "ellipsoid" : {
+          "entityType" : "Ellipsoid",
+          "name" : {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "WGS 84",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          },
+          "identifier" : [ {
+            "entityType" : "Identifier",
+            "authority" : {
+              "entityType" : "Citation",
+              "title" : "EPSG Geodetic Parameter Dataset"
+            },
+            "code" : "7030",
+            "codeSpace" : "EPSG",
+            "version" : "12.026"
+          } ],
+          "alias" : [ "WGS84" ],
+          "remarks" : "1/f derived from four defining parameters semi-major axis; C20 = -484.16685*10e-6; earth's angular velocity ω = 7292115e-11 rad/sec; gravitational constant GM = 3986005e8 m*m*m/s/s. In 1994 new GM = 3986004.418e8 m*m*m/s/s but a and 1/f retained.",
+          "semiMajorAxis" : {
+            "value" : 6378137.0,
+            "uom" : "m"
+          },
+          "secondDefiningParameter" : {
+            "inverseFlattening" : {
+              "value" : 298.257223563
+            },
+            "isSphere" : false
+          }
+        }
+      } ],
+      "ensembleAccuracy" : {
+        "entityType" : "PositionalAccuracy",
+        "nameOfMeasure" : [ "Ensemble accuracy" ],
+        "evaluationMethodType" : "directExternal",
+        "evaluationMethodDescription" : "Accuracy declared in a geodetic dataset.",
+        "result" : [ {
+          "entityType" : "QuantitativeResult",
+          "value" : {
+            "value" : 2.0,
+            "uom" : "m"
+          }
+        } ]
+      }
     }
   },
   "operationVersion" : "DMA-N Am",
   "coordinateOperationAccuracy" : [ {
     "entityType" : "PositionalAccuracy",
+    "nameOfMeasure" : [ "Transformation accuracy" ],
+    "evaluationMethodType" : "directExternal",
+    "evaluationMethodDescription" : "Accuracy declared in a geodetic dataset.",
     "result" : [ {
       "entityType" : "QuantitativeResult",
       "value" : {

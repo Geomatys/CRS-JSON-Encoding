@@ -15,20 +15,28 @@
  */
 package com.geomatys.crsjson.pojo;
 
+import org.opengis.temporal.TemporalPrimitive;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+
 
 /**
- * Contextually local coordinate reference system associated with an engineering datum.
- * This is applied either to activities on or near the surface of the Earth without geodetic corrections,
- * or on moving platforms such as road vehicles, vessels, aircraft or spacecraft,
- * or as the internal <abbr>CRS</abbr> of an image.
+ * Temporal domain of resource.
  */
-public final class EngineeringCRS extends SingleCRS<CoordinateSystem, EngineeringDatum>
-        implements org.opengis.referencing.crs.EngineeringCRS
+public final class TemporalExtent extends Entity
+        implements org.opengis.metadata.extent.TemporalExtent
 {
+    /**
+     * Period for the content of the resource.
+     */
+    @JsonProperty(index = 10)
+    @JsonPropertyDescription("period for the content of the resource")
+    public Period extent;
+
     /**
      * Creates a new instance with all values initialized to null.
      */
-    public EngineeringCRS() {
+    public TemporalExtent() {
     }
 
     /**
@@ -37,11 +45,20 @@ public final class EngineeringCRS extends SingleCRS<CoordinateSystem, Engineerin
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    protected EngineeringCRS(final org.opengis.referencing.crs.EngineeringCRS impl) {
-        super(impl);
-        entityType = "EngineeringCRS";
-        datum = EngineeringDatum.create(impl.getDatum());
-        coordinateSystem = CoordinateSystem.create(impl.getCoordinateSystem());
+    protected TemporalExtent(org.opengis.metadata.extent.TemporalExtent impl) {
+        entityType = "TemporalExtent";
+        extent = Period.create(impl.getExtent());
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object.
+     *
+     * @param impl implementation of a GeoAPI object to serialize.
+     * @return the POJO to serialize.
+     */
+    public static TemporalExtent create(org.opengis.metadata.extent.TemporalExtent impl) {
+        return (impl == null || impl instanceof TemporalExtent)
+                ? (TemporalExtent) impl : new TemporalExtent(impl);
     }
 
     // ┌────────────────────────────────────────┐
@@ -49,7 +66,7 @@ public final class EngineeringCRS extends SingleCRS<CoordinateSystem, Engineerin
     // └────────────────────────────────────────┘
 
     @Override
-    public org.opengis.referencing.datum.EngineeringDatum getDatum() {
-        return datum;
+    public TemporalPrimitive getExtent() {
+        return extent;
     }
 }

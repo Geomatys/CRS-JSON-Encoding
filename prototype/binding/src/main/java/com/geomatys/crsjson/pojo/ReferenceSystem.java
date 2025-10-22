@@ -15,30 +15,36 @@
  */
 package com.geomatys.crsjson.pojo;
 
-import java.util.Date;
-import java.util.List;
+import java.util.Set;
 import java.util.Collection;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 
 /**
- * Standardized resource reference.
+ * Information about the reference system.
  */
-public final class Citation extends Entity
-        implements org.opengis.metadata.citation.Citation
+public class ReferenceSystem extends Entity
+        implements org.opengis.referencing.ReferenceSystem
 {
     /**
-     * Name by which the cited resource is known.
+     * Identifier and codespace for reference system.
      */
-    @JsonProperty(index = 100, required = true)
-    @JsonPropertyDescription("name by which the cited resource is known")
-    public String title;
+    @JsonProperty(index = 10)
+    @JsonPropertyDescription("identifier and codespace for reference system")
+    public Identifier referenceSystemIdentifier;
+
+    /**
+     * Type of reference system used.
+     */
+    @JsonProperty(index = 11)
+    @JsonPropertyDescription("type of reference system used")
+    public String referenceSystemType;
 
     /**
      * Creates a new instance with all values initialized to null.
      */
-    public Citation() {
+    public ReferenceSystem() {
     }
 
     /**
@@ -47,9 +53,15 @@ public final class Citation extends Entity
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    protected Citation(final org.opengis.metadata.citation.Citation impl) {
-        entityType = "Citation";
-        title = text(impl.getTitle());
+    protected ReferenceSystem(org.opengis.referencing.ReferenceSystem impl) {
+        entityType = "ReferenceSystem";
+        // TODO: get reference system type.
+        for (var id : impl.getIdentifiers()) {
+            if ((referenceSystemIdentifier = Identifier.create(id)) != null) {
+                return;
+            }
+        }
+        referenceSystemIdentifier = Identifier.create(impl.getName());
     }
 
     /**
@@ -58,9 +70,9 @@ public final class Citation extends Entity
      * @param impl implementation of a GeoAPI object to serialize.
      * @return the POJO to serialize.
      */
-    public static Citation create(org.opengis.metadata.citation.Citation impl) {
-        return (impl == null || impl instanceof Citation)
-                ? (Citation) impl : new Citation(impl);
+    public static ReferenceSystem create(org.opengis.referencing.ReferenceSystem impl) {
+        return (impl == null || impl instanceof ReferenceSystem)
+                ? (ReferenceSystem) impl : new ReferenceSystem(impl);
     }
 
     // ┌────────────────────────────────────────┐
@@ -68,67 +80,37 @@ public final class Citation extends Entity
     // └────────────────────────────────────────┘
 
     @Override
-    public org.opengis.util.InternationalString getTitle() {
-        return i18n(title);
+    public org.opengis.referencing.ReferenceIdentifier getName() {
+        return referenceSystemIdentifier;
     }
 
     @Override
-    public Collection<org.opengis.util.InternationalString> getAlternateTitles() {
-        return List.of();
+    public Collection<org.opengis.util.GenericName> getAlias() {
+        return Set.of();
     }
 
     @Override
-    public Collection<org.opengis.metadata.citation.CitationDate> getDates() {
-        return List.of();
+    public Set<org.opengis.referencing.ReferenceIdentifier> getIdentifiers() {
+        return Set.of();
     }
 
     @Override
-    public org.opengis.util.InternationalString getEdition() {
+    public org.opengis.metadata.extent.Extent getDomainOfValidity() {
         return null;
     }
 
     @Override
-    public Date getEditionDate() {
+    public org.opengis.util.InternationalString getScope() {
         return null;
     }
 
     @Override
-    public Collection<org.opengis.metadata.Identifier> getIdentifiers() {
-        return List.of();
-    }
-
-    @Override
-    public Collection<org.opengis.metadata.citation.ResponsibleParty> getCitedResponsibleParties() {
-        return List.of();
-    }
-
-    @Override
-    public Collection<org.opengis.metadata.citation.PresentationForm> getPresentationForms() {
-        return List.of();
-    }
-
-    @Override
-    public org.opengis.metadata.citation.Series getSeries() {
+    public org.opengis.util.InternationalString getRemarks() {
         return null;
     }
 
     @Override
-    public org.opengis.util.InternationalString getOtherCitationDetails() {
-        return null;
-    }
-
-    @Override
-    public org.opengis.util.InternationalString getCollectiveTitle() {
-        return null;
-    }
-
-    @Override
-    public String getISBN() {
-        return null;
-    }
-
-    @Override
-    public String getISSN() {
-        return null;
+    public String toWKT() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException();
     }
 }

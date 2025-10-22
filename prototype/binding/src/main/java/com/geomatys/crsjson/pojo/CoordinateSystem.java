@@ -1,13 +1,22 @@
-
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership. You may not use this
+ * file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.geomatys.crsjson.pojo;
 
-import java.util.Set;
-import java.util.LinkedHashSet;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
@@ -17,23 +26,20 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  * The coordinate values in a coordinate tuple shall be recorded in the order
  * in which the coordinate system axes associations are recorded.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class CoordinateSystem
-    extends IdentifiedObject
+public class CoordinateSystem extends IdentifiedObject
+        implements org.opengis.referencing.cs.CoordinateSystem
 {
     /**
      * Coordinate system axis that is a component of this coordinate system.
      */
-    @JsonProperty(value="axis", index=100, required=true)
-    @JsonDeserialize(as = java.util.LinkedHashSet.class)
+    @JsonProperty(index = 20, required = true)
     @JsonPropertyDescription("coordinate system axis that is a component of this coordinate system")
-    public Set<Object> axis;
+    public CoordinateSystemAxis[] axis;
 
     /**
      * Creates a new instance with all values initialized to null.
      */
-    protected CoordinateSystem() {
+    public CoordinateSystem() {
     }
 
     /**
@@ -49,9 +55,9 @@ public class CoordinateSystem
         super(impl);
         entityType = "CoordinateSystem";
         int dimension = impl.getDimension();
-        axis = LinkedHashSet.newLinkedHashSet(dimension);
+        axis = new CoordinateSystemAxis[dimension];
         for (int i=0; i<dimension; i++) {
-            axis.add(new CoordinateSystemAxis(impl.getAxis(i)));
+            axis[i] = CoordinateSystemAxis.create(impl.getAxis(i));
         }
     }
 
@@ -65,6 +71,7 @@ public class CoordinateSystem
     public static CoordinateSystem create(org.opengis.referencing.cs.CoordinateSystem impl) {
         return switch (impl) {
             case null -> null;
+            case CoordinateSystem subtype -> subtype;
             case org.opengis.referencing.cs.CartesianCS   subtype -> new CartesianCS  (subtype);
             case org.opengis.referencing.cs.SphericalCS   subtype -> new SphericalCS  (subtype);
             case org.opengis.referencing.cs.EllipsoidalCS subtype -> new EllipsoidalCS(subtype);
@@ -73,7 +80,27 @@ public class CoordinateSystem
             case org.opengis.referencing.cs.AffineCS      subtype -> new AffineCS     (subtype);
             case org.opengis.referencing.cs.VerticalCS    subtype -> new VerticalCS   (subtype);
             case org.opengis.referencing.cs.TimeCS        subtype -> new TemporalCS   (subtype);
-            default -> new CoordinateSystem(impl);
+            case org.opengis.referencing.cs.LinearCS      subtype -> new LinearCS     (subtype);
+            default -> {
+                if (isInstanceByReflection("ParametricCS", impl)) {
+                    yield new ParametricCS(impl);
+                }
+                yield new CoordinateSystem(impl);
+            }
         };
+    }
+
+    // ┌────────────────────────────────────────┐
+    // │    Implementation of GeoAPI methods    │
+    // └────────────────────────────────────────┘
+
+    @Override
+    public int getDimension() {
+        return (axis != null) ? axis.length : 0;
+    }
+
+    @Override
+    public org.opengis.referencing.cs.CoordinateSystemAxis getAxis(int i) {
+        return axis[i];
     }
 }

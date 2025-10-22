@@ -17,16 +17,15 @@ package com.geomatys.crsjson.pojo;
 
 
 /**
- * Two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal.
- * The number of associations shall equal the dimension of the coordinate system.
+ * Coordinate reference system having a temporal reference frame and a one-dimensional temporal coordinate system.
  */
-public final class CartesianCS extends AffineCS
-        implements org.opengis.referencing.cs.CartesianCS
+public final class TemporalCRS extends SingleCRS<TemporalCS, TemporalDatum>
+        implements org.opengis.referencing.crs.TemporalCRS
 {
     /**
      * Creates a new instance with all values initialized to null.
      */
-    public CartesianCS() {
+    public TemporalCRS() {
     }
 
     /**
@@ -35,9 +34,11 @@ public final class CartesianCS extends AffineCS
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    protected CartesianCS(final org.opengis.referencing.cs.CartesianCS impl) {
+    protected TemporalCRS(final org.opengis.referencing.crs.TemporalCRS impl) {
         super(impl);
-        entityType = "CartesianCS";
+        entityType = "TemporalCRS";
+        datum = TemporalDatum.create(impl.getDatum());
+        coordinateSystem = TemporalCS.create(impl.getCoordinateSystem());
     }
 
     /**
@@ -46,8 +47,22 @@ public final class CartesianCS extends AffineCS
      * @param impl implementation of a GeoAPI object to serialize, or {@code null}.
      * @return the serializable object, or {@code null} if the given object was null.
      */
-    public static CartesianCS create(final org.opengis.referencing.cs.CartesianCS impl) {
-        return (impl == null || impl instanceof CartesianCS)
-                ? (CartesianCS) impl : new CartesianCS(impl);
+    public static TemporalCRS create(org.opengis.referencing.crs.TemporalCRS impl) {
+        return (impl == null || impl instanceof TemporalCRS)
+                ? (TemporalCRS) impl : new TemporalCRS(impl);
+    }
+
+    // ┌────────────────────────────────────────┐
+    // │    Implementation of GeoAPI methods    │
+    // └────────────────────────────────────────┘
+
+    @Override
+    public org.opengis.referencing.cs.TimeCS getCoordinateSystem() {
+        return coordinateSystem;
+    }
+
+    @Override
+    public org.opengis.referencing.datum.TemporalDatum getDatum() {
+        return datum;
     }
 }

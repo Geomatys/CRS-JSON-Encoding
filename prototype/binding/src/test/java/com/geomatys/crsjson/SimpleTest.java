@@ -13,22 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.geomatys.crsjson.pojo;
+package com.geomatys.crsjson;
 
-import java.util.Set;
+import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import java.util.Arrays;
+import com.geomatys.crsjson.pojo.IdentifiedObject;
+import com.geomatys.crsjson.pojo.Identifier;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * Tests writing a few JSON objects.
+ * Tests a few standalone <abbr>JSON</abbr> objects.
+ * This test does not use Apache <abbr>SIS</abbr> of other libraries.
  */
-public class WriteTest {
+public class SimpleTest {
     /**
      * The JSON marshaller.
      */
@@ -37,7 +39,7 @@ public class WriteTest {
     /**
      * Creates a new test case.
      */
-    public WriteTest() {
+    public SimpleTest() {
         mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
@@ -73,7 +75,7 @@ public class WriteTest {
         var object = new IdentifiedObject();
         object.entityType = "IdentifiedObject";
         object.name = identifier("WGS 84");
-        object.identifier = Set.of(identifier("EPSG:4326"));
+        object.identifier = new Identifier[] {identifier("EPSG:4326")};
         object.remarks = "This is a test of CRS-JSON.";
         assertLinesMatch(Arrays.asList(
                 "{",
