@@ -1,25 +1,36 @@
-
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership. You may not use this
+ * file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.geomatys.crsjson.pojo;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
  * <var>n</var>-dimensional coordinate system in which every axis uses integers.
  * The number of associations shall be equal the dimension of the coordinate system.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class OrdinalCS
-    extends CoordinateSystem
+public final class OrdinalCS extends CoordinateSystem
+        // TODO: pending the definition of an interface in GeoAPI.
 {
     /**
      * Datatype of coordinate values.
+     * Constrained to "integer" in the case of ordinal coordinate system.
      */
-    @JsonProperty(value="coordinateType", index=200, required=true)
+    @JsonProperty(index = 30, required = true)
     @JsonPropertyDescription("datatype of coordinate values")
     public String coordinateType;
 
@@ -35,9 +46,9 @@ public class OrdinalCS
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    public OrdinalCS(final org.opengis.referencing.cs.CoordinateSystem impl) {
+    protected OrdinalCS(final org.opengis.referencing.cs.CoordinateSystem impl) {
         super(impl);
         entityType = "OrdinalCS";
-        // TODO: missing coordinateType.
+        coordinateType = "integer";
     }
 }

@@ -15,28 +15,37 @@
  */
 package com.geomatys.crsjson.pojo;
 
+import java.time.Instant;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 
 /**
- * Textual description and/or a set of parameters identifying a particular reference surface
- * used as the origin of a parametric coordinate system, including its position with respect to the Earth.
+ * A one-dimensional temporal primitive that represent extent in time.
  */
-public final class ParametricDatum extends Datum
-        // TODO: pending the definition of an interface in GeoAPI.
+public class Period extends Entity
+        implements org.opengis.temporal.TemporalPrimitive
 {
     /**
-     * Parameter used to define the parametric datum.
+     * The beginning instant at which this period starts.
+     * Note: really upper-case "B": ISO defines this property that way.
      */
-    @JsonProperty(index = 30)
-    @JsonPropertyDescription("parameter used to define the parametric datum")
-    public DefiningParameter[] datumDefiningParameter;
+    @JsonProperty(index = 10)
+    @JsonPropertyDescription("the beginning instant at which this period starts")
+    public Instant Beginning;
+
+    /**
+     * The ending instant at which this period ends.
+     * Note: really upper-case "E": ISO defines this property that way.
+     */
+    @JsonProperty(index = 11)
+    @JsonPropertyDescription("the ending instant at which this period ends")
+    public Instant Ending;
 
     /**
      * Creates a new instance with all values initialized to null.
      */
-    public ParametricDatum() {
+    public Period() {
     }
 
     /**
@@ -45,10 +54,9 @@ public final class ParametricDatum extends Datum
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    protected ParametricDatum(org.opengis.referencing.datum.Datum impl) {
-        super(impl);
-        entityType = "ParametricDatum";
-        // TODO: definit parameters
+    protected Period(org.opengis.temporal.TemporalPrimitive impl) {
+        entityType = "Period";
+        // Actually no property that we can get from GeoAPI 3.0.2.
     }
 
     /**
@@ -57,8 +65,8 @@ public final class ParametricDatum extends Datum
      * @param impl implementation of a GeoAPI object to serialize.
      * @return the POJO to serialize.
      */
-    public static ParametricDatum create(org.opengis.referencing.datum.Datum impl) {
-        return (impl == null || impl instanceof ParametricDatum)
-                ? (ParametricDatum) impl : new ParametricDatum(impl);
+    public static Period create(org.opengis.temporal.TemporalPrimitive impl) {
+        return (impl == null || impl instanceof Period)
+                ? (Period) impl : null;     // TODO
     }
 }

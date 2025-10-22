@@ -1,25 +1,35 @@
-
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership. You may not use this
+ * file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.geomatys.crsjson.pojo;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 /**
  * Parameter value, an ordered sequence of values,
  * or a reference to a file of parameter values that define a parametric datum.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class DefiningParameter
-    extends IdentifiedObject
+public final class DefiningParameter extends IdentifiedObject
+        // TODO: pending the definition of an interface in GeoAPI.
 {
     /**
      * Value of the coordinate operation parameter.
      */
-    @JsonProperty(value="parameterValue", index=100, required=true)
+    @JsonProperty(index = 20, required = true)
     @JsonPropertyDescription("value of the coordinate operation parameter")
     public ParameterValue parameterValue;
 
@@ -35,7 +45,7 @@ public class DefiningParameter
      *
      * @param impl implementation of a GeoAPI object to serialize.
      */
-    public DefiningParameter(final org.opengis.parameter.ParameterDescriptor<?> impl) {
+    protected DefiningParameter(final org.opengis.referencing.IdentifiedObject impl) {
         super(impl);
         entityType = "DefiningParameter";
     }

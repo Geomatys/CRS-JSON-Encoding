@@ -1,34 +1,53 @@
-
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership. You may not use this
+ * file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.geomatys.crsjson.pojo;
 
-import java.util.Set;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
  * Usage of a CRS-related object.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "entityType")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ObjectUsage
-    extends IdentifiedObject
+public class ObjectUsage extends IdentifiedObject
+        // TODO: pending the definition of an interface in GeoAPI.
 {
     /**
      * Scope and validity of a CRS-related object.
      */
-    @JsonProperty(value="domain", index=90)
-    @JsonDeserialize(as = java.util.LinkedHashSet.class)
+    @JsonProperty(index = 19)   // Anticipate that this property will be merged with parent class.
     @JsonPropertyDescription("scope and validity of a CRS-related object")
-    public Set<ObjectDomain> domain;
+    public ObjectDomain[] domain;
 
     /**
      * Creates a new instance with all values initialized to null.
      */
-    protected ObjectUsage() {
+    public ObjectUsage() {
+    }
+
+    /**
+     * Creates a new instance with values initialized from the given GeoAPI object and given domain.
+     * Subclasses should overwrite the {@link #entityType} value in their constructor.
+     *
+     * @param impl    implementation of a GeoAPI object to serialize.
+     * @param domain  scope and validity.
+     */
+    ObjectUsage(org.opengis.referencing.IdentifiedObject impl, final ObjectDomain domain) {
+        super(impl);
+        initialize(domain);
     }
 
     /**
@@ -81,7 +100,33 @@ public class ObjectUsage
     private void initialize(ObjectDomain node) {
         entityType = "ObjectUsage";
         if (node.scope != null || node.domainOfValidity != null) {
-            domain = Set.of(node);
+            domain = new ObjectDomain[] {node};
         }
+    }
+
+    // ┌────────────────────────────────────────┐
+    // │    Implementation of GeoAPI methods    │
+    // └────────────────────────────────────────┘
+
+    public org.opengis.metadata.extent.Extent getDomainOfValidity() {
+        if (domain != null) {
+            for (ObjectDomain d : domain) {
+                if (d != null) {
+                    return d.domainOfValidity;  // Return even if null for consistency with scope.
+                }
+            }
+        }
+        return null;
+    }
+
+    public org.opengis.util.InternationalString getScope() {
+        if (domain != null) {
+            for (ObjectDomain d : domain) {
+                if (d != null) {
+                    return i18n(d.scope);       // Return even if null for consistency with domain of validity.
+                }
+            }
+        }
+        return null;
     }
 }

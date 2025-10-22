@@ -28,6 +28,7 @@
       "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
       "geographicElement" : [ {
         "entityType" : "GeographicBoundingBox",
+        "extentTypeCode" : 1,
         "westBoundLongitude" : -9.86,
         "eastBoundLongitude" : 10.38,
         "southBoundLatitude" : 41.15,
@@ -130,7 +131,7 @@
         "entityType" : "Citation",
         "title" : "EPSG Geodetic Parameter Dataset"
       },
-      "code" : "Réseau Géodesique Français 1993 v1",
+      "code" : "Reseau Geodesique Francais 1993 v1",
       "codeSpace" : "EPSG",
       "version" : "12.026"
     },
@@ -144,7 +145,7 @@
       "codeSpace" : "EPSG",
       "version" : "12.026"
     } ],
-    "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Réseau Géodesique Français 1993" ],
+    "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Reseau Geodesique Francais 1993" ],
     "remarks" : "RGF93 v1 is a realization of ETRS89. Replaced by RGF93 v2 (datum code 1312) from 2010-06-18.",
     "domain" : [ {
       "entityType" : "ObjectDomain",
@@ -154,6 +155,7 @@
         "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
+          "extentTypeCode" : 1,
           "westBoundLongitude" : -9.86,
           "eastBoundLongitude" : 10.38,
           "southBoundLatitude" : 41.15,
@@ -174,6 +176,7 @@
       }
     } ],
     "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0. Derived from long-term GNSS observations at 23 points aligned to ETRF93 @ 1993.0 through fundamental points at Grasse, Toulouse and Brest. Network supplemented in 1994 and 1995 by approx. 1000 additional stations.",
+    "publicationDate" : "1993",
     "primeMeridian" : {
       "entityType" : "PrimeMeridian",
       "name" : {
@@ -269,6 +272,7 @@
         "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
+          "extentTypeCode" : 1,
           "westBoundLongitude" : -9.86,
           "eastBoundLongitude" : 10.38,
           "southBoundLatitude" : 41.15,
@@ -379,7 +383,7 @@
           "entityType" : "Citation",
           "title" : "EPSG Geodetic Parameter Dataset"
         },
-        "code" : "Réseau Géodesique Français 1993 v1",
+        "code" : "Reseau Geodesique Francais 1993 v1",
         "codeSpace" : "EPSG",
         "version" : "12.026"
       },
@@ -393,7 +397,7 @@
         "codeSpace" : "EPSG",
         "version" : "12.026"
       } ],
-      "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Réseau Géodesique Français 1993" ],
+      "alias" : [ "RGF93 v1", "Réseau Géodésique Français 1993", "Reseau Geodesique Francais 1993" ],
       "remarks" : "RGF93 v1 is a realization of ETRS89. Replaced by RGF93 v2 (datum code 1312) from 2010-06-18.",
       "domain" : [ {
         "entityType" : "ObjectDomain",
@@ -403,6 +407,7 @@
           "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
           "geographicElement" : [ {
             "entityType" : "GeographicBoundingBox",
+            "extentTypeCode" : 1,
             "westBoundLongitude" : -9.86,
             "eastBoundLongitude" : 10.38,
             "southBoundLatitude" : 41.15,
@@ -423,6 +428,7 @@
         }
       } ],
       "anchorDefinition" : "Coincident with ETRS89 at epoch 1993.0. Derived from long-term GNSS observations at 23 points aligned to ETRF93 @ 1993.0 through fundamental points at Grasse, Toulouse and Brest. Network supplemented in 1994 and 1995 by approx. 1000 additional stations.",
+      "publicationDate" : "1993",
       "primeMeridian" : {
         "entityType" : "PrimeMeridian",
         "name" : {
@@ -517,6 +523,7 @@
         "description" : "France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica).",
         "geographicElement" : [ {
           "entityType" : "GeographicBoundingBox",
+          "extentTypeCode" : 1,
           "westBoundLongitude" : -9.86,
           "eastBoundLongitude" : 10.38,
           "southBoundLatitude" : 41.15,
